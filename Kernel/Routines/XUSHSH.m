@@ -1,12 +1,7 @@
 XUSHSH ;ISF/STAFF - ENCRYPTION/DECRYPTION UTILITIES ;01/20/16  14:33
- ;;8.0;KERNEL;**655,659**;Jul 10, 1995;Build 22
+ ;;8.0;KERNEL;**655,659**;Jul 10, 1995
  ;Per VA Directive 6402, this routine should not be modified.
  ;
- ;; This is the public domain version of the VA Kernel.
- ;; Use this routine for your own encryption algorithm
- ;; Input in X
- ;; Output in X
- ;;
  ;ZEXCEPT: X ;Returned global value when called as an extrinsic subroutine.
  S X=$$EN(X)
  Q
