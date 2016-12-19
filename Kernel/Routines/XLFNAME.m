@@ -1,6 +1,11 @@
-XLFNAME ;CIOFO-SF/TKW,MKO-Utilities for person name fields ;03/31/15  09:30
- ;;8.0;KERNEL;**134,211,240,655**;Jul 10, 1995;Build 16
- ;Per VA Directive 6402, this routine should not be modified.
+XLFNAME ;CIOFO-SF/TKW,MKO-Utilities for person name fields ;10:12 AM  29 Jan 2003 ; 7/18/10 12:25pm
+ ;;8.0;KERNEL;**134,211,240,400000000**;Jul 10, 1995;Build 3
+ ;
+ ; Change Log:
+ ; *400000000 on 3100718 by UJO/SMH
+ ; Lines 155-160 - Don't execute punctuation clean ups if we have
+ ; ASCII higher than 127 in the string. Some characters get redacted
+ ; inappropriately depending on ASCII encoding used.
  ;
 STDNAME(XUNAME,XUFLAG,XUAUD) ;Standardize name XUNAME
  ; XUNAME - In, name to be standardized. Out, standardized name
@@ -16,7 +21,6 @@ STDNAME(XUNAME,XUFLAG,XUAUD) ;Standardize name XUNAME
  N I,XUFAM,XUNM,XUOUT,XUMOV,XUREST,XUSP
  S XUOUT=$G(XUFLAG)["C"
  N:XUOUT XUFAMO,XURESTO
- S XUNAME=$TR(XUNAME,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")
  K XUAUD S XUAUD=XUNAME
  ;
  F I="FAMILY","GIVEN","MIDDLE","SUFFIX" S XUNM(I)="" S:XUOUT XUOUT(I)=""
@@ -28,7 +32,7 @@ STDNAME(XUNAME,XUFLAG,XUAUD) ;Standardize name XUNAME
  ;
  S:XUNAME?1"EEE".E!(XUNAME?.E1" FEE")!(XUNAME?1A1"-".E) XUAUD("NOTE")=""
  ;
- ;If no comma, assume given name first (also no "F")
+ ;If no comma, assume given name first
  I XUNAME'[",",$G(XUFLAG)'["F" G GIVFRST
  ;
  ;Standardize Family
@@ -150,6 +154,12 @@ MOVSUF(XUREST,XUOUT,XURESTO,XUAUD,XUMOV) ;Move suffixes immediately in front to 
  ;
 PUNC(XUNAME,XUAUD) ;Remove name pieces that are purely punctuation
  N XUC,XUI,XUNEW
+ ; *400000000 - if name contains high range ascii, don't try to
+ ; remove punctuation... some chars are mistakenly removed.
+ N XUASCIIHIGHRANGE S XUASCIIHIGHRANGE=0
+ F XUI=1:1:$L(XUNAME) I $A(XUNAME,XUI)>127 S XUASCIIHIGHRANGE=1 QUIT
+ I XUASCIIHIGHRANGE QUIT XUNAME
+ ; END *400000000
  S XUNEW=""
  F XUI=1:1:$L(XUNAME," ") D
  . S XUC=$P(XUNAME," ",XUI)

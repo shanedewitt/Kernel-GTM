@@ -1,6 +1,5 @@
-XUS1A ;SF-ISC/STAFF - SIGNON overflow from XUS1 ;12/02/14  13:26
- ;;8.0;KERNEL;**153,149,183,258,265,638**;Jul 10, 1995;Build 15
- ;Per VA Directive 6402, this routine should not be modified.
+XUS1A ;SF-ISC/STAFF - SIGNON overflow from XUS1 ;3:33 PM  17 Sep 2010 ; 10/27/14 11:03am
+ ;;8.0;KERNEL;**153,149,183,258,265**;Jul 10, 1995;Build 4
  Q
 USER() ;
  N %B,%E,%T,I1,X1,X2
@@ -42,6 +41,16 @@ DUZ ;setup duz, also see XUS5
  S DUZ(2)=$S($G(DUZ(2))>0:DUZ(2),1:+$P(XOPT,U,17))
  S X=$P($G(^DIC(4,DUZ(2),99)),U,5),DUZ("AG")=$S(X]"":X,1:$P(^XTV(8989.3,1,0),U,8))
  S DUZ("BUF")=($P(XOPT,U,9)="Y"),DUZ("LANG")=$P(XOPT,U,7)
+    ;EHS/AYG ; UJO7*2.0*6; Oct 23,2014 ; Addition [Fill $ZTWORMHOLE variable]
+    ;If this is a GT.M instance fill the $ZTWORMHOLE with a list of variables.
+    ;$ZTWORMHOLE will pass the current selected session variables to the GT.M trigger session.
+    ; START OF CODE CHANGES FOR ;UJO7*2.0*6
+    IF $GET(^%ZOSF("OS"))["GT.M" DO
+    . NEW VARIABLES
+    . SET VARIABLES("DUZ")=""
+    . SET VARIABLES("DUZ(2)")=""
+    . DO FILLWORM^UJO7WORM(.VARIABLES)
+    ; END OF CODE CHANGES FOR ;UJO7*2.0*6
  Q
 XOPT ;Build the XOPT string
  N X,I
@@ -51,20 +60,23 @@ XOPT ;Build the XOPT string
  Q
  ;
 COUNT(IEN,IP) ;Count sign-on log active connect from this IP
- N CNT,IX,IP6
- S CNT="",IX=0,IP6=$$FORCEIP6^XLFIPV(IP) ;p638 use IPv6 xref
- I '$D(^XUSEC(0,"AS5",IEN)) Q 0 ;First sign-on
- I $O(^XUSEC(0,"AS5",IEN,""))'=IP6 Q -1 ;Diff IP
- I $O(^XUSEC(0,"AS5",IEN,""),-1)'=IP6 Q -1 ;Diff IP
- F  S IX=$O(^XUSEC(0,"AS5",IEN,IP6,IX)) Q:'IX  S CNT=CNT+1
+ N CNT,IX
+ S CNT="",IX=0
+ I '$D(^XUSEC(0,"AS3",IEN)) Q 0 ;First sign-on
+ I $O(^XUSEC(0,"AS3",IEN,""))'=IP Q -1 ;Diff IP
+ I $O(^XUSEC(0,"AS3",IEN,""),-1)'=IP Q -1 ;Diff IP
+ F  S IX=$O(^XUSEC(0,"AS3",IEN,IP,IX)) Q:'IX  S CNT=CNT+1
  Q CNT ;Return Count
  ;
 INTRO(WNM) ;
  Q:'$D(^XTV(8989.3,1,"INTRO",0))
- F I=0:0 S I=$O(^XTV(8989.3,1,"INTRO",I)) Q:I'>0  S X=^(I,0) D
+ N DIWF,DIWL,DIWR K ^UTILITY($J,"W")
+ F I=0:0 S I=$O(^XTV(8989.3,1,"INTRO",I)) Q:'I  S X=^(I,0),DIWF="",DIWL=1,DIWR=78 D ^DIWP
+ F I=0:0 S I=$O(^UTILITY($J,"W",1,I)) Q:I'>0  S X=^(I,0) D
  . I $D(WNM) S @WNM@(I)=X
  . I '$D(WNM) W X,!
  . Q
+ K ^UTILITY($J,"W")
  Q
  ;
 DD(Y) Q $$FMTE^XLFDT(X,"1D")

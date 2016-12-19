@@ -1,5 +1,16 @@
-XLFNAME8 ;BPOIFO/KEITH/DW - NAME STANDARDIZATION ; 12 Aug 2002@20:20
- ;;8.0;KERNEL;**343**; Jul 10, 1995;
+XLFNAME8 ;BPOIFO/KEITH/DW - NAME STANDARDIZATION ; 7/18/10 12:32pm
+ ;;8.0;KERNEL;**343,400000000,400000001**; Jul 10, 1995;Build 3
+ ; Local Mods by EHS in Jordan by UJO/SMH
+    ;
+    ; Change Log:
+    ; *400000000 on 3100700 by UJO/SMH
+    ; Fix capitalization in FC1 -- previously used -32; d'ed to 
+    ; $$UP^XLFSTR API.
+    ;
+    ; *400000001 on 3100700 by UJO/SMH
+    ; Fix F1 -- wanted to make sure that 1st and last characters are alpha.
+    ; Not recognized correctly in arabic encoding.
+    ; 
  ;
 FAMILY ;Family name help text
  S XUM("LENGTH")="1-35"
@@ -133,9 +144,11 @@ F1(XUX,XUCOMA)  ;Transform text value
  F XUI=1:1:6 S XUC=$E(XUY,XUI) D
  .F  Q:XUX'[XUC  S XUX=$P(XUX,XUC)_$P(XUX,XUC,2,999)
  .Q
+    ;*400000001
  ;Insure value begins and ends with an alpha character
- F  Q:'$L(XUX)!($E(XUX,1)?1A)  S XUX=$E(XUX,2,999)
- F  Q:'$L(XUX)!($E(XUX,$L(XUX))?1A)  Q:($L(XUX,",")=2)&($E(XUX,$L(XUX))=",")  S XUX=$E(XUX,1,($L(XUX)-1))
+ ;// UJO/SMH - Can't use for Arabic depedning on encondig
+ ;F  Q:'$L(XUX)!($E(XUX,1)?1A)  S XUX=$E(XUX,2,999)
+ ;F  Q:'$L(XUX)!($E(XUX,$L(XUX))?1A)  Q:($L(XUX,",")=2)&($E(XUX,$L(XUX))=",")  S XUX=$E(XUX,1,($L(XUX)-1))
  Q XUX'=XUOLDX
  ;
 CLAST(XUX,XUC) ;Find last instance of character
@@ -157,9 +170,11 @@ FC1(XUC,XUCOMA) ;Transform single character
  ;Retain parenthesis, bracket and brace characters
  Q:XUC?1"("!(XUC?1")")!(XUC?1"[")!(XUC?1"]")!(XUC?1"{")!(XUC?1"}") 0
  ;Transform lowercase to uppercase
- I XUC?1L S XUC=$C($A(XUC)-32) Q 1
+ ;I XUC?1L S XUC=$C($A(XUC)-32) Q 1 //smh *400000000
+ I XUC?1L S XUC=$$UP^XLFSTR(XUC) Q 1 ; wrong caplitalization in orig
  ;Set all other characters to space
- S XUC=" " Q 1
+ ;S XUC=" " Q 1 //SMH *400000000 --don't do that--garbles arabic
+ Q 0
  ;
 CMP(XUNC) ;Cleanup name components
  ;

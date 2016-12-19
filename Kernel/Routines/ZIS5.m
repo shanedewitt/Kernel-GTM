@@ -1,5 +1,5 @@
-%ZIS5 ;SFISC/STAFF --DEVICE LOOK-UP ;08/30/2011
- ;;8.0;KERNEL;**18,24,69,499,518,546,572**;JUL 10, 1995;Build 7
+%ZIS5 ;SFISC/STAFF --DEVICE LOOK-UP ; 9/3/15 11:23am
+ ;;8.0;KERNEL;**18,24,69,499,518,546**;JUL 10, 1995;Build 13
  ;Per VHA Directive 2004-038, this routine should not be modified
  ;Does a DIC like lookup. %XX,%YY are call in/out parameters
  N %DO,%DIY,%DD,%DIX
@@ -13,17 +13,24 @@ B I $D(%ZIS("B")),%ZIS("B")]"" S %YY=%ZIS("B"),%XX=$O(^%ZIS(%ZISDFN,%D,%YY)),%DI
  W !,%DD R %XX:%ZISDTIM
 G G NO:'$T,NO:%XX["^" G:%XX?.N&(+%XX=%XX) NUM I %XX'?.ANP!($L(%XX)>30) W:%ZIS(0)["Q" *7," ??" G A
  ;Lookup
-X ;**P572 START CJM
- ;I %XX=" ",$D(DUZ)#2,$D(^DISV(+DUZ,"^%ZIS("_%ZISDFN_",")) S %YY=+^("^%ZIS("_%ZISDFN_",") D S G:'$T NO G GOT
- I %XX=" ",$D(DUZ)#2,$D(^DISV(+DUZ,"ZIS","^%ZIS("_%ZISDFN_","))!$D(^DISV(+DUZ,"^%ZIS("_%ZISDFN_",")) D  D S G:'$T NO G GOT
- .S %YY=$S($D(^DISV(+DUZ,"ZIS","^%ZIS("_%ZISDFN_",")):+^("^%ZIS("_%ZISDFN_","),1:^DISV(+DUZ,"^%ZIS("_%ZISDFN_","))
- ;**P572 END CJM
+X I %XX=" ",$D(DUZ)#2,$D(^DISV(+DUZ,"^%ZIS("_%ZISDFN_",")) S %YY=+^("^%ZIS("_%ZISDFN_",") D S G:'$T NO G GOT
 F G NO:%XX="" K %DS S %DS=0,%DS(0)=1,%DIX=%XX,%DIY=0
  I $D(^%ZIS(%ZISDFN,%D,%XX)) G T1
 TRY S %DIX=$O(^%ZIS(%ZISDFN,%D,%DIX)) G:$P(%DIX,%XX,1)'=""!(%DIX="") T2 S %DIY=0
+       ; EHS/AYG/SAH ; UJOM*2.0*85 ; SEP 2,2015 ; Update [Revert old changes to fix Devices issue]
+          ; START OF CODE CHANGES FOR ;UJOM*2.0*85
+          ; EHS/WAS ; UJOM*2.0*75 ; OCT 22,2012 ; Addition [New screening on Device]
+       ; Adding a new screening by using the UJOSMULT API to filter the device according to an assigned division
+       ; START OF CODE CHANGES FOR ;UJOM*2.0*75
 T1 S %DIY=$O(^%ZIS(%ZISDFN,%D,%DIX,+%DIY)) G:%DIY'>0 TRY S %YY=+%DIY D S G:'$T T1
- I %DS,'(%DS#10) D LST G NO:%XX=U,ADD:%YY<0,GOT:%YY>0
- S %DS=%DS+1,%DS(%DS)=%DIY G T1
+       ;T1	
+    ;NEW SCR
+    ;SET SCR=$$GETSCR^UJOSMULT("3.5")
+    ;SET %DIY=$ORDER(^%ZIS(%ZISDFN,%D,%DIX,+%DIY)) GOTO:%DIY'>0!'($$EXESCR^UJOSMULT(SCR,$NAME(^%ZIS(%ZISDFN,%DIY,0)))) TRY SET %YY=+%DIY DO S GOTO:'$TEST T1
+    ; END OF CODE CHANGES FOR ;UJOM*2.0*75
+       ; END OF CODE CHANGES FOR ;UJOM*2.0*85
+    I %DS,'(%DS#10) D LST G NO:%XX=U,ADD:%YY<0,GOT:%YY>0
+    S %DS=%DS+1,%DS(%DS)=%DIY G T1
 LSYN ;
 S I $D(^%ZIS(%ZISDFN,%YY,0)) G S1
  Q
@@ -43,12 +50,7 @@ L1 W:%DIY !,"Type '^' to Stop, or" W !,"Choose 1" W:%DS>1 "-",%DS
  S %YY=%DS(%YY) Q
 GOT S %DZ=^%ZIS(%ZISDFN,+%YY,0)
  W:%ZIS(0)["E" "  ",$P(%DZ,U,1)
- ;**P572 START CJM
-R ;
- ;I %ZIS(0)'["F" S:$S($D(DUZ)#2:$S(DUZ:1,1:0),1:0) ^DISV(DUZ,"^%ZIS("_%ZISDFN_",")=+%YY
- I %ZIS(0)'["F" I '$D(IOP),$S($D(DUZ)#2:$S(DUZ:1,1:0),1:0) S ^DISV(DUZ,"ZIS","^%ZIS("_%ZISDFN_",")=+%YY
- ;**P572 END CJM
- ;
+R I %ZIS(0)'["F" S:$S($D(DUZ)#2:$S(DUZ:1,1:0),1:0) ^DISV(DUZ,"^%ZIS("_%ZISDFN_",")=+%YY
  I %ZIS(0)["Z" S %YY(0)=^%ZIS(%ZISDFN,+%YY,0)
 Q K %ZISDFN,%DO,%DD,%DIX,%DIY,%DZ Q
 ADD ;can't add to files

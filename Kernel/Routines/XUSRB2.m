@@ -1,5 +1,5 @@
-XUSRB2 ;SFISC/RWF - RPC Broker Kernel Utilities. ;1/30/08  11:37
- ;;8.0;KERNEL;**115,150,277,337,469**;Jul 10, 1995;Build 7
+XUSRB2 ;SFISC/RWF - RPC Broker Kernel Utilities. ; 10/27/14 11:03am
+ ;;8.0;KERNEL;**115,150,277,337,469**;Jul 10, 1995;Build 4
  ;Per VHA Directive 2004-038, this routine should not be modified.
  Q
  ;
@@ -26,6 +26,16 @@ UPDIV(V) ;Update the Sign-on Log & DUZ(2)
  N IX
  S DUZ(2)=V
  S IX=$G(^XUTL("XQ",$J,0)) I IX S $P(^XUSEC(0,IX,0),U,17)=DUZ(2)
+    ;EHS/AYG ; UJO7*2.0*6; Oct 23,2014 ; Addition [Fill $ZTWORMHOLE variable]
+    ;If this is a GT.M instance fill the $ZTWORMHOLE with a list of variables.
+    ;$ZTWORMHOLE will pass the current selected session variables to the GT.M trigger session.
+    ; START OF CODE CHANGES FOR ;UJO7*2.0*6
+    IF $GET(^%ZOSF("OS"))["GT.M" DO
+    . NEW VARIABLES
+    . SET VARIABLES("DUZ")=""
+    . SET VARIABLES("DUZ(2)")=""
+    . DO FILLWORM^UJO7WORM(.VARIABLES)
+    ; END OF CODE CHANGES FOR ;UJO7*2.0*6
  Q
  ;
 USERINFO(RET) ;generic user information for seeding VistaUser object.

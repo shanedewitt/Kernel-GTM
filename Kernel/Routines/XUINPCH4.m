@@ -1,5 +1,5 @@
-XUINPCH4 ;ISF/RWF - Post INIT for strong passwords ;03/30/2001  10:41
- ;;8.0;KERNEL;**180**;Jul 10, 1995
+XUINPCH4 ;ISF/RWF - Post INIT for strong passwords ; 4/21/16 3:10pm
+ ;;8.0;KERNEL;**180**;Jul 10, 1995;Build 2
  ;;
  Q
 POST180 ;Patch XU*8*180 post init
@@ -12,7 +12,16 @@ KSP ;Check site params and reset if needed.
  ;Lockout time
  S V=10*60 I $G(XUIN(8989.3,"1,",203))<V S XUIN(8989.3,"1,",203)=V
  ;Verify code lifetime
- S V=90 I $G(XUIN(8989.3,"1,",214))>V S XUIN(8989.3,"1,",214)=V
+ ; EHS/MUK/TOA; UJO*2.0*78 ; JUL 8,2014 ; Update [Getting the expiration date form the ..
+ ; KERNEL SYSTEM PARAMETERS file]
+ ; START OF CODE CHANGES FOR ; UJO*2.0*78
+ ; Old code below :-
+ ;S V=90 I $G(XUIN(8989.3,"1,",214))>V S XUIN(8989.3,"1,",214)=V
+ NEW UJOCONFIG
+ SET UJOCONFIG=$$GET1^DIQ(8989.3,1,214)
+ SET V=$GET(UJOCONFIG,360)
+ IF $GET(XUIN(8989.3,"1,",214))>V SET XUIN(8989.3,"1,",214)=V
+ ; END OF CODE CHANGES FOR ; UJO*2.0*78
  D UPDATE^DIE("E","XUIN")
  Q
 DD ;Remove field 20.5 and 9.23 from file 200

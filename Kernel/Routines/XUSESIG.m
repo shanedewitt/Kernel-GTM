@@ -1,5 +1,5 @@
-XUSESIG ;SF/RWF - ROUTINE TO ENTER OR CHANGE ELECTRONIC SIGNATURE CODE ;10/16/2006
- ;;8.0;KERNEL;**14,55,437**;Jul 10, 1995;Build 2
+XUSESIG ;SF/RWF - ROUTINE TO ENTER OR CHANGE ELECTRONIC SIGNATURE CODE ;10/16/2006 ; 3/29/15 10:22am
+ ;;8.0;KERNEL;**14,55,437**;Jul 10, 1995;Build 11
 A ;Called by others from the top. See DBIC #936
  I $D(DUZ)[0 W "NO ACTION CAN BE TAKEN ON YOUR REQUEST     " Q
  N DA,DIE,DR,X1,K
@@ -46,9 +46,15 @@ SIG ;Call with DUZ; Return X1="" if fail else hashed ESC.
  . Q
  Q
  ;
-S2 W !!,"Enter your Current Signature Code: " D R G:X=""!(X="^") S9
+S2 
+ ;EHS/AHB ; UJO*2.0*115 ; MAR 29,2015 ;Update [To make the signature code as mandatory to fill]
+ ;START OF CODE CHANGES FOR ;UJO*2.0*115
+ ;W !!,"Enter your Current Signature Code: " D R G:X=""!(X="^") S9
+ WRITE !!,"Enter your Current Signature Code: " DO R GOTO:X=""!(X="^") S2
  I X?1.2"?" W !,"Enter your current Electronic Signature Code so it can be verified.",! G S2
- S K=K+1 D HASH^XUSHSHP I X1'=X W "  ??",*7 S X="" G S2:K<3,S9
+ ;S K=K+1 D HASH^XUSHSHP I X1'=X W "  ??",*7 S X="" G S2:K<3,S9
+ SET K=K+1 DO HASH^XUSHSHP IF X1'=X WRITE "  ??",*7 SET X="" GOTO S2
+ ;END OF CODE CHANGES FOR ;UJO*2.0*115
  W "   SIGNATURE VERIFIED"
 S9 S:X=""!(X="^") X1=""
  Q
