@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Aug 02, 2018@15:04
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;8월 30, 2018@10:09
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -23,10 +23,12 @@ STARTUP ;
  D UPDATE^DIE("E","FDA")
  I $D(DIERR) S $EC=",U1,"
  F ZOSVV="VTCM","VSTM","VBEM","VMCM","VHLM" D STARTMON^KMPVCBG(ZOSVV,1)
+ S KMPVTEST="TESTING"
  QUIT
  ;
 SHUTDOWN ; 
  S $ZSOURCE="ZOSVGUT4"
+ K KMPVTEST
  QUIT
  ;
 PATCH ; @TEST $$PATCH^XPDUTL, which prv accepted only 3 digits
@@ -90,19 +92,6 @@ CPUINFO ; @TEST D CPU^KMPDUTL5 CPU Information
  D CHKTF^%ut($L(ZZZ(HOST),U)=4) ; 4 pieces: process name, # cores, speed, system memory
  QUIT
  ;
-EMAIL1 ; @TEST Fix hardcoded email address in KMPDRDAT to Postmaster
- ; We count the postmaster's emails before sending the message and after.
- ; We give enough time for the filer to do its work.
- D ^KMPDRDAT
- D SUCCEED^%ut
- QUIT
- ;
-EMAIL2 ; @TEST Fix hardcoded email address in KMPDUTL2 to Postmaster
- N ZOSVTEXT S ZOSVTEXT(1,0)="LINE 1",ZOSVTEXT(2,0)="LINE 2"
- D EMAIL^KMPDUTL2("TEST SUBJECT","ZOSVTEXT(")
- D SUCCEED^%ut
- QUIT
- ;
 ROUFIND ; @TEST ROUFIND^KMPDU2 Routine Find
  N RTN,GLOBAL
  S GLOBAL=$NA(^TMP($T(+0),$J))
@@ -116,7 +105,61 @@ ROUFIND ; @TEST ROUFIND^KMPDU2 Routine Find
  D CHKTF^%ut(CNT>50)
  QUIT
  ;
-SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
+COVER ; @TEST Cover Sheet Statistics Calculations
+ S ^KMPTMP("KMPD-CPRS")=1
+ ; Run covershet for up to 10 patients
+ N DFN F DFN=0:0 S DFN=$O(^DPT(DFN)) Q:'DFN  Q:DFN>10  D COVER1(DFN)
+ ;
+ ; Move data to yesterday
+ ; -1 from the $H in the first two pieces
+ ; ^KMPTMP("KMPDT","ORWCV","ORWCV 169.254.170.40-00980054-1")="64889,42842^64889,42845^1^127.0.0.1"
+ ; ^KMPTMP("KMPDT","ORWCV-FT","ORWCV 127.0.0.1-0xDead1085733-1")="64889,59568^64889,59603^.5^"
+ N S1,S2
+ F S1="ORWCV","ORWCV-FT" S S2="" F  S S2=$O(^KMPTMP("KMPDT",S1,S2)) Q:S2=""  D
+ . N D S D=^KMPTMP("KMPDT",S1,S2)
+ . N START S START=$P(D,U,1)
+ . N END   S END=$P(D,U,2)
+ . N NSTART,NEND S NSTART=START,NEND=END ; new start, end
+ . S $P(NSTART,",",1)=$P(START,",",1)-1
+ . S $P(NEND,",",1)=$P(END,",",1)-1
+ . N ND S ND=D ; new D
+ . S $P(ND,U,1)=NSTART
+ . S $P(ND,U,2)=NEND
+ . S ^KMPTMP("KMPDT",S1,S2)=ND
+ ;
+ ; Run nightly job
+ D ^KMPDBD01
+ QUIT
+ ;
+COVER1(DFN) ; [Private] Inner worker for each patient
+ ; Foreground Stats (starts first)
+ N IP,HWND
+ S IP=$R(255)_"."_$R(255)_"."_$R(255)_"."_$R(255)
+ S HWND="0xDead"_$R(99999999)
+ N XWBFGTIM S XWBFGTIM=$H
+ N XWB S XWB(5,"P",0)=DFN,XWB(5,"P",1)=IP,XWB(5,"P",2)=HWND
+ D STRTCVR1^XWBPRS
+ ;
+ ; Background Status
+ N ZZZ
+ D START^ORWCV(.ZZZ,DFN,IP,HWND)
+ ;
+ ; Switch to foreground stats again
+ D STRTCVR2^XWBPRS(ZZZ)
+ ;
+ ; Run the RPCs for the foreground stats
+ N XWBCSRPC
+ S XWBCSRPC="ORQQPXRM REMINDERS UNEVALUATED" K ZZZ D LIST^ORQQPXRM(.ZZZ,1,0)     D ONECOVER^XWBPRS
+ S XWBCSRPC="ORQQPXRM REMINDERS APPLICABLE"  K ZZZ D APPL^ORQQPXRM(.ZZZ,1,0)     D ONECOVER^XWBPRS
+ S XWBCSRPC="ORQQPXRM REMINDERS CATEGORIES"  K ZZZ D CATEGORY^ORQQPXRM(.ZZZ,1,0) D ONECOVER^XWBPRS
+ K ^TMP("XWBFGP",$J,"TODO")
+ S XWBCSRPC="ORQQPX REMINDERS LIST"          K ZZZ D REMIND^ORQQPX(.ZZZ,1)       D ONECOVER^XWBPRS
+ ;
+ ; Poll for the Background Job
+ N I F I=1:1 K ZZZ D POLL^ORWCV(.ZZZ,DFN,IP,HWND) Q:$G(ZZZ(1))["DONE"  Q:I>10  H 1
+ QUIT
+ ;
+SAGG ; #TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
  D ^KMPSGE
  D SUCCEED^%ut
  QUIT
