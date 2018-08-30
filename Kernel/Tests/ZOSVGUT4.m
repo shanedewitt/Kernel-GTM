@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;8월 30, 2018@10:09
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;8월 30, 2018@13:49
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -157,6 +157,7 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  ;
  ; Poll for the Background Job
  N I F I=1:1 K ZZZ D POLL^ORWCV(.ZZZ,DFN,IP,HWND) Q:$G(ZZZ(1))["DONE"  Q:I>10  H 1
+ I I>10 D FAIL^%ut("BG CV Job never finished. Is taskman running?")
  QUIT
  ;
 SAGG ; #TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
@@ -175,15 +176,51 @@ VSTM ; @TEST VSM Storage Monitor
  QUIT
  ;
 VBEM ; @TEST VSM Business Event Monitor (replaces old CM task)
+ ; make sure RUM is on - this test runs after LOGRSRC above, which turns it on and records data.
  D ^KMPVBETR
  D CHKTF^%ut($data(^KMPTMP("KMPV","VBEM","COMPRESS")))
  QUIT
  ;
 VHLM ; @TEST VSM Section HL7 mointor
- ; My test system has no HL7 messages on it; so no mail messages would get sent.
- ; We will just be happy saying that we succeeded.
+ ; Turn on patient registration messages
+ N IEN43 S IEN43=$O(^DG(43,0))
+ I 'IEN43 D FAIL^%ut("MAS PARAMETERS NOT DEFINED") QUIT
+ S $P(^DG(43,IEN43,"HL7"),U,2,3)="1^1"
+ ;
+ ; Create patient registration message
+ N $ET,$ES S $ET="D VHLMERR^ZOSVGUT4"
+ N DFN S DFN=1
+ N % S %=$$EN^VAFCA04(DFN,$$NOW^XLFDT)
+ ;
+ ; Get Registration Message Number
+ N PIVOT S PIVOT=$O(^VAT(391.71," "),-1)
+ N MESS S MESS=$G(^VAT(391.71,PIVOT,1))
+ I 'MESS D FAIL^%ut("Message not generated")
+ ;
+ ; Get Message number in HLMA (message - site number from the beginning)
+ N SITE S SITE=+$P($$PARAM^HLCS2,U,6)
+ N HLMA S HLMA=$P(MESS,SITE,2,99)
+ ; 
+ ; Get HL7 message number
+ N HLIEN S HLIEN=+^HLMA(HLMA,0)
+ ;
+ ; Backdate the message by one day for our testing
+ N DATE   S DATE=+^HL(772,HLIEN,0)
+ N NDATE S NDATE=$$FMADD^XLFDT(DATE,-1)
+ N FDA S FDA(772,HLIEN_",",.01)=NDATE
+ D FILE^DIE(,"FDA")
+ ;
  D ^KMPVVHLM
- D SUCCEED^%ut
+ QUIT
+ ;
+VHLMERR ; 
+ S $ET="W ""EMERGENCY"" HALT"
+ ; The following is an expected error due to 2 digit vs 3 digit site numbers
+ I $ST($ST-1,"PLACE")["RGADTP" S $EC="" QUIT  ; clear error and just continue
+ D ^%ZTER
+ S $EC=""
+ S $ET="B"
+ D UNWIND^ZU
  QUIT
  ;
 VMCM ; @TEST VSM Message Count Monitor
