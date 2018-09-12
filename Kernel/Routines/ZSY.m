@@ -1,4 +1,4 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2018-08-20  12:08 PM
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;9월 10, 2018@14:55
  ;;8.0;KERNEL;**349,10001,10002,10003**;Jul 10, 1995;Build 20
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
@@ -466,11 +466,11 @@ HALTALL ; [Public] Gracefully halt all jobs accessing current database
  n procs d UNIXLSOF(.procs)
  ;
  ; Tell them to stop
- n i f i=1:1 q:'$d(procs(i))  s ^XUTL("XUSYS",procs(i),"CMD")="HALT"
+ n i f i=0:0 s i=$o(procs(i)) q:'i  s ^XUTL("XUSYS",procs(i),"CMD")="HALT"
  K ^XUTL("XUSYS",$J,"CMD")  ; but not us
  ;
  ; Sayonara
- N J F J=0:0 S J=$O(^XUTL("XUSYS",J)) Q:'J  D INTRPT(J)
+ N J F J=0:0 S J=$O(procs(J)) Q:'J  D INTRPT(procs(J))
  ;
  ; Wait; Long hang for TCP jobs that can't receive interrupts for .2 seconds
  H .25
