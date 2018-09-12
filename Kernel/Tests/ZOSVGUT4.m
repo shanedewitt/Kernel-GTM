@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;8월 30, 2018@13:49
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;9월 10, 2018@15:28
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -7,6 +7,7 @@ ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;8월 30, 2018@13:49
  QUIT
  ;
 STARTUP ;
+ ; ZEXCEPT: KMPVTEST
  ;
  ; Fix the email address to which messages are sent
  N FDA,DIERR
@@ -27,6 +28,7 @@ STARTUP ;
  QUIT
  ;
 SHUTDOWN ; 
+ ; ZEXCEPT: KMPVTEST
  S $ZSOURCE="ZOSVGUT4"
  K KMPVTEST
  QUIT
@@ -160,7 +162,7 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  I I>10 D FAIL^%ut("BG CV Job never finished. Is taskman running?")
  QUIT
  ;
-SAGG ; #TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
+SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
  D ^KMPSGE
  D SUCCEED^%ut
  QUIT
@@ -226,9 +228,12 @@ VHLMERR ;
 VMCM ; @TEST VSM Message Count Monitor
  ; This one runs perpetually. The only way to stop is it to turn it off in the file.
  ; I do that; but I also want it to stop now; thus the HALTONE^ZSY.
+ ; ZEXCEPT: IN,OUT,ERROR
+ K ^KMPTMP("KMPV","VMCM","DLY",+$H)
  J ^KMPVVMCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
  N %J S %J=$ZJOB
  D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
+ H 1
  D STOPMON^KMPVCBG("VMCM",1)
  D HALTONE^ZSY(%J)
  F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
@@ -239,9 +244,12 @@ VMCM ; @TEST VSM Message Count Monitor
 VTCM ; @TEST VSM Timed Collection Monitor
  ; This one runs perpetually. The only way to stop is it to turn it off in the file.
  ; I do that; but I also want it to stop now; thus the HALTONE^ZSY.
+ ; ZEXCEPT: IN,OUT,ERROR
+ K ^KMPTMP("KMPV","VTCM","DLY",+$H)
  J ^KMPVVTCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
  N %J S %J=$ZJOB
  D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
+ H 2 ; Cygwin wants some time I think
  D STOPMON^KMPVCBG("VTCM",1)
  D HALTONE^ZSY(%J)
  F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
