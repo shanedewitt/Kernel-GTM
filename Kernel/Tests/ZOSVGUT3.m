@@ -1,7 +1,7 @@
-ZOSVGUT3 ; VEN/SMH - Unit Tests for GT.M VistA Port;2018-08-02
+ZOSVGUT3 ; VEN/SMH - Unit Tests for GT.M VistA Port;9월 10, 2018@15:16
  ;;8.0;KERNEL;**10002**;;Build 25
- ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Authored by Sam Habiel 2017.
+ ;
 STARTUP QUIT
  ;
 SHUTDOWN ; 
@@ -187,6 +187,7 @@ LIST ; @TEST LIST^%ZISH
  D CHKTF^%ut('%,3)
  ;
  I $ZPARSE("$vista_home/r/")="" QUIT
+ I $$VERSION^%ZOSV(1)["CYGWIN" QUIT  ; This just takes too long on Cygwin
  N %ARR S %ARR("*")=""
  N %RET
  N % S %=$$LIST^%ZISH("$vista_home/r/",$NA(%ARR),$NA(%RET))
@@ -381,6 +382,7 @@ LISTRPMS ; @TEST Test LIST RPMS Version (2nd par is by value not by name)
  D CHKEQ^%ut(%,1) ; Return 1 for failure
  ;
  I $ZPARSE("$vista_home/r/")="" QUIT
+ I $$VERSION^%ZOSV(1)["CYGWIN" QUIT  ; This just takes too long on Cygwin
  N %RET
  N % S %=$$LIST^%ZISH("$vista_home/r/","*",.%RET)
  N CNT,I
