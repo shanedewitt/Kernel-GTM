@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;9월 10, 2018@15:28
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 17, 2018@18:13
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -162,9 +162,14 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  I I>10 D FAIL^%ut("BG CV Job never finished. Is taskman running?")
  QUIT
  ;
-SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (40s on Cygwin)
+SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (2.5m on Cygwin)
  D ^KMPSGE
- D SUCCEED^%ut
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat")>1000)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/globals-"_DT_".dat")>100)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/packages-"_DT_".dat")>100)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/taskman-"_DT_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/version-"_DT_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/volumes-"_DT_".dat")>0)
  QUIT
  ;
  ; -- VistA System Monitor Unit Tests --
@@ -234,7 +239,6 @@ VMCM ; @TEST VSM Message Count Monitor
  N %J S %J=$ZJOB
  D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
  H 1
- D STOPMON^KMPVCBG("VMCM",1)
  D HALTONE^ZSY(%J)
  F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
  D CHKTF^%ut($data(^KMPTMP("KMPV","VMCM","DLY",+$H)))
@@ -250,7 +254,6 @@ VTCM ; @TEST VSM Timed Collection Monitor
  N %J S %J=$ZJOB
  D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
  H 2 ; Cygwin wants some time I think
- D STOPMON^KMPVCBG("VTCM",1)
  D HALTONE^ZSY(%J)
  F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
  D CHKTF^%ut($data(^KMPTMP("KMPV","VTCM","DLY",+$H)))

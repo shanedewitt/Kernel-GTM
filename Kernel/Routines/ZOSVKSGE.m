@@ -1,4 +1,4 @@
-%ZOSVKSE ;YDB/CJE&OSE/SMH - ZOSVKSGE - Global data (GT.M) ;2018-06-20
+%ZOSVKSE ;YDB/CJE&OSE/SMH - ZOSVKSGE - Global data (GT.M) ;Sep 17, 2018@17:56
  ;;8.0;KERNEL;**10003**;Jul 26, 2004;Build 48
  ;
  Q
@@ -43,12 +43,47 @@ ALLOS ;-- entry point now for all OS's
  ;
  I '$D(GLOARRAY) S ^XTMP("KMPS",KMPSSITE,NUM," NO GLOBALS ",KMPSVOL)="" Q
  ;
- D ALLGLO
- S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,"KEY")="blocks_U_blockSize_U_bytes_U_adj_U_reg_U_acc_U_jourstr_U_jourfile"
+ ; Extract the journal
+ n jExtractFile s jExtractFile=$$DUMPJOUR()
+ ;
+ ; Run the global analysis
+ D ALLGLO(jExtractFile)
+ ;
+ ; Delete the journal
+ N % S %=$$RETURN^%ZOSV("rm -f "_jExtractFile,1)
+ S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,"KEY")="blocks_U_blockSize_U_bytes_U_adj_U_reg_U_acc_U_jourstr_U_jourfile_U_sets_U_kills"
  ;
  Q
  ;
-ALLGLO ;- collect global info
+DUMPJOUR() ; [$$ Private] Dump default current journal file for grepping (only DEFAULT region)
+ ; Output: File containing the extract
+ n reg s reg=$view("region","^DD")
+ ;
+ ; Journaling on? Check; if not quit.
+ n jour s jour=$view("JNLACTIVE",reg)
+ n jourstr
+ i jour<2 s jourstr="off" ; (2 active, 1 enabled but off; 0 disabled; -1 error)
+ e  s jourstr="on"
+ if jourstr'="on" quit
+ ;
+ ; Get Journal File
+ n jourfile s jourfile=$view("JNLFILE",reg)
+ ;
+ ; Extract Journal File Name; delete old
+ n outfile s outfile=jourfile_".extract."_DT
+ N % S %=$$RETURN^%ZOSV("rm -f "_outfile,1)
+ ;
+ ; Extract
+ n comm s comm="mupip journal -extract="_outfile_" -forward -detail "_jourfile
+ o "pipe":(shell="/bin/sh":command=comm)::"pipe"
+ u "pipe"
+ n x f  r x:1  q:$zeof
+ c "pipe"
+ ;
+ ; quit with file name
+ q outfile
+ ;
+ALLGLO(jExtractFile) ;- collect global info
  N GLO S GLO=""
  ;
  F  S GLO=$O(GLOARRAY(GLO)) Q:GLO=""  D  Q:+$G(^XTMP("KMPS","STOP"))
@@ -90,7 +125,13 @@ ALLGLO ;- collect global info
  . ; Journal file
  . n jourfile s jourfile=""
  . i jourstr="on" s jourfile=$view("JNLFILE",reg)
+ . ;
+ . ; If we have a journal file, get the # of sets/kills for the global
+ . n sets,kills s (sets,kills)=0
+ . i jourstr="on" do
+ .. s sets=$$RETURN^%ZOSV("grep -c ""SET.*"_GLO_"("" "_jExtractFile)
+ .. s kills=$$RETURN^%ZOSV("grep -c ""KILL.*"_GLO_"("" "_jExtractFile)
  . ; 
  . ; Set info into global
- . S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,GLO,KMPSZU)=blocks_U_blockSize_U_bytes_U_adj_U_reg_U_acc_U_jourstr_U_jourfile
+ . S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,GLO,KMPSZU)=blocks_U_blockSize_U_bytes_U_adj_U_reg_U_acc_U_jourstr_U_jourfile_U_sets_U_kills
  QUIT
