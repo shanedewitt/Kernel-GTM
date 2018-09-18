@@ -1,8 +1,9 @@
-KMPDRDAT ;SP/JML - Cover Sheet Load Raw Data Extract ;2018-06-11  2:57 PM
+KMPDRDAT ;SP/JML - Cover Sheet Load Raw Data Extract ;Sep 17, 2018@19:28
  ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018;Build 38
  ;
  ; *10003* (c) Sam Habiel 2018
  ; *10003 changes: Change VA email address to postmaster
+ ;               : Log entries if outside of the VA; and don't send mail
  ;
  ; Send raw data to CPE database
  ; START TIME^FG DELTA^BG DELTA^TOT DELTA^CLIENT DUZ^CLIENT NAME^KMPTMP SUBSCRIPT KEY^APPLICATION TITLE^IP^DFN
@@ -108,6 +109,18 @@ ORBOTH ;
 TRANSMIT ;
  ; quit if no data to transmit.
  Q:'$D(^KMPTMP("KMPD","RDAT"))
+ ;
+ ; *10003* - if outside of the VA, export to text file
+ I '$$VA^KMPLOG D  QUIT 
+ . K ^KMPTMP("KMPD","RDAT",1),^(2),^(3)  ; remove headers we dont want!
+ . ; add the header we want
+ . S ^KMPTMP("KMPD","RDAT",1)="START TIME^FG DELTA^BG DELTA^TOT DELTA^CLIENT DUZ^CLIENT NAME^KMPTMP SUBSCRIPT KEY^APPLICATION TITLE^IP^DFN"
+ . ; Remove "CVLOAD DATA=" from each entry
+ . N I S I=3 F  S I=$O(^KMPTMP("KMPD","RDAT",I)) Q:'I  S ^(I)=$P(^(I),"CVLOAD DATA=",2)
+ . ; log
+ . D EN^KMPLOG($NA(^KMPTMP("KMPD","RDAT")),"KMPD","cv-load","W",1)
+ ; /*10003*
+ ;
  N XMSUB,XMTEXT,XMY,XMZ
  ; send data via mail message.
  S XMTEXT="^KMPTMP(""KMPD"",""RDAT"","

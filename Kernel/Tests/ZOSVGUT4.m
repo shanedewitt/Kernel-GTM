@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 17, 2018@18:13
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 17, 2018@19:34
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -131,6 +131,7 @@ COVER ; @TEST Cover Sheet Statistics Calculations
  ;
  ; Run nightly job
  D ^KMPDBD01
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPD/cv-load-"_DT_".dat")>0)
  QUIT
  ;
 COVER1(DFN) ; [Private] Inner worker for each patient
@@ -163,6 +164,9 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  QUIT
  ;
 SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (2.5m on Cygwin)
+ ; It takes too long to run this -- quit if run today already.
+ I $$RETURN^%ZOSV("stat "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat",1)=0 QUIT
+ ;
  D ^KMPSGE
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat")>1000)
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/globals-"_DT_".dat")>100)
@@ -231,8 +235,8 @@ VHLMERR ;
  QUIT
  ;
 VMCM ; @TEST VSM Message Count Monitor
- ; This one runs perpetually. The only way to stop is it to turn it off in the file.
- ; I do that; but I also want it to stop now; thus the HALTONE^ZSY.
+ ; This one runs perpetually. The only way to stop is it to kill it.
+ ; thus the HALTONE^ZSY.
  ; ZEXCEPT: IN,OUT,ERROR
  K ^KMPTMP("KMPV","VMCM","DLY",+$H)
  J ^KMPVVMCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
@@ -246,8 +250,8 @@ VMCM ; @TEST VSM Message Count Monitor
  QUIT
  ;
 VTCM ; @TEST VSM Timed Collection Monitor
- ; This one runs perpetually. The only way to stop is it to turn it off in the file.
- ; I do that; but I also want it to stop now; thus the HALTONE^ZSY.
+ ; This one runs perpetually. The only way to stop is it to kill it.
+ ; thus the HALTONE^ZSY.
  ; ZEXCEPT: IN,OUT,ERROR
  K ^KMPTMP("KMPV","VTCM","DLY",+$H)
  J ^KMPVVTCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
