@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 17, 2018@19:34
+ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 18, 2018@15:20
  ;;8.0;KERNEL;**10003**;;
  ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
  ; (c) Sam Habiel 2018
@@ -260,8 +260,8 @@ VTCM ; @TEST VSM Timed Collection Monitor
  H 2 ; Cygwin wants some time I think
  D HALTONE^ZSY(%J)
  F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
- D CHKTF^%ut($data(^KMPTMP("KMPV","VTCM","DLY",+$H)))
  D SEND^KMPVVTCM
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_DT_".dat")>1)
  QUIT
  ;
 TASK ; @TEST Task Creator
