@@ -1,7 +1,34 @@
-KMPLOG ; OSE/SMH - Logging Utility for KMP* Packages;9월 11, 2018@12:30
+KMPLOG ; OSE/SMH - Logging Utility for KMP* Packages;Sep 18, 2018@15:02
  ;;3.0;CAPACITY MANAGEMENT;**10003**;
  ;
  I $T(^%ut)]"" D EN^%ut($t(+0),3) quit
+ ;
+HEAD(string,filePath,fileName,addDate) ; [Public] Add header
+ ;
+ ; Create directory
+ n defDir s defDir=$$DEFDIR^%ZISH()
+ n fullDir s fullDir=defDir_filePath
+ n % s %=$$MKDIR^%ZISH(fullDir)
+ I % S $EC=",U-MKDIR-FAILED,"
+ ;
+ ; Add date if necessary
+ if $get(addDate) set fileName=$p(fileName,".")_"-"_DT
+ ;
+ ; Add ext
+ if $l(fileName,".")<2 s fileName=fileName_".dat"
+ ;
+ ; Open - Read only - check if file exists
+ N POP
+ D OPEN^%ZISH("FILE1",fullDir,fileName,"R")
+ I 'POP D CLOSE^%ZISH("FILE1") QUIT  ; ! Quit if the file already exists
+ ;
+ ; Open - write mode
+ D OPEN^%ZISH("FILE1",fullDir,fileName,"W")
+ I POP S $EC=",U-POP,"
+ D USE^%ZISUTL("FILE1")
+ w string,!
+ D CLOSE^%ZISH("FILE1")
+ quit
  ;
 EN(arrayName,filePath,fileName,flag,addDate) ; [Public] Main Entry Point
  ; arrayName: Closed Root $NAME of the array
@@ -34,6 +61,7 @@ EN(arrayName,filePath,fileName,flag,addDate) ; [Public] Main Entry Point
  D USE^%ZISUTL("FILE1")
  ;
  ; Write out the data
+ i $d(@arrayName)#2 w @arrayName,!
  n i s i="" f  s i=$o(@arrayName@(i)) q:i=""  w @arrayName@(i),!
  ;
  ; Close
