@@ -1,8 +1,10 @@
-XTHCURL ;HCIOFO/SG - HTTP 1.0 CLIENT (URL TOOLS) ;07/29/10  14:01
- ;;7.3;TOOLKIT;**123**;Apr 25, 1995;Build 4
- ;Per VHA Directive 2004-038, this routine should not be modified
+XTHCURL ;HCIOFO/SG - HTTP 1.0 CLIENT (URL TOOLS) ;Oct 02, 2018@13:37
+ ;;7.3;TOOLKIT;**123,10002**;Apr 25, 1995;Build 4
  Q
- ;
+ ; (c) Sam Habiel 2015-2018 *10002*
+ ; See repository for license terms.
+ ; *10002* - TLS Support
+ ; See code for *10002* markers for modified code.
  ;***** ENCODES THE STRING
  ;
  ; STR           String to be encoded
@@ -54,7 +56,7 @@ NORMPATH(PATH) ;
  ;--- Append a trailing slash to the path if it has
  ;--- neither a file name nor a query string
  S LAST=$L(PATH,"/"),LAST=$P(PATH,"/",LAST)
- I LAST'="",LAST'["?",LAST'["."  S PATH=PATH_"/"
+ ;I LAST'="",LAST'["?",LAST'["."  S PATH=PATH_"/" ; smh commented out *10002*
  Q PATH
  ;
  ;##### PARSES THE URL INTO COMPONENTS
@@ -64,16 +66,23 @@ NORMPATH(PATH) ;
  ; .HOST         Reference to a local variable for the host name
  ; .PORT         Reference to a local variable for the port number
  ; .PATH         Reference to a local variable for the path
+ ; .ISTLS        Reference to a local variable for TLS/SSL
  ;
  ; Return values:
  ;           <0  Error Descriptor
  ;            0  Ok
  ;
-PARSEURL(URL,HOST,PORT,PATH) ;
+PARSEURL(URL,HOST,PORT,PATH,ISTLS)	; *10002* - Add ISTLS
+ ; *10002*
+ N TLSSTR S TLSSTR="HTTPS://"
+ N TLSSTRL S TLSSTRL=$L(TLSSTR)
+ S ISTLS=$E($$UP^XLFSTR(URL),1,TLSSTRL)=TLSSTR
+ ; /*10002*
+ ;
  S:$F(URL,"://") URL=$P(URL,"://",2,999)
  S HOST=$TR($P(URL,"/")," ")
  S PATH=$$NORMPATH($P(URL,"/",2,999))
  S PORT=$P(HOST,":",2),HOST=$P(HOST,":")
  Q:HOST?." " $$ERROR^XTHC10(1,URL)
- S:PORT'>0 PORT=80
+ S:PORT'>0 PORT=$S(ISTLS:443,1:80) ; *10002*
  Q 0

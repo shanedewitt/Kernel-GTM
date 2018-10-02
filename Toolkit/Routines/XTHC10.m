@@ -1,6 +1,10 @@
-XTHC10 ;HCIOFO/SG - HTTP 1.0 CLIENT ;12/07/2011
- ;;7.3;TOOLKIT;**123,566**;Apr 25, 1995;Build 6
+XTHC10 ;HCIOFO/SG - HTTP 1.0 CLIENT ;Oct 02, 2018@13:35
+ ;;7.3;TOOLKIT;**123,566,10002**;Apr 25, 1995;Build 6
  ;
+ ; *10002* changes - (c) Sam Habiel 2015-2018
+ ; See repository for license terms.
+ ; See code for *10002* markers for modified code.
+ ; *10002* - TLS support
  Q
  ;
  ;##### GETS THE DATA FROM THE PROVIDED URL USING HTTP 1.0
@@ -99,7 +103,9 @@ XTHC10 ;HCIOFO/SG - HTTP 1.0 CLIENT ;12/07/2011
  ; See the http://www.faqs.org/rfcs/rfc1945.html for more details.
  ;
 GETURL(URL,XT8FLG,XT8RDAT,XT8RHDR,XT8SDAT,XT8SHDR,REDIR) ;
- N HOST,I,IP,IPADDR,PATH,PORT,RQS,STATUS,X
+ N HOST,I,IP,IPADDR,PATH,PORT,RQS,STATUS,X,ISTLS,OS
+ S OS=$G(^%ZOSF("OS"))
+ S ISTLS=0 ; TLS turned off by default unless user says https.
  ;**P566 START CJM
  N IO,POP
  ;**P566 END CJM
@@ -108,12 +114,13 @@ GETURL(URL,XT8FLG,XT8RDAT,XT8RHDR,XT8SDAT,XT8SHDR,REDIR) ;
  ;Check IO
  I '$D(IO(0)) D HOME^%ZIS
  ;=== Parse the URL
- S I=$$PARSEURL^XTHCURL(URL,.HOST,.PORT,.PATH)  Q:I<0 I
+ S I=$$PARSEURL^XTHCURL(URL,.HOST,.PORT,.PATH,.ISTLS)  Q:I<0 I
  ;
  ;=== Check the host name/address
  I HOST'?1.3N3(1"."1.3N)  D  Q:IPADDR="" $$ERROR(2,HOST)
- . ;--- Resolve the host name into the IP address(es)
- . S IPADDR=$$ADDRESS^XLFNSLK(HOST)  Q:IPADDR=""
+ . ;--- Resolve the host name into the IP address(es) (but not on GT.M -- does it at runtime) ; *10002*
+ . I OS["GT.M" S IPADDR=HOST ; *10002*
+ . E  S IPADDR=$$ADDRESS^XLFNSLK(HOST)  Q:IPADDR=""
  . ;--- Check for the Host header value
  . S I=""
  . F  S I=$O(XT8SHDR(I))  Q:(I="")!($$UP^XLFSTR(I)="HOST")
@@ -122,7 +129,7 @@ GETURL(URL,XT8FLG,XT8RDAT,XT8RHDR,XT8SDAT,XT8SHDR,REDIR) ;
  ;
  ;=== Connect to the host
  F I=1:1  S IP=$P(IPADDR,",",I)  Q:IP=""  D  Q:'$G(POP)
- . D CALL^%ZISTCP(IP,PORT,+XT8FLG)
+ . D CALL^%ZISTCP(IP,PORT,+XT8FLG,ISTLS) ; *10002*
  Q:$G(POP) $$ERROR(3,IPADDR)
  ;
  ;=== Perform the transaction

@@ -1,15 +1,21 @@
-%ZISTCP ;ISC/RWF,ISD/HGW - DEVICE HANDLER TCP/IP CALLS ;07/11/14  11:37
- ;;8.0;KERNEL;**36,34,59,69,118,225,275,638**;Jul 10, 1995;Build 15
- ;Per VA Directive 6402, this routine should not be modified.
+%ZISTCP ;ISC/RWF,ISD/HGW - DEVICE HANDLER TCP/IP CALLS ;Oct 02, 2018@13:29
+ ;;8.0;KERNEL;**36,34,59,69,118,225,275,638,10003**;Jul 10, 1995;Build 15
  Q
+ ; (c) *10003* changes (c) Sam Habiel 2015-2018
+ ; See repository for license terms.
+ ; See source code for modified portions under patch *10003*
+ ; *10003* Kernel Client TLS support
  ;
-CALL(IP,SOCK,TO) ;Open a socket to the IP address <procedure>
+ ; VEN/SMH - 23 Aug 2015 added TLS for GT.M and Cache for Client calls
+ ;
+CALL(IP,SOCK,TO,TLS) ;Open a socket to the IP address <procedure>
  N %A,ZISOS,X,NIO
- S ZISOS=^%ZOSF("OS"),TO=$G(TO,30)
- N $ETRAP S $ETRAP="G OPNERR^%ZISTCP"
+ S ZISOS=^%ZOSF("OS"),TO=$G(TO,30),TLS=$G(TLS,0)
+ N $ETRAP,$ESTACK S $ETRAP="G OPNERR^%ZISTCP"
  S POP=1
- I '$$VALIDATE^XLFIPV(IP) S IP=$$ADDRESS^XLFNSLK(IP)  ;Lookup the name
- I '$$VALIDATE^XLFIPV(IP) Q  ;Not in the IP format
+ ; Don't convert IP in M for GT.M; GT.M lets the Linux Kernel handle that
+ I '(ZISOS["GT.M") D  I '$$VALIDATE^XLFIPV(IP) Q  ;Not in the IP format ; *10003*
+ . I '$$VALIDATE^XLFIPV(IP) S IP=$$ADDRESS^XLFNSLK(IP)  ;Lookup the name
  I (SOCK<1)!(SOCK>65535) Q
  G CVXD:ZISOS["VAX",CONT:ZISOS["OpenM",CGTM:ZISOS["GT.M",CMSM:ZISOS["MSM"
  S POP=1
@@ -33,19 +39,21 @@ CONT ;Open OpenM socket
  . O NIO:($$FORCEIP4^XLFIPV(IP):SOCK:"-M"::512:512):TO G:'$T NOOPN
  E  D
  . O NIO:("["_IP_"]":SOCK:"-M"::512:512):TO G:'$T NOOPN
+ I TLS D CACHETLS U NIO:(/SSL="encrypt_only") ; *10003*
  U NIO D VAR(NIO)
  Q
 CGTM ;Open GT.M Socket
  S NIO="SCK$"_$P($H,",",2) ;Just needs to be unique for job
- O NIO:(CONNECT=IP_":"_SOCK_":TCP":ATTACH="client"):TO:"SOCKET"
+ O NIO:(CONNECT=IP_":"_SOCK_":TCP":ATTACH="client":IOERROR="TRAP"):TO:"SOCKET"
  I '$T S POP=1 Q
  U NIO S NIO("KEY")=$KEY
  S NIO("SOCKET")=$P(NIO("KEY"),"|",2)
  I $P(NIO("KEY"),"|")'="ESTABLISHED" D LOG("** ="_NIO("KEY")_"= **") W 1/0 ; PROTOCOL ERROR
- ;U NIO:(SOCKET=NIO("SOCKET"):WIDTH=512:NOWRAP:IOERROR="TRAP":EXCEPT="G GTMERR^%ZISTCP")
- U NIO:(SOCKET=NIO("SOCKET"):WIDTH=512:NOWRAP:EXCEPT="G GTMERR^%ZISTCP")
+ U NIO:SOCKET=NIO("SOCKET")
+ I TLS W /TLS("client") ; TLS supported as of V6.2-001 ; *10003*
  D VAR(NIO) S IOF="#" ;Set buffer flush
  Q
+ ;
 VAR(%IO) ;Setup IO variables
  S:'$D(IO(0)) IO(0)=$I
  S IO=%IO,IO(1,IO)=$G(IP),POP=0
@@ -58,7 +66,9 @@ NOOPN ;Didn't make the conection
  Q
 OPNERR ;
  ;D ^%ZTER
+ I $ESTACK QUIT
  S POP=1
+ I $D(NIO) C NIO
  D ERRCLR
  Q
 UCXOPEN(NIO) ;This call only applies to SERVER jobs tied to UCX/VMS
@@ -176,4 +186,20 @@ LOG(MSG) ;LOG STATUS
  N CNT
  S CNT=$G(^TMP("ZISTCP",$J))+1,^TMP("ZISTCP",$J)=CNT,^($J,CNT)=MSG
  Q
+ ;
+CACHETLS ; Create a client SSL/TLS config on Cache ; *10003*
+ ;
+ ; Create the configuration
+ N NMSP S NMSP=$ZU(5)
+ ZN "%SYS"
+ n config,status
+ n % s %=##class(Security.SSLConfigs).Exists("encrypt_only",.config,.status) ; check if config exists
+ i '% d
+ . n prop s prop("Name")="encrypt_only"
+ . s %=##class(Security.SSLConfigs).Create("encrypt_only",.prop) ; create a default ssl config
+ . i '% w $SYSTEM.Status.GetErrorText(%) s $ec=",u-cache-error,"
+ . s %=##class(Security.SSLConfigs).Exists("encrypt_only",.config,.status) ; get config
+ e  s %=config.Activate()
+ ZN NMSP
+ QUIT
  ;
