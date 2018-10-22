@@ -1,6 +1,5 @@
-%ZISH ;ISF/AC,RWF,VEN/SMH - GT.M for Unix Host file Control ;2018-06-06  1:47 PM
- ;;8.0;KERNEL;**275,306,385,524,10001,10002**;Jul 10, 1995;Build 25
- ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
+%ZISH ;ISF/AC,RWF,VEN/SMH - GT.M for Unix Host file Control ;Oct 22, 2018@10:04
+ ;;8.0;KERNEL;**275,306,385,524,10001,10002,10004**;Jul 10, 1995;Build 25
  ; Original Routine authored by Department of Veterans Affairs
  ; EPs OPEN,DEL1,CD,PWD,MAXREC,MKDIR,SIZE,WGETSYNC,DF,SEND,SENDTO1 
  ; --> authored by Sam Habiel 2016-2018.
@@ -330,8 +329,8 @@ MAXREC(GLO) ; [Public] Maximum Record Size for a Global
  ; Global passed by name
  N REGION S REGION=$VIEW("REGION",$NA(@GLO))
  I REGION="" S $EC=",U-ERROR,"
- I $T(^%PEEKBYNAME)]"" Q $$^%PEEKBYNAME("gd_region.max_rec_size",REGION)
- I $T(^%DSEWRAP)]"" N FDUMP D  Q FDUMP(REGION,"Maximum record size")
+ I $T(+0^%PEEKBYNAME)]"" Q $$^%PEEKBYNAME("gd_region.max_rec_size",REGION) ; +0 *10004*
+ I $T(+0^%DSEWRAP)]"" N FDUMP D  Q FDUMP(REGION,"Maximum record size")     ; +0 *10004*
  . D DUMP^%DSEWRAP(REGION,.FDUMP,"fileheader","all")
  ;
  ; -- RPMS ENTRY POINTS! --
