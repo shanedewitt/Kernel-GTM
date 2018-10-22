@@ -1,12 +1,12 @@
-%ZOSV ;VEN/SMH,KRM/CJE,FIS/KSB - View commands & special functions. ;2018-08-01
- ;;8.0;KERNEL;**275,425,499,10001,10002,10003**;Jul 10, 1995;Build 25
+%ZOSV ;VEN/SMH,KRM/CJE,FIS/KSB - View commands & special functions. ;Oct 22, 2018@10:01
+ ;;8.0;KERNEL;**275,425,499,10001,10002,10004**;Jul 10, 1995;Build 25
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine authored by Department of Veterans Affairs
  ; Almost the entire routine was rewritten by Sam Habiel, Christopher Edwards, KS Bhaskar
  ;
 ACTJ() ; # active jobs
  ; Next call active as of 6.3
- I $T(^%PEEKBYNAME)]"" Q $$^%PEEKBYNAME("node_local.ref_cnt",$$DEFREG)
+ I $T(+0^%PEEKBYNAME)]"" Q $$^%PEEKBYNAME("node_local.ref_cnt",$$DEFREG)
  I ($G(^XUTL("XUSYS","CNT"))<1)!($G(^XUTL("XUSYS","CNT","SEC"))>($$SEC^XLFDT($H)+3600)) D
  . I $$UP^XLFSTR($ZV)["LINUX" D
  .. N I,IO,LINE
@@ -35,11 +35,11 @@ AVJ() ; # available jobs, Limit is in the OS.
  S V=^%ZOSF("VOL"),J=$O(^XTV(8989.3,1,4,"B",V,0)),J=$P($G(^XTV(8989.3,1,4,J,0),"^^1000"),"^",3)
  Q J-$$ACTJ ;Use signon Max
  ;
-DEFFILE() ; Default Region File Name ; *10003*
+DEFFILE() ; Default Region File Name ; *10004*
  Q $V("GVFILE",$$DEFREG)
  ;
-DEFREG() ; Default Region Name; *10003*
- Q $VIEW("REGION","^DD") 
+DEFREG() ; Default Region Name; *10004*
+ Q $VIEW("REGION","^DD")
  ;
 RTNDIR() ; primary routine source directory
  N DIRS
@@ -103,7 +103,7 @@ PRGMODE ;Drop into direct mode
  N X,XUCI,XUSLNT
  W ! S ZTPAC=$P($G(^VA(200,+DUZ,.1)),"^",5),XUVOL=^%ZOSF("VOL")
  S X="" X ^%ZOSF("EOFF") R:ZTPAC]"" !,"PAC: ",X:60 D LC^XUS X ^%ZOSF("EON") I X'=ZTPAC W "??",$C(7) Q
- N XMB,XMTEXT,XMY S XMB="XUPROGMODE",XMB(1)=DUZ,XMB(2)=$I D ^XMB:$L($T(^XMB)) D BYE^XUSCLEAN K ZTPAC,X,XMB
+ N XMB,XMTEXT,XMY S XMB="XUPROGMODE",XMB(1)=DUZ,XMB(2)=$I D ^XMB:$L($T(+0^XMB)) D BYE^XUSCLEAN K ZTPAC,X,XMB
  D UCI S XUCI=Y D PRGM^ZUA
  I $D(%ut) QUIT
  F  BREAK
@@ -142,7 +142,7 @@ LGR() ; Last global reference ($REFERENCE)
  Q $R
  ;
 EC() ; Error Code: returning $ZS in format more like $ZE from DSM
- ; NB: Updated in patch *10003* to deal with multiple commas (as in global references)
+ ; NB: Updated in patch *10004* to deal with multiple commas (as in global references)
  N %ZE
  I $ZS="" Q ""
  S %ZE=$P($ZS,",",2)_","_$TR($P($ZS,",",4,999),",","'")_","_$P($ZS,",")_",-"_$P($ZS,",",3)
