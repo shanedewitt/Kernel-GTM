@@ -1,5 +1,5 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;9월 10, 2018@14:55
- ;;8.0;KERNEL;**349,10001,10002,10003**;Jul 10, 1995;Build 20
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;Oct 22, 2018@10:01
+ ;;8.0;KERNEL;**349,10001,10002,10004**;Jul 10, 1995;Build 20
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
  ; Rewritten by KS Bhaskar and Sam Habiel 2005-2015
@@ -362,6 +362,7 @@ UNIX(MODE,USERS,SORT) ;PUG/TOAD,FIS/KSB,VEN/SMH - Kernel System Status Report fo
  n procs
  D INTRPTALL(.procs)
  H .205 ; 200ms for TCP Read processes; 5ms b/c I am nice.
+ ; H .005 ; 200ms for TCP Read processes; 5ms b/c I am nice.
  n procgrps
  n done s done=0
  n j s j=1
@@ -424,15 +425,16 @@ VPE(%OLDSTR,%OLDDEL,%NEWDEL) ; $PIECE extract based on variable length delimiter
  ; Sam's entry points
 UNIXLSOF(procs) ; [Public] - Get all processes accessing THIS database (only!)
  ; (return) .procs(n)=unix process number
- ; ZEXCEPT: shell,parse
- n %cmd s %cmd="lsof -t "_$$DEFFILE
+ ; ZEXCEPT: shell
+ n %cmd s %cmd="PATH=$PATH:/usr/sbin lsof -t "_$$DEFFILE
  i $ZV["CYGWIN" s %cmd="ps -a | grep mumps | grep -v grep | awk '{print $1}'"
  i $ZV["Darwin" s %cmd="pgrep -a mumps | xargs -n 1 -I{} lsof -p{} | grep "_$$DEFFILE_" | awk '{print $2}'"
  n oldio s oldio=$IO
- o "lsof":(shell="/bin/bash":command=%cmd:parse)::"pipe"
+ o "lsof":(shell="/bin/bash":command=%cmd)::"pipe"
  u "lsof"
  n i f i=1:1 q:$ZEOF  r procs(i):1  i procs(i)="" k procs(i)
  u oldio c "lsof"
+ i $zclose s $ec=",U-lsof-or-other-not-found,"
  n cnt s cnt=0
  n i f i=0:0 s i=$o(procs(i)) q:'i  i $i(cnt)
  quit:$Q cnt quit
@@ -656,10 +658,10 @@ DEBUG(%J) ; [Private] Debugging logic
  ;
  QUIT 0
  ;
-DEFREG() ; Default Region Name; *10003*
+DEFREG() ; Default Region Name; *10004*
  Q $VIEW("REGION","^DD")
  ;
-DEFFILE() ; Default Region File Name ; *10003*
+DEFFILE() ; Default Region File Name ; *10004*
  Q $V("GVFILE",$$DEFREG)
  ;
 AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M
