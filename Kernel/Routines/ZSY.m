@@ -1,4 +1,4 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;Oct 22, 2018@10:01
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;Oct 23, 2018@09:58
  ;;8.0;KERNEL;**349,10001,10002,10004**;Jul 10, 1995;Build 20
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
@@ -136,15 +136,15 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^ZU]
  Q 1
  ;
 ZSTEP ; Wait for commands
- K ^ZZSAM
- F  R X  S ^ZZSAM($I(^ZZSAM))=X D  I $E(X,1,2)="ZC" QUIT
- . I $E(X,1,2)="ZC" QUIT
- . N $ET,$ES S $ET="S $EC="""" W $C(4)"
- . X X
- . W $C(4)
- . B
- C TCPIO
- QUIT
+ ; K ^ZZSAM
+ ; F  R X  S ^ZZSAM($I(^ZZSAM))=X D  I $E(X,1,2)="ZC" QUIT
+ ; . I $E(X,1,2)="ZC" QUIT
+ ; . N $ET,$ES S $ET="S $EC="""" W $C(4)"
+ ; . X X
+ ; . W $C(4)
+ ; . B
+ ; C TCPIO
+ ; QUIT
  ;
 WORK(MODE,FILTER) ; [Private] Main driver, Will release lock
  ; int MODE
@@ -654,7 +654,6 @@ DEBUG(%J) ; [Private] Debugging logic
  ;
  F  W /WAIT(10) Q:$KEY]""
  R X
- B
  ;
  QUIT 0
  ;
