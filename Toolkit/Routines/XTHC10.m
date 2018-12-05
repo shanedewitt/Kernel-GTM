@@ -1,4 +1,4 @@
-XTHC10 ;HCIOFO/SG - HTTP 1.1 CLIENT ;2018-12-05  2:38 PM
+XTHC10 ;HCIOFO/SG - HTTP 1.1 CLIENT ; 12/5/18 8:45pm
  ;;7.3;TOOLKIT;**123,566,10002**;Apr 25, 1995
  ; *10002 Changes: TLS Support by Sam Habiel (c) 2018
  ; passim changes
@@ -95,18 +95,21 @@ INIT(AUTOCLOSE) ;
  ; Supply Autoclose if you want the code to automatically close the connection
  K ^TMP("XTHC10",$J)
  I ^%ZOSF("OS")["GT.M" D &libcurl.init
+ I ^%ZOSF("OS")["OpenM" S XT8REQUEST=##class(%Net.HttpRequest).%New()
  S ^TMP("XTHC10",$J)=AUTOCLOSE
  QUIT
  ;
 CLEANUP ;
  I ^%ZOSF("OS")["GT.M" D &libcurl.cleanup
+ I ^%ZOSF("OS")["OpenM" K XT8REQUEST
  K ^TMP("XTHC10",$J)
  QUIT
  ;
 GETURL(URL,XT8FLG,XT8RDAT,XT8RHDR,XT8SDAT,XT8SHDR,XT8METH) ;IA# 5553
  ;ZEXCEPT: %Net,%New,ContentType,HttpRequest,Https,Location,OpenTimeout,Port,Server,SSLCheckServerIdentity,SSLConfiguration,class   ; Cache ObjectScript methods and properties
  ;ZEXCEPT: Data,Get,GetHeader,GetNextHeader,Head,HttpResponse,Post,Put,ReadLine,ReasonPhrase,Send,SocketTimeout,StatusCode,StatusLine    ; Cache ObjectScript methods and properties
- N EOL,ERR,ESTATUS,HOST,I,J,K,NEWLINE,PATH,PORT,REQUEST,RESPONSE,STATUS,X,Y
+ ;ZEXCEPT: XT8REQUEST
+ N EOL,ERR,ESTATUS,HOST,I,J,K,NEWLINE,PATH,PORT,RESPONSE,STATUS,X,Y
  S XT8FLG=$G(XT8FLG)  S:XT8FLG'?1.N.E XT8FLG="5"_XT8FLG
  ;
  ;Check IO
@@ -117,26 +120,25 @@ GETURL(URL,XT8FLG,XT8RDAT,XT8RHDR,XT8SDAT,XT8SHDR,XT8METH) ;IA# 5553
  I ^%ZOSF("OS")["GT.M" G GTM
  ;
 CACHE ;
- S REQUEST=##class(%Net.HttpRequest).%New()
  S I=$$PARSEURL^XTHCURL(URL,.HOST,.PORT,.PATH)  Q:I<0 I
- I $G(PORT)>0 S REQUEST.Port=PORT ;Set port here, reset to 443 if https
+ I $G(PORT)>0 S XT8REQUEST.Port=PORT ;Set port here, reset to 443 if https
  I $$UP^XLFSTR($E(URL,1,8))["HTTPS://" D
- . S REQUEST.Https=1
- . S REQUEST.SSLCheckServerIdentity=0
- . S REQUEST.SSLConfiguration="encrypt_only"
- . I $G(PORT)=80 S REQUEST.Port=443 ;If default http port, reset to default https
- S REQUEST.Server=HOST
- I $G(PATH)'="" S REQUEST.Location=PATH
- S REQUEST.ContentType="text/html"
- S REQUEST.OpenTimeout=+XT8FLG
- S REQUEST.SocketTimeout=0
+ . S XT8REQUEST.Https=1
+ . S XT8REQUEST.SSLCheckServerIdentity=0
+ . S XT8REQUEST.SSLConfiguration="encrypt_only"
+ . I $G(PORT)=80 S XT8REQUEST.Port=443 ;If default http port, reset to default https
+ S XT8REQUEST.Server=HOST
+ I $G(PATH)'="" S XT8REQUEST.Location=PATH
+ S XT8REQUEST.ContentType="text/html"
+ S XT8REQUEST.OpenTimeout=+XT8FLG
+ S XT8REQUEST.SocketTimeout=0
  ;Set custom headers
- D REQUEST.SetHeader("User-Agent","VistA/2.0")
+ D XT8REQUEST.SetHeader("User-Agent","VistA/2.0")
  S I=""
- F  S I=$O(XT8SHDR(I))  Q:I=""  D REQUEST.SetHeader(I,XT8SHDR(I))
+ F  S I=$O(XT8SHDR(I))  Q:I=""  D XT8REQUEST.SetHeader(I,XT8SHDR(I))
  ; "GET"
  I $G(XT8METH)="GET" D
- . S ESTATUS=REQUEST.Get()
+ . S ESTATUS=XT8REQUEST.Get()
  ; "POST"
  I $G(XT8METH)="POST" D
  . S I=""
@@ -144,11 +146,11 @@ CACHE ;
  . . S NEWLINE=$G(@XT8SDAT@(I))
  . . S J=""
  . . F  S J=$O(@XT8SDAT@(I,J))  Q:J=""  S NEWLINE=NEWLINE_$G(@XT8SDAT@(I,J))
- . . D REQUEST.EntityBody.WriteLine(NEWLINE)
- . S ESTATUS=REQUEST.Post()
+ . . D XT8REQUEST.EntityBody.WriteLine(NEWLINE)
+ . S ESTATUS=XT8REQUEST.Post()
  ; "HEAD"
  I $G(XT8METH)="HEAD" D
- . S ESTATUS=REQUEST.Head()
+ . S ESTATUS=XT8REQUEST.Head()
  ; "PUT"
  I $G(XT8METH)="PUT" D
  . S I=""
@@ -156,16 +158,16 @@ CACHE ;
  . . S NEWLINE=$G(@XT8SDAT@(I))
  . . S J=""
  . . F  S J=$O(@XT8SDAT@(I,J))  Q:J=""  S NEWLINE=NEWLINE_$G(@XT8SDAT@(I,J))
- . . D REQUEST.EntityBody.WriteLine(NEWLINE)
- . S ESTATUS=REQUEST.Put()
+ . . D XT8REQUEST.EntityBody.WriteLine(NEWLINE)
+ . S ESTATUS=XT8REQUEST.Put()
  ; "OPTIONS" "DELETE" "TRACE"
  I $D(XT8METH) D
  . F  S I=$O(@XT8SDAT@(I))  Q:I=""  D  ;load an entire page, not just key/value pairs
  . . S NEWLINE=$G(@XT8SDAT@(I))
  . . S J=""
  . . F  S J=$O(@XT8SDAT@(I,J))  Q:J=""  S NEWLINE=NEWLINE_$G(@XT8SDAT@(I,J))
- . . D REQUEST.EntityBody.WriteLine(NEWLINE)
- . S ESTATUS=REQUEST.Send($G(XT8METH))
+ . . D XT8REQUEST.EntityBody.WriteLine(NEWLINE)
+ . S ESTATUS=XT8REQUEST.Send($G(XT8METH))
  ;Defaults if XT8METH is not defined
  ;If XT8SDAT has data, then do POST method, otherwise GET
  I $D(XT8SDAT)>0 D
@@ -174,13 +176,13 @@ CACHE ;
  . . S NEWLINE=$G(@XT8SDAT@(I))
  . . S J=""
  . . F  S J=$O(@XT8SDAT@(I,J))  Q:J=""  S NEWLINE=NEWLINE_$G(@XT8SDAT@(I,J))
- . . D REQUEST.EntityBody.WriteLine(NEWLINE)
- . S ESTATUS=REQUEST.Post()
+ . . D XT8REQUEST.EntityBody.WriteLine(NEWLINE)
+ . S ESTATUS=XT8REQUEST.Post()
  E  D
- . S ESTATUS=REQUEST.Get()
+ . S ESTATUS=XT8REQUEST.Get()
  I 'ESTATUS D $system.Status.DecomposeStatus(ESTATUS,.ERR) Q "-1^"_ERR(1)  ;Q if errors
  ;
- S RESPONSE=REQUEST.HttpResponse ;Sets the %Net.HttpResponse object
+ S RESPONSE=XT8REQUEST.HttpResponse ;Sets the %Net.HttpResponse object
  S STATUS=RESPONSE.StatusCode_"^"_RESPONSE.ReasonPhrase
  ;--- Header - Enter header into XT8RHDR
  S XT8RHDR=RESPONSE.StatusLine
@@ -197,10 +199,11 @@ CACHE ;
  . E  I $D(XT8RDAT)>0 D
  . . S @XT8RDAT@(J)=$E(X,1,245)  ;first 245 chars into parent node (J)
  . . I $L(X)>245 D               ;append remaining chars into child nodes (J,K), 245 chars at a time
- . . . F K=1:1:(X\245) D
+ . . . F K=1:1:($L(X)\245) D
  . . . S Y=$E(X,(K*245)+1,(K*245)+245) Q:Y=""
  . . . S @XT8RDAT@(J,K)=Y
  ;
+ I ^TMP("XTHC10",$J) D CLEANUP
  Q STATUS
  ;
 GTM ;

@@ -1,4 +1,4 @@
-XTHC ;HCIOFO/SG - HTTP 1.0 CLIENT ;2018-12-05  1:56 PM
+XTHC ;HCIOFO/SG - HTTP 1.0 CLIENT ; 12/5/18 8:02pm
  ;;7.3;TOOLKIT;**123,10002**;Apr 25, 1995;Build 4
  ;
  ; *10002* changes (c) Sam Habiel 2015-2018
@@ -71,32 +71,32 @@ TMI ; @TEST Multiple GETs from Single Domain - Init
 TM1 ; @TEST Multiple GETs from Single Domain - First
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/ndcstatus.json?ndc=00143314501",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TM2 ; @TEST Multiple GETs from Single Domain - Second
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/drugs?name=cymbalta",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TM3 ; @TEST Multiple GETs from Single Domain - Third
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/termtypes",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TM4 ; @TEST Multiple GETs from Single Domain - Fourth
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/brands?ingredientids=8896+20610",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TM5 ; @TEST Multiple GETs from Single Domain - Fifth
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/brands?ingredientids=8896+20610",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TM6 ; @TEST Mulitple GETs from Single Domain - Sixth
  n sss,zzz,status
  s status=$$GETURL^XTHC10("https://rxnav.nlm.nih.gov/REST/approximateTerm?term=zocor%2010%20mg&maxEntries=4",1,$NA(sss))
- d CHKEQ^%ut(status,200)
+ d CHKEQ^%ut(+status,200)
  quit
 TMC ; @TEST Multiple GETs from Single Domain - Cleanup
  d CLEANUP^XTHC10
