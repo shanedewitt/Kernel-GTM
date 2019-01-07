@@ -1,4 +1,4 @@
-XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;2017-01-09  3:28 PM
+XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;Jan 07, 2019@08:16
  ;;8.0;KERNEL;**142,151,425,638,659,10001**;Jul 10, 1995
  ;Per VA Directive 6402, this routine should not be modified.
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
@@ -8,7 +8,7 @@ XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;2017-01-09  3:2
  Q
 TEST ;Test entry
  N XNAME
- R !,"Enter an IP address to lookup: www.domain//",XNAME:DTIME S:XNAME="" XNAME="www.domain" Q:XNAME["^"
+ R !,"Enter an IP address to lookup: www.domain.ext//",XNAME:DTIME S:XNAME="" XNAME="www.domain.ext" Q:XNAME["^"
  W !!,"Looking up IPv4 address: ",XNAME
  W !,?5,XNAME,". > ",$$ADDRESS(XNAME,"A")
  W !!,"Looking up IPv6 address: ",XNAME

@@ -1,5 +1,5 @@
 ZOSVKSP2 ;BP/RAK/JML - Post install routine ;7/26/2004
- ;;8.0;KERNEL;**670**;3/1/2018
+ ;;8.0;KERNEL;**670**;3/1/2018;Build 45
  ;
 EN ;-- entry point for post-install
  ;
@@ -9,7 +9,7 @@ EN ;-- entry point for post-install
  ;
  Q
  ;
-SAVE ;-save correct files as '%' routines
+SAVE ;-save correct files as '%' routines 
  ;
  N %D,%S,SCR,ZTOS
  S ZTOS=$$OSNUM^ZTMGRSET
