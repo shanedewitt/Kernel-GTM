@@ -1,5 +1,5 @@
-ZOSVGUT3 ; VEN/SMH - Unit Tests for GT.M VistA Port;9월 10, 2018@15:16
- ;;8.0;KERNEL;**10002**;;Build 25
+ZOSVGUT3 ; VEN/SMH - Unit Tests for GT.M VistA Port;Jan 08, 2019@09:23
+ ;;8.0;KERNEL;**10002,10005**;;Build 25
  ; Authored by Sam Habiel 2017.
  ;
 STARTUP QUIT
@@ -405,7 +405,7 @@ MKDIR ; @TEST $$MKDIR^%ZISH
  D CHKTF^%ut(%=0)
  QUIT
  ;
-WGETSYNC ; @TEST $$WGETSYNC^%ZISH on NDF DAT files
+WGETSYNC ; #TEST $$WGETSYNC^%ZISH on NDF DAT files
  N SEC1 S SEC1=$P($H,",",2)
  N % S %=$$WGETSYNC^%ZISH("foia-vista.osehra.org","Patches_By_Application/PSN-NATIONAL DRUG FILE (NDF)/PPS_DATS/","/tmp/foo/boo","*.DAT*")
  D CHKTF^%ut(%=0)
@@ -449,5 +449,4 @@ DF ; @TEST Test DF^%ZISH (Directory Format)
  QUIT
  ;
 XTROU ;;
- ;;ZOSVGUT4
- ;;XLFSHANT
+ ;;ZOSVGUT5
