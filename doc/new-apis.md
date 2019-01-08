@@ -11,6 +11,10 @@ The following APIs are new:
  | $$SIZE^%ZISH()     | XU\*8.0\*10002 | Get size of a file                          | Public                            |
  | $$MKDIR^%ZISH()    | XU\*8.0\*10002 | Create a directory                          | Public                            |
  | $$WGETSYNC^%ZISH() | XU\*8.0\*10002 | Sync an http/https remote directory with a local directory | Public             |
+ | $$BL^%ZOSV()       | XU\*8.0\*10005 | Byte length of a UTF-8 String               | Kernel Applications Only          |
+ | $$BE^%ZOSV()       | XU\*8.0\*10005 | Byte Extract of a UTF-8 String              | Kernel Applications Only          |
+ | $$ENV^%ZOSV()      | XU\*8.0\*10005 | OS Environment variable                     | Public                            |
+
 
 API Listing
 ===========
@@ -193,4 +197,83 @@ xu-8_seq-402_pat-508.kid  xu-8_seq-421_pat-475.kid  xu-8_seq-440_pat-528.kid  XU
 xu-8_seq-403_pat-399.kid  xu-8_seq-422_pat-518.kid  XU-8_SEQ-441_PAT-545.KID  XU-8_SEQ-464_PAT-586.KID	XU-8_SEQ-483_PAT-604.KID  XU-8_SEQ-514_PAT-625.KIDS
 xu-8_seq-404_pat-510.kid  xu-8_seq-423_pat-527.kid  XU-8_SEQ-442_PAT-546.KID  XU-8_SEQ-465_PAT-555.KID	XU-8_SEQ-485_PAT-585.KID  XU-8_SEQ-516_PAT-638.KIDS
 xu-8_seq-405_pat-401.kid  xu-8_seq-424_pat-520.kid  XU-8_SEQ-443_PAT-549.KID  XU-8_SEQ-466_PAT-594.KID	XU-8_SEQ-487_PAT-598.KID  XU-8_SEQ-517_PAT-654.KIDS
+```
+
+$$BL^%ZOSV(): Byte Length of a UTF-8 String
+-------------------------------------------
+Reference Type: Private, Category: String Encoding, Integration Agreement: Sam's List
+
+### Description
+This API returns the number of bytes in a UTF-8 string. It's is used by the
+RPC Broker.
+
+### Format
+`$$BL^%ZOSV("string")`
+
+### Input Parameters
+String
+
+### Output
+Integer size
+
+### Example
+```
+>W $$BL^%ZOSV("中文")
+6
+```
+
+$$BE^%ZOSV(): Byte Extract of a UTF-8 String
+-------------------------------------------
+Reference Type: Private, Category: String Encoding, Integration Agreement: Sam's List
+
+### Description
+This API extracts a portion of a UTF-8 string by byte position, rather than code
+point position. It is used by the RPC Broker. The API mirrors $extract.
+
+### Format
+`$$BE^%ZOSV("string",start byte,bytes to extract)`
+
+### Input Parameters
+String, integer, integer
+
+### Output
+String (but may not be a well-formed UTF-8 string); the example below uses
+`ZWRITE` as writing the string will cause a BADCHAR error in UTF-8 mode.
+
+### Example
+```
+>S X=$$BE^%ZOSV("中文",1,1)
+
+>ZWRITE X
+X=$ZCH(228)
+>S X=$$BE^%ZOSV("中文",1,2)
+
+>ZWRITE X
+X=$ZCH(228,184)
+```
+
+$$ENV^%ZOSV(): Get Environment Variable from the OS
+---------------------------------------------------
+Reference Type: Supported, Category: OS, Integration Agreement: Sam's List
+
+### Description
+This API gets an environment variable from the OS. You can use it to get secrets
+stored as environment variables or to get PATH or TEMP in the OS.
+
+### Format
+`$$ENV^%ZOSV("environment variable")`
+
+### Input Parameters
+Environment Variable name as string. Do not include the shell expanders for
+environment variables (e.g. %% on Windows, or $ on Unix Shells).
+
+### Output
+String
+
+### Example
+```
+>W $$ENV^%ZOSV("TEMP")
+/tmp
+>W $$ENV^%ZOSV("gtm_dist")
+/usr/lib/fis-gtm/V6.3-005_x86_debug/
 ```
