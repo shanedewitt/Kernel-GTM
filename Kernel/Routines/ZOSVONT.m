@@ -1,4 +1,4 @@
-%ZOSV ;SFISC/AC - $View commands for Open M for NT.  ;Dec 06, 2018@11:52
+%ZOSV ;SFISC/AC - $View commands for Open M for NT.  ;Jan 08, 2019@08:49
  ;;8.0;KERNEL;**34,94,107,118,136,215,293,284,385,425,440,499,10002,10005**;Jul 10, 1995;Build 24
  ;
  ; *10002,*10005 changes (c) 2018 Sam Habiel
@@ -24,7 +24,7 @@ AVJ() ;# available jobs
  . S T=+LMFLIM+$P(LMFLIM,"|",2) ;Check the license total
  . S AVJ=$S(T<MAXPID:X,1:MAXPID-$$ACTJ) ;Return the smaller of license or pid
  ;To get available jobs from Cache 5.0 up
- I V'<5 D  Q AVJ
+ I V'<5 D  Q:AVJ>5 AVJ  ; *10005* Support for Cache w/o license; was Q AVJ
  . X "S AVJ=$system.License.LUAvailable()"
  ;Return fixed value not known version
  Q 15
@@ -198,10 +198,10 @@ RETURN(%COMMAND,JUSTSTATUS) ; [Public] execute a shell command - *10002* OSE/SMH
  ;
  ; *10005* Plan VI Calls for VistA Internationalization
 BL(X) ; Byte Length of X in UTF-8 encoding
- Q $L($ZCONVERT(string,"O","UTF8"))
+ Q $L($ZCONVERT(X,"O","UTF8"))
  ;
 BE(X,S,E) ; Byte Extract of X in UTF-8 encoding
- Q $E($ZCONVERT(string,"O","UTF8"),S,E)
+ Q $E($ZCONVERT(X,"O","UTF8"),S,E)
  ;
 ENV(X) ; Get Environment Variable from Operating System
  Q $SYSTEM.Util.GetEnviron(X)
