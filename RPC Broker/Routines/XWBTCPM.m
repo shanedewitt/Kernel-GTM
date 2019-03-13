@@ -47,6 +47,13 @@ GTMLNX ;From Linux xinetd script
  ;
 ESET ;Set inital error trap
  S U="^",$ETRAP="D ^%ZTER H" ;Set up the error trap
+ ; Comment in *10001*
+ ; This next line causes a problem on GT.M: It clears $ETRAP; but not on Cache
+ ; If we fix it, connection attempts (w/o full handshake) will show errors in trap
+ ; This can potentially mean that people currently using TCP monitoring systems
+ ; in existing environments will fill up their trap and use up all disk space
+ ; I personally don't think we can change it at this point due to this.
+ ; See: https://github.com/shabiel/Kernel-GTM/issues/18
  S X="",@("$ZT=X") ;Clear old trap
  Q
  ;Find the type of connection and jump to the processing routine.
