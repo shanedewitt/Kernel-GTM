@@ -1,8 +1,8 @@
-%ZISH ;ISF/AC,RWF,VEN/SMH - GT.M for Unix Host file Control ;Jan 08, 2019@09:44
- ;;8.0;KERNEL;**275,306,385,524,10001,10002,10004,10005**;Jul 10, 1995;Build 25
+%ZISH ;ISF/AC,RWF,VEN/SMH - GT.M for Unix Host file Control ;2019-12-23  12:11 PM
+ ;;8.0;KERNEL;**275,306,385,524,10001,10002,10004,10005,10006**;Jul 10, 1995;Build 11
  ; Original Routine authored by Department of Veterans Affairs
  ; EPs OPEN,DEL1,CD,PWD,MAXREC,MKDIR,SIZE,WGETSYNC,DF,SEND,SENDTO1 
- ; --> authored by Sam Habiel 2016-2018.
+ ; --> authored by Sam Habiel 2016-2019.
  ; EPs MV,DEFDIR,FTG,READNXT,MGTF have bugs fixed by Sam Habiel 2016.
  ; 
  ;
@@ -135,6 +135,7 @@ LIST(%ZX1,%ZX2,%ZX3) ;ef,SR. Set local array holding fl names
  . S %ZIX=$ZPARSE(%ZX1_%ZISH) Q:%ZIX=""
  . F  S %ZIY=$ZSEARCH(%ZIX) Q:%ZIY=""  S %ZIY=$ZPARSE(%ZIY,"NAME")_$ZPARSE(%ZIY,"TYPE"),@%ZX3@(%ZIY)=""
 LSTX ;
+ Q:$ESTACK
  S $ECODE=""
  S $ETRAP="G LISTIX^%ZISH" ; This is in case $$DEFDIR fails but 2nd par is passed by reference (So @ on it will crash)
  Q ($Q(@%ZX3)]"")
@@ -276,6 +277,7 @@ FTG(%ZX1,%ZX2,%ZX3,%ZX4,%ZX5) ;ef,SR. Unload contents of host file into global
  Q '%EXIT
  ;
 FTGERR ; Error Trap for FTG
+ ; ZEXCEPT: %EXIT
  Q:$ES
  S %ZA=1
  S %EXIT=1
@@ -335,7 +337,7 @@ MGTF(%ZX1,%ZX2,%ZX3,%ZX4,%ZX5) ;
  ;
 MAXREC(GLO) ; [Public] Maximum Record Size for a Global
  ; Global passed by name
- ; ZEXCEPT: %UTZIMERR1
+ ; ZEXCEPT: %UTSIMERR1
  N REGION S REGION=$VIEW("REGION",$NA(@GLO))
  I REGION="" S $EC=",U-ERROR,"
  I $D(%UTSIMERR1) S $EC=",U-SIM-ERR-1,"
