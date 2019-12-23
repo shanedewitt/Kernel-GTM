@@ -1,7 +1,6 @@
-ZOSVGUT2 ; VEN/SMH - Unit Tests for GT.M VistA Port;2017-11-30  2:18 PM
- ;;8.0;KERNEL;**10001,10002**;
- ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
- ; Authored by Sam Habiel 2016.
+ZOSVGUT2 ; VEN/SMH - Unit Tests for GT.M VistA Port;2019-12-23  12:52 PM
+ ;;8.0;KERNEL;**10001,10002,10006**;;Build 26
+ ; Authored by Sam Habiel 2016, 2019
  ;
 STARTUP QUIT
  ;
@@ -145,8 +144,11 @@ RSAENC ; @TEST Test RSA Encryption
  ;
 AESENC ; @TEST Test AES Encryption
  N SECRET S SECRET="Alice and Bob had Sex!"
- N X S X=$$AESENCR^XUSHSH(SECRET,"ABCDABCDABCDABCD","DCBADCBADCBADCBA")
- N Y S Y=$$AESDECR^XUSHSH(X,"ABCDABCDABCDABCD","DCBADCBADCBADCBA")
+ N KEY,IV
+ S KEY="78d11f168848ecbed5794758d57a7dad68db1b561c537a28ebf3beb051aace8e"
+ S IV="70229bd15ecd4f68fb8d775ed62451d5"
+ N X S X=$$AESENCR^XUSHSH(SECRET,KEY,IV)
+ N Y S Y=$$AESDECR^XUSHSH(X,KEY,IV)
  D CHKEQ^%ut(SECRET,Y)
  QUIT
  ;
@@ -174,6 +176,7 @@ BROKER ; @TEST Test the new GT.M MTL Broker
  QUIT
  ;
 ACTJPEEK ; @TEST Active Jobs using $$^%PEEKBYNAME("node_local.ref_cnt",...)
+ Q:$T(^%PEEKBYNAME)=""
  N % S %=$$^%PEEKBYNAME("node_local.ref_cnt","DEFAULT")
  D CHKTF^%ut(%>1)
  QUIT
