@@ -1,4 +1,4 @@
-ZOSFGUX ;SFISC/MVB,PUG/TOAD,OSE/SMH - ZOSF Table for GT.M for Unix ;2019-12-26  11:15 AM
+ZOSFGUX ;SFISC/MVB,PUG/TOAD,OSE/SMH - ZOSF Table for GT.M for Unix ;2019-12-26  2:33 PM
  ;;8.0;KERNEL;**275,425,10006**;Jul 10, 1995;Build 18
  ;
  ; Original Code written by the VA
@@ -15,6 +15,8 @@ ZOSFGUX ;SFISC/MVB,PUG/TOAD,OSE/SMH - ZOSF Table for GT.M for Unix ;2019-12-26  
  ;     sure which.
  ;
  S %Y=1 ; Be verbose and ask the user for stuff
+ ;
+ I $G(ZTMODE)=2 S %Y=0 ; Patch Load from ZTMGRSET, be silent.
  ;
 INIT ;
  S DTIME=$G(DTIME,600)
