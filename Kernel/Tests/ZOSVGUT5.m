@@ -1,5 +1,5 @@
-ZOSVGUT5 ; OSE/SMH - Unit Tests for GT.M VistA Port;Jan 08, 2019@09:04
- ;;8.0;KERNEL;**10004,10005**;;
+ZOSVGUT5 ; OSE/SMH - Unit Tests for GT.M VistA Port;2019-12-26  11:22 AM
+ ;;8.0;KERNEL;**10004,10005,10006**;;Build 11
  ;
  ; (c) Sam Habiel 2018-2019
  ; Licensed under Apache 2.0
@@ -69,3 +69,6 @@ ENV ; @TEST $$ENV^%ZOSV ; 10005
  N PATH S PATH=$$ENV^%ZOSV("PATH")
  D CHKTF^%ut(PATH'="")
  QUIT
+ ;
+XTROU ;;
+ ;;ZOSVGUT6
