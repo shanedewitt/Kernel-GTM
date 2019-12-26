@@ -1,8 +1,9 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;Oct 23, 2018@09:58
- ;;8.0;KERNEL;**349,10001,10002,10004**;Jul 10, 1995;Build 20
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-26  11:04 AM
+ ;;8.0;KERNEL;**349,10001,10002,10004,10006**;Jul 10, 1995;Build 3
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
  ; Rewritten by KS Bhaskar and Sam Habiel 2005-2015
+ ; Various contributions by David Whitten 2019
  ; Sam: JOBEXAM, WORK, USHOW, UNIX, UNIXLSOF, INTRPT, INTRPTALL, HALTALL, ZJOBff
  ; Bhaskar provided pipe implementations of various commands.
  ;GT.M/VA %SY utility - status display
@@ -41,8 +42,8 @@ ASK() ;Ask sort item
  N RES,X,GROUP
  S RES=0,GROUP=2
  W !,"1 pid",!,"2 cpu time"
- F  R !,"1// ",X:600 S:X="" X=1 Q:X["^"  Q:(X>0)&(X<3)  W " not valid"
- Q:X["^" -1
+ F  R !,"1// ",X:600 S:X="" X=1 Q:X["^"  Q:X["Q"  Q:(X>0)&(X<3)  W " not valid"
+ I X["^"!(X["Q") Q -1
  S X=X-1,RES=(X#GROUP)_"~"_(X\GROUP)
  Q RES
  ;
@@ -51,6 +52,7 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^ZU]
  ; Preserve old state for process
  N OLDIO S OLDIO=$IO
  N %reference S %reference=$REFERENCE
+ N %testisv S %testisv=$TEST
  K ^XUTL("XUSYS",$J,"JE")
  ;
  ; Halt the Job if requested - no need to do other work
@@ -63,7 +65,7 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^ZU]
  S ^XUTL("XUSYS",$J,"JE","ZMODE")=$ZMODE ; SMH - INTERACTIVE or OTHER
  I %ZPOS'["GTM$DMOD" S ^XUTL("XUSYS",$J,"JE","codeline")=$T(@%ZPOS)
  I $G(DUZ) S ^XUTL("XUSYS",$J,"JE","UNAME")=$P($G(^VA(200,DUZ,0)),"^")
- E           S ^XUTL("XUSYS",$J,"JE","UNAME")=$G(^XUTL("XUSYS",$J,"NM"))
+ E         S ^XUTL("XUSYS",$J,"JE","UNAME")=$G(^XUTL("XUSYS",$J,"NM"))
  ;
  ;
  ; Default System Status.
@@ -86,6 +88,7 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^ZU]
  ; A -> Autorelink information
  ; C -> External programs that are loaded (presumable with D &)
  ; S -> Stack (use R instead)
+ S U="^"
  I $G(^XUTL("XUSYS",$J,"CMD"))="EXAM"!($P($G(^("CMD")),"^")="DEBUG") ZSHOW "*":^XUTL("XUSYS",$J,"JE")
  ;
  ; ^XUTL("XUSYS",8563,"JE","G",0)="GLD:*,REG:*,SET:25610,KIL:593,GET:12284,...
@@ -133,6 +136,7 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^ZU]
  ; Restore old IO and $R
  U OLDIO
  I %reference
+ IF %testisv
  Q 1
  ;
 ZSTEP ; Wait for commands
@@ -144,7 +148,7 @@ ZSTEP ; Wait for commands
  ; . W $C(4)
  ; . B
  ; C TCPIO
- ; QUIT
+ QUIT
  ;
 WORK(MODE,FILTER) ; [Private] Main driver, Will release lock
  ; int MODE
@@ -248,19 +252,27 @@ USHOW(TAB,SORT,FILTER) ;Display job info, sorted by pid
  . S PROCNAME=$P(X,"~",5),CTIME=$P(X,"~",6)
  . I $G(^XUTL("XUSYS",PID,"JE","ZMODE"))="OTHER" S TNAME="BG-"_TNAME
  . N UNAME S UNAME=$G(^XUTL("XUSYS",PID,"JE","UNAME"))
- . W !,PROCID,?TAB(1),PROCNAME,?TAB(2),TNAME,?TAB(4),PLACE,?TAB(5),UNAME,?TAB(6),$J(CTIME,6)
+ . W ?0
+ . F I=0,1,2,4,5,6 D
+ . . W:$X>TAB(I) !
+ . . I I=0 W PROCID
+ . . I I=1 W " ",?TAB(1),PROCNAME
+ . . I I=2 W " ",?TAB(2),TNAME
+ . . I I=4 W " ",?TAB(4),PLACE
+ . . I I=5 W " ",?TAB(5),UNAME
+ . . I I=6 W " ",?TAB(6),$J(CTIME,6)
  . I IOM>80 D
- .. I '$D(^XUTL("XUSYS",PID,"JE","GSTAT","DRD")) W ?TAB(7),"PROCESS NOT RESPONDING" QUIT
+ .. I '$D(^XUTL("XUSYS",PID,"JE","GSTAT","DRD")) D EACHHEADER("PROCESS NOT RESPONDING",TAB(7)) QUIT
  .. N DRD,DTA,GET,ORD,ZPR,QRY
  .. S DRD=^XUTL("XUSYS",PID,"JE","GSTAT","DRD"),DTA=^("DTA"),GET=^("GET"),ORD=^("ORD"),ZPR=^("ZPR"),QRY=^("QRY")
  .. N opPerRead
  .. i DRD=0 s opPerRead=0
  .. e  S opPerRead=(DTA+GET+ORD+ZPR+QRY)/DRD
  .. W ?TAB(7),$J(opPerRead,"",2)
- .. N NTR,NTW S NTR=^XUTL("XUSYS",PID,"JE","GSTAT","NTR"),NTW=^("NTW") ; **NAKED**
+ .. N NTR,NTW S NTR=$G(^XUTL("XUSYS",PID,"JE","GSTAT","NTR")),NTW=$G(^("NTW")) ; **NAKED**
  .. I NTR>9999 S NTR=$J(NTR/1024,"",0)_"k",NTW=$J(NTW/1024,"",0)_"k"
  .. W ?TAB(8),NTR,"/",NTW
- .. W ?TAB(9),^XUTL("XUSYS",PID,"JE","GSTAT","NR0"),"/",^("NR1"),"/",^("NR2"),"/",^("NR3")
+ .. W ?TAB(9),$G(^XUTL("XUSYS",PID,"JE","GSTAT","NR0")),"/",$G(^("NR1")),"/",$G(^("NR2")),"/",$G(^("NR3"))
  .. ; ^XUTL("XUSYS",14295,"JE","L",1)="LOCK ^XUTL(""XUSYS"",""COMMAND"") LEVEL=2"
  .. N numLocks s numLocks=0
  .. N I F I=0:0 S I=$O(^XUTL("XUSYS",PID,"JE","L",I)) Q:'I  N S S S=^(I) D  ; **NAKED**
@@ -362,7 +374,6 @@ UNIX(MODE,USERS,SORT) ;PUG/TOAD,FIS/KSB,VEN/SMH - Kernel System Status Report fo
  n procs
  D INTRPTALL(.procs)
  H .205 ; 200ms for TCP Read processes; 5ms b/c I am nice.
- ; H .005 ; 200ms for TCP Read processes; 5ms b/c I am nice.
  n procgrps
  n done s done=0
  n j s j=1
@@ -426,7 +437,7 @@ VPE(%OLDSTR,%OLDDEL,%NEWDEL) ; $PIECE extract based on variable length delimiter
 UNIXLSOF(procs) ; [Public] - Get all processes accessing THIS database (only!)
  ; (return) .procs(n)=unix process number
  ; ZEXCEPT: shell
- n %cmd s %cmd="PATH=$PATH:/usr/sbin lsof -t "_$$DEFFILE
+ n %cmd s %cmd="PATH=$PATH:/usr/sbin lsof -c mumps -t "_$$DEFFILE
  i $ZV["CYGWIN" s %cmd="ps -a | grep mumps | grep -v grep | awk '{print $1}'"
  i $ZV["Darwin" s %cmd="pgrep -a mumps | xargs -n 1 -I{} lsof -p{} | grep "_$$DEFFILE_" | awk '{print $2}'"
  n oldio s oldio=$IO
@@ -484,6 +495,7 @@ HALTALL ; [Public] Gracefully halt all jobs accessing current database
  quit
  ;
 HALTONE(%J) ; [Public] Halt a single process
+ I '$zgetjpi(%J,"isprocalive") quit
  S ^XUTL("XUSYS",%J,"CMD")="HALT"
  D INTRPT(%J)
  H .25 ; Long hang for TCP jobs that can't receive interrupts
@@ -495,6 +507,29 @@ KILL(%J) ; [Private] Kill %J
  n %cmd s %cmd="kill "_%J
  o "kill":(shell="/bin/sh":command=%cmd)::"pipe" u "kill" c "kill"
  quit
+ ;
+RESJOB(PID)  G KILLJOBZ ; [Public, Interactive] Kill a specific job for ^%ZOSF("RESJOB")
+KILLJOB(PID) G KILLJOBZ ;
+KILLJOBZ ;
+ ; ZEXCEPT: CTRAP,NOESCAPE,NOFILTER,PID,DTIME
+ U $P:(CTRAP=$C(3):NOESCAPE:NOFILTER)
+ I $G(PID) D HALTONE(PID) QUIT
+ D ^ZSY
+ N X,DONE
+ S DONE=0
+ ; Nasty read loop. I hate read loops
+ F  D  Q:DONE
+ . if $data(%ut) S DONE=1 QUIT
+ . R !,"Enter a job number to kill (^ to quit): ",X:$G(DTIME,300)
+ . E  S DONE=1 QUIT
+ . S X=$TR(X," ") ;DJW avoid spaces introduced with mouse clicking
+ . I X="" D ^ZSY QUIT
+ . I $E(X)="^"!("Qq"[X) S DONE=1 QUIT
+ . I X["?" D ^ZSY QUIT
+ . ;
+ . D HALTONE(X)
+ . D ^ZSY
+ QUIT
  ;
 ZJOB(PID) G JOBVIEWZ ; [Public, Interactive] Examine a specific job -- written by OSEHRA/SMH
 EXAMJOB(PID) G JOBVIEWZ ;
@@ -511,8 +546,9 @@ JOBVIEWZ ;
  F  D  Q:DONE
  . R !,"Enter a job number to examine (^ to quit): ",X:$G(DTIME,300)
  . E  S DONE=1 QUIT
- . I X="^" S DONE=1 QUIT
+ . S X=$TR(X," ") ;DJW avoid spaces introduced with mouse clicking
  . I X="" D ^ZSY QUIT
+ . I $E(X)="^"!("Qq"[X) S DONE=1 QUIT
  . I X["?" D ^ZSY QUIT
  . ;
  . D JOBVIEWZ2(X)
