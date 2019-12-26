@@ -1,9 +1,10 @@
-%ZOSV2 ;ISF/RWF,FIS/KSB,VEN/SMH - More GT.M support routines ;2017-01-09  3:32 PM
- ;;8.0;KERNEL;**275,425,10001**;Jul 10, 1995;Build 8
+%ZOSV2 ;ISF/RWF,FIS/KSB,VEN/SMH - More GT.M support routines ;2019-12-26  2:39 PM
+ ;;8.0;KERNEL;**275,425,10001,10006**;Jul 10, 1995;Build 21
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine authored by Department of Veterans Affairs
- ; All EPs authored by Sam Habiel 2016 except RSUM and RSUM2
- ; except: TEST is authored by KS Bhaskar
+ ; All EPs authored by (c) Sam Habiel 2016 except RSUM and RSUM2
+ ; except: TEST is authored by (c) KS Bhaskar date unknown, but before 2016
+ ; DEL IO issues fixed by (c) 2019 David Whitten 
  Q
  ;SAVE: DIE open array reference.
  ;      XCN is the starting value to $O from.
@@ -21,6 +22,7 @@ SAVE(RN) ;Save a routine
 DEL(RN) ; Delete Routine, VEN/SMH
  ; Input: Routine Name by Value
  ; Output: None
+ N %I,%R,%T,%ET S %I=$IO,%R=$R,%T=$T,%ET=$ET
  N CNT S CNT=0
 DELLOOP ; Loop entry point
  I CNT>5 S $EC=",U-DELETION-FAILED,"
@@ -31,7 +33,7 @@ DELLOOP ; Loop entry point
  D SILENT^%RSEL(RN,"SRC") S %S=$G(%ZR(RN)) ; Source Directory
  D SILENT^%RSEL(RN,"OBJ") S %O=$G(%ZR(RN)) ; Object Directory
  ;
- I '$L(%S)&('$L(%O)) QUIT
+ I '$L(%S)&('$L(%O)) G DELX
  ;
  S RN=$TR(RN,"%","_") ; change % to _ in routine name
  ;
@@ -52,6 +54,9 @@ DELLOOP ; Loop entry point
  S CNT=CNT+1
  ;
  G DELLOOP
+DELX ;
+ X "I $O("_%R_")" S $ET=%ET U %I I %T
+ QUIT
  ;
  ;
  ;LOAD: DIF open array to receive the routine lines.
