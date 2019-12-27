@@ -1,4 +1,4 @@
-ZOSVGUT2 ; VEN/SMH - Unit Tests for GT.M VistA Port;2019-12-23  12:52 PM
+ZOSVGUT2 ; VEN/SMH - Unit Tests for GT.M VistA Port;2019-12-27  3:27 PM
  ;;8.0;KERNEL;**10001,10002,10006**;;Build 26
  ; Authored by Sam Habiel 2016, 2019
  ;
@@ -157,6 +157,13 @@ BROKER ; @TEST Test the new GT.M MTL Broker
  ; NB: It DOES NOT WANT anything that's not IPv4.
  ; Hard to do on any modern computer that is hardwired to give you IPv6
  ; addressed for localhost.
+ ;
+ ; CLOSE^%ZISTCP calls HOME^%ZIS, which eventually tries to open IO(0).
+ ; If we don't set IO variables here, IO(0) gets set to the socket device,
+ ; which CLOSE closes, and then HOME^%ZIS tries to open it. So let's set $P to
+ ; IO here.
+ D HOME^%ZIS
+ ;
  N PORT S PORT=58738
  ; ZEXCEPT: ZISTCP,XWBTCPM1
  J ZISTCP^XWBTCPM1(58738)
