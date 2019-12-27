@@ -1,4 +1,4 @@
-ZOSVGUT6 ; OSE/SMH - Unit Tests for GT.M VistA Port;2019-12-27  11:44 AM
+ZOSVGUT6 ; OSE/SMH - Unit Tests for GT.M VistA Port;2019-12-27  4:26 PM
  ;;8.0;KERNEL;**10006**;;
  ;
  ; (c) Sam Habiel 2019
@@ -12,7 +12,9 @@ SHUTDOWN ; [M-Unit Shutdown]
  QUIT
  ;
 ZTMGRSET ; @TEST ZTMGRSET Rename Routines ; *10006*
+ N IOP S IOP="NULL" D ^%ZIS U IO
  D PATCH^ZTMGRSET(10006)
+ D ^%ZISC
  D CHKTF^%ut($T(+2^%ZOSV2)[10006)
  QUIT
  ;

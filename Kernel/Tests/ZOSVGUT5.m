@@ -1,4 +1,4 @@
-ZOSVGUT5 ; OSE/SMH - Unit Tests for GT.M VistA Port;2019-12-26  11:22 AM
+ZOSVGUT5 ; OSE/SMH - Unit Tests for GT.M VistA Port;2019-12-27  4:28 PM
  ;;8.0;KERNEL;**10004,10005,10006**;;Build 11
  ;
  ; (c) Sam Habiel 2018-2019
@@ -17,7 +17,9 @@ SHUTDOWN ;
  QUIT
  ;
 ZTMGRSET ; @TEST ZTMGRSET Rename Routines ; *10005*
+ N IOP S IOP="NULL" D ^%ZIS U IO
  D PATCH^ZTMGRSET(10005)
+ D ^%ZISC
  D CHKTF^%ut($T(+2^%ZOSV)[10005)
  QUIT
  ;
@@ -31,7 +33,9 @@ EC ; @TEST $$EC^%ZOSV ; *10004*
  QUIT
  ;
 ZSY ; @TEST RUN ZSY with lsof in sbin ; *10004*
+ N IOP S IOP="NULL" D ^%ZIS U IO
  D ^ZSY
+ D ^%ZISC
  D SUCCEED^%ut
  QUIT
  ;
