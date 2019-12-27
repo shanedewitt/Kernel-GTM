@@ -1,7 +1,7 @@
-XPDCOMF ;SFISC/GFT/MSC - COMPARE FILES ;8월 28, 2018@10:08
- ;;8.0;KERNEL;**506,539,559,10003**;Jul 10, 1995;Build 4
+XPDCOMF ;SFISC/GFT/MSC - COMPARE FILES ;2019-12-27  2:27 PM
+ ;;8.0;KERNEL;**506,539,559,10006**;Jul 10, 1995;Build 4
  ; 
- ; *10003* Changed by David Whitten
+ ; *10006* Changed by David Whitten
  ;
  ;DI1 & DI2 are left & right roots
  ;DIFLAG[1 -->compare files   [2-->compare entries   ["L" --> IGNORE EXTRA ENTRIES ON RIGHT SIDE
