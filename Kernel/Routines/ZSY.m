@@ -1,4 +1,4 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-27  4:15 PM
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-27  5:00 PM
  ;;8.0;KERNEL;**349,10001,10002,10004,10006**;Jul 10, 1995;Build 3
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
@@ -437,7 +437,7 @@ VPE(%OLDSTR,%OLDDEL,%NEWDEL) ; $PIECE extract based on variable length delimiter
 UNIXLSOF(procs) ; [Public] - Get all processes accessing THIS database (only!)
  ; (return) .procs(n)=unix process number
  ; ZEXCEPT: shell
- n %cmd s %cmd="PATH=$PATH:/usr/sbin lsof -c mumps -t "_$$DEFFILE
+ n %cmd s %cmd="PATH=$PATH:/usr/sbin lsof -c mumps -a -t "_$$DEFFILE
  i $ZV["CYGWIN" s %cmd="ps -a | grep mumps | grep -v grep | awk '{print $1}'"
  i $ZV["Darwin" s %cmd="pgrep -a mumps | xargs -n 1 -I{} lsof -p{} | grep "_$$DEFFILE_" | awk '{print $2}'"
  n oldio s oldio=$IO
