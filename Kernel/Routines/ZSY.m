@@ -1,4 +1,4 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-26  11:04 AM
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-27  4:15 PM
  ;;8.0;KERNEL;**349,10001,10002,10004,10006**;Jul 10, 1995;Build 3
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
@@ -170,7 +170,7 @@ WORK(MODE,FILTER) ; [Private] Main driver, Will release lock
  ; Counts; Turn on Ctrl-C.
  ; ZEXCEPT: CTRAP,NOESCAPE,NOFILTER
  N USERS S USERS=0
- U $P:(CTRAP=$C(3):NOESCAPE:NOFILTER)
+ U $I:(CTRAP=$C(3):NOESCAPE:NOFILTER)
  ;
  ;Go get the data
  D UNIX(MODE,.USERS,.SORT)
@@ -186,11 +186,11 @@ WORK(MODE,FILTER) ; [Private] Main driver, Will release lock
 EXIT ;
  L -^XUTL("XUSYS","COMMAND") ;Release lock and let others in
  I $L($G(OLDINT)) S $ZINTERRUPT=OLDINT
- U $P:CTRAP=""
+ U $I:CTRAP=""
  Q
  ;
 ERR ;
- U $P W !,$P($ZS,",",2,99),!
+ U $I W !,$P($ZS,",",2,99),!
  D EXIT
  Q
  ;
@@ -200,14 +200,14 @@ LW ;Lock wait
  ;
 HEADER(TAB) ;Display Header
  ; ZEXCEPT: AB
- W #
+ I '$D(%ut) W #
  S IOM=+$$AUTOMARG
- W !,"GT.M System Status users on ",$$DATETIME($H)
+ W "GT.M System Status users on ",$$DATETIME($H)
  W:IOM>80 " - (stats reflect accessing DEFAULT region ONLY except *)"
  S TAB(0)=0,TAB(1)=6,TAB(2)=14,TAB(3)=18,TAB(4)=27,TAB(5)=46,TAB(6)=66
  S TAB(7)=75,TAB(8)=85,TAB(9)=100,TAB(10)=110,TAB(11)=115,TAB(12)=123
  S TAB(13)=130,TAB(14)=141,TAB(15)=150
- U 0:FILTER="ESCAPE"
+ U $I:FILTER="ESCAPE"
  W !
  D EACHHEADER("PID",TAB(0))
  D EACHHEADER("PName",TAB(1))
@@ -395,7 +395,7 @@ UNIX(MODE,USERS,SORT) ;PUG/TOAD,FIS/KSB,VEN/SMH - Kernel System Status Report fo
  Q
  ;
 UERR ;Linux Error
- N ZE S ZE=$ZS,$EC="" U $P
+ N ZE S ZE=$ZS,$EC="" U $I
  ZSHOW "*"
  Q  ;halt
  ;
@@ -512,7 +512,7 @@ RESJOB(PID)  G KILLJOBZ ; [Public, Interactive] Kill a specific job for ^%ZOSF("
 KILLJOB(PID) G KILLJOBZ ;
 KILLJOBZ ;
  ; ZEXCEPT: CTRAP,NOESCAPE,NOFILTER,PID,DTIME
- U $P:(CTRAP=$C(3):NOESCAPE:NOFILTER)
+ U $I:(CTRAP=$C(3):NOESCAPE:NOFILTER)
  I $G(PID) D HALTONE(PID) QUIT
  D ^ZSY
  N X,DONE
@@ -537,7 +537,7 @@ VIEWJOB(PID) G JOBVIEWZ ;
 JOBVIEW(PID) G JOBVIEWZ ;
 JOBVIEWZ ;
  ; ZEXCEPT: CTRAP,NOESCAPE,NOFILTER,PID
- U $P:(CTRAP=$C(3):NOESCAPE:NOFILTER)
+ U $I:(CTRAP=$C(3):NOESCAPE:NOFILTER)
  I $G(PID) D JOBVIEWZ2(PID) QUIT
  D ^ZSY
  N X,DONE
@@ -619,7 +619,7 @@ PRINTEXAMDATA(%J,FLAG) ; [Private] Print the exam data
  . N I F I=0:0 S I=$O(ZSY("JE","I",I)) Q:'I  W ZSY("JE","I",I),!
  ;
  ; Normal Display: Job Info, Stack, Locks, Devices
- W #
+ I '$D(%ut) W #
  W UNDER,"JOB INFORMATION FOR "_%J," (",$ZDATE(ZSY(0),"YYYY-MON-DD 24:60:SS"),")",RESET,!
  W BOLD,"AT: ",RESET,ZSY("JE","INTERRUPT"),": ",$G(ZSY("JE","codeline")),!!
  ;
@@ -701,8 +701,8 @@ DEFFILE() ; Default Region File Name ; *10004*
  ;
 AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M
  ; ZEXCEPT: APC,TERM,NOECHO,WIDTH
- I $PRINCIPAL'["/dev/" quit:$Q "" quit
- U $PRINCIPAL:(WIDTH=0)
+ I $IO'["/dev/" quit:$Q "" quit
+ U $IO:(WIDTH=0)
  N %I,%T,ESC,DIM S %I=$I,%T=$T D
  . ; resize terminal to match actual dimensions
  . S ESC=$C(27)
@@ -712,9 +712,9 @@ AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; 
  . W ESC,"8"
  . I DIM?.APC U $P:(TERM="":ECHO) Q
  . I $L($G(DIM)) S DIM=+$P(DIM,";",2)_"^"_+$P(DIM,"[",2)
- . U $P:(TERM="":ECHO:WIDTH=+$P(DIM,";",2):LENGTH=+$P(DIM,"[",2))
+ . U $IO:(TERM="":ECHO:WIDTH=+$P(DIM,";",2):LENGTH=+$P(DIM,"[",2))
  ; restore state
  U %I I %T
  ; Extra just for ^ZJOB - don't wrap
- U $PRINCIPAL:(WIDTH=0)
+ U $IO:(WIDTH=0)
  Q:$Q $S($G(DIM):DIM,1:"") Q
