@@ -26,8 +26,9 @@ Products & Installation
  | [XU\*8.0\*10002](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10002/XU_8-0_10001--XU_8-0_10002.KID) | 2 | [10002](doc/rel/XU-8.0-10002.rel.md) | Bug fixes + NDF Update Support |
  | [XU\*8.0\*10004](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10004/XU-8.0-10004T2.KID) | 3 | [10004](doc/rel/XU-8.0-10004.rel.md) | Bug fixes |
  | [XU\*8.0\*10005](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10005/XU_8-0_10005.KID) | 4 | [10005](doc/rel/XU-8.0-10005.rel.md) | UTF-8 support/Bug fixes |
- | [XU-Multibuild (ALL)](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10005/XU-8-10001-10002-10004-10005.KID) | n/a | n/a | n/a |
- | [virgin\_install.zip](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10005/virgin_install.zip) | n/a | n/a | n/a |
+ | [XU\*8.0\*10006](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/XU_8-0_10006.KID) | 5 | [10006](doc/rel/XU-8.0-10006.rel.md) | Bug fixes + ^%ZOSF("RESJOB") |
+ | [XU-Multibuild (ALL)](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/XU-8-10001-10002-10004-10005-10006.KID) | n/a | n/a | n/a |
+ | [virgin\_install.zip](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/virgin_install.zip) | n/a | n/a | n/a |
 
 You can install these either using a KIDS build by unzipping the routines in
 the virgin\_install.zip. You should always use the KIDS build unless you have
@@ -52,7 +53,7 @@ outside of the VA is currently in process.
 
 Unit Testing
 ------------
-See [UnitTests.md](UnitTests.md)
+See [doc/UnitTests.md](doc/UnitTests.md)
 
 Future Plans
 ------------
@@ -63,3 +64,4 @@ I plan to port the following packages in these order:
  * XOBW web service implementation for GT.M (done)
  * Resource Usage Monitor (RUM) (completed but not packaged)
  * Statistical Analysis of Global Growth (SAGG) (in progress)
+ * Lock Manager (not started)
