@@ -339,7 +339,27 @@ $TEST=1
 $TLEVEL=0 (etc...)
 \end{lstlisting}
 
-K will kill the process (actually, it sends it to HALT\^{}ZU after cleaning it up--killing it softly by forcing it to drink a cup). \^{} will take you back; D (debug) is currently broken; and Z is there for the developer's use.
+K will kill the process (actually, it sends it to HALT\^{}ZU after cleaning it up). \^{} will take you back; D (debug) is currently broken; and Z is there for the developer's use.
+
+\pagebreak
+
+\section{Interactive Kill Job (a.k.a RESJOB)}
+A Utility to interactively kill jobs is provided using the entry point D KILLJOB\^{}ZSY. Select a job number from the list, and it will be sent to HALT\^{}ZU after lock and globals cleanup. You can alternately use D RESJOB\^{}ZSY. This entry point is used by \^{}\%ZOSF("RESJOB").
+
+\lstset{
+	caption=D KILLJOB\^{}ZSY
+}
+\begin{lstlisting}
+GT.M System Status users on 30-DEC-19 14:45:28
+PID   PName   Device       Routine            Name                CPU Time
+2028  mumps   BG-0         IDLE+3^%ZTM        Taskman ROU 1       00:00:00
+2093  mumps   BG-0         GETTASK+3^%ZTMS1   Sub 2093            00:00:00
+2187  mumps   /dev/pts/0   INTRPTALL+8^ZSY                        00:00:00
+
+Total 3 users.
+
+Enter a job number to kill (^ to quit): 
+\end{lstlisting}
 
 \pagebreak
 
