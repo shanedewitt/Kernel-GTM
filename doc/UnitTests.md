@@ -1,7 +1,7 @@
 # Unit Tests
 ## Summary
-Unit Tests for GT.M and YottaDB are called using ^ZOSVGUT1. There are five
-routines that contain unit tests: ZOSVGUT1-3 and ZOSVGUT5-6. ZOSVGUT4 is for the
+Unit Tests for GT.M and YottaDB are called using ^ZOSVGUT1. There are six
+routines that contain unit tests: ZOSVGUT1-3 and ZOSVGUT5-7. ZOSVGUT4 is for the
 Capacity Management Packages and has not been released in a package yet.
 
 Unit Tests use M-Unit 1.6, which is available at https://github.com/ChristopherEdwards/M-Unit/releases.
@@ -15,8 +15,9 @@ of all the tests.
 
  | Test Routine       | Mumps Implementation | Tests Patches  |
  | ------------------ | -------------------- | -------------- |
- | ZOSVGUT1           | GT.M & YottaDB       | (ALL) 10001, 10002, 10004, 10005, 10006 |
- | ZOSVONUT           | Intersystems Cache   | (ALL) 10002 & 10005  |
+ | ZOSVGUT1           | GT.M & YottaDB       | 10001, 10002, 10004, 10005, 10006 |
+ | ZOSVONUT           | Intersystems Cache   | 10002 & 10005  |
+ | ZOSVGUT7           | Both                 | 10007          |
 
 Testing Numbers by Operating System:
 
@@ -25,6 +26,7 @@ Testing Numbers by Operating System:
  | ZOSVGUT1/Centos 7  | 210 |
  | ZOSVGUT1/Ubuntu 18 | 214 |
  | ZOSVONUT/Linux     | 28  |
+ | ZOSVGUT7/All       | 13  |
 
 ## Test Setup Notes
 The tests need `stat` command, and need access to a writable `PRIMARY HFS
@@ -198,6 +200,22 @@ CNTOLD3 - Test Old Process Counting - Reset the counter at the tok....
 
 Ran 5 Routines, 105 Entry Tags
 Checked 210 tests, with 0 failures and encountered 0 errors.
+```
+Tests ran by `ZOSVGUT7`:
+```
+$ mumps -r ZOSVGUT7
+
+
+ ---------------------------------- ZOSVGUT7 ----------------------------------
+NODE - $$NODE^%ZLMLIB().--------------------------------------  [OK]    0.056ms
+VOLUME - $$VOLUME^%ZLMLIB().----------------------------------  [OK]    0.048ms
+LOCKQRY - LOCKQRY^%ZLMLIB.....--------------------------------  [OK]    3.991ms
+NXTLOCK - NXTLOCK^%ZLMLIB....---------------------------------  [OK]    2.715ms
+OSUSER - $$OSUSER^%ZLMLIB(PID).-------------------------------  [OK]    2.408ms
+XULMU - $$GETLOCKS^XULMU.-------------------------------------  [OK]    6.944ms
+
+Ran 1 Routine, 6 Entry Tags
+Checked 13 tests, with 0 failures and encountered 0 errors.
 ```
 
 ### Cache Tests
