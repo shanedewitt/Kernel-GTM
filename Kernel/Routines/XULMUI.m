@@ -1,6 +1,9 @@
-XULMUI ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;10/24/2012
- ;;8.0;KERNEL;**608**;JUL 10, 1995;Build 84
+XULMUI ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;2019-12-31  11:35 AM
+ ;;8.0;KERNEL;**608,10007**;JUL 10, 1995;Build 84
  ;;Per VA Directive 6402, this routine should not be modified
+ ; Original code by Department of Veterans Affairs
+ ; *10007 by Sam Habiel - Add missing QUIT at end of OPTIONS
+ ; *10007 lines Licensed under Apache 2.0
  ;
  ;  ******************************************************************
  ;  *                                                                *
@@ -316,6 +319,7 @@ OPTIONS ;Give options for how the lock list should be displayed.
  ..S FILE=$$SLCTFILE
  ..I FILE D BYFILE(FILE)
  S VALMBCK="R"
+ QUIT
  ;
  ;
  ;

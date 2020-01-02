@@ -1,6 +1,8 @@
-XULM ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;12/09/2012
- ;;8.0;KERNEL;**608**;JUL 10, 1995;Build 84
+XULM ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;2019-12-31  11:29 AM
+ ;;8.0;KERNEL;**608,10007**;JUL 10, 1995;Build 84
  ;;Per VA Directive 6402, this routine should not be modified
+ ; Original code by Department of Veterans Affairs
+ ; *10007 by Sam Habiel - Remove the note that code runs on Cache only
  ;
  ;  ******************************************************************
  ;  *                                                                *
@@ -15,7 +17,6 @@ MAIN ;Main Program
  ;
  N $ETRAP,$ESTACK S $ETRAP="G ERROR^XULM"
  ;
- I $$VERSION^%ZOSV(1)'["Cache" W !,"This application is for Cache systems only!" D PAUSE^XULMU QUIT
  ;
  ;Automatic update of HOSTS IP addresses
  ;D GETIP^XULMU

@@ -1,6 +1,10 @@
-XULMU ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;11/16/2012
- ;;8.0;KERNEL;**608**;JUL 10, 1995;Build 84
+XULMU ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;2019-12-31  11:32 AM
+ ;;8.0;KERNEL;**608,10007**;JUL 10, 1995;Build 84
  ;;Per VA Directive 6402, this routine should not be modified
+ ; Original code by Department of Veterans Affairs
+ ; *10007 by Sam Habiel - Remove platform dependent code in $$NODE and $$VOLUME
+ ;                      --> Redirect instead to %ZTMLIB.
+ ; *10007 lines Licensed under Apache 2.0
  ;
  ;  ******************************************************************
  ;  *                                                                *
@@ -111,10 +115,10 @@ IFSYSTEM(LOCK) ;returns 1 if system lock, 0 otherwise
  Q FOUND
  ;
 NODE() ;Get Cache' instance name for this process
- Q ##class(%SYS.System).GetInstanceName()
+ Q $$NODE^%ZLMLIB
  ;
 VOLUME() ;Returns the namespace of current environment
- Q $SYSTEM.SYS.NameSpace()
+ Q $$VOLUME^%ZLMLIB
  ;
 SAMENODE(NODE) ;Is the current process running on the indicated node?
  N SNODE

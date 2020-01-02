@@ -1,9 +1,9 @@
-ZTMGRSET ;SF/RWF,PUG/TOAD - SET UP THE MGR ACCOUNT FOR THE SYSTEM ;2018-06-20
- ;;8.0;KERNEL;**34,36,69,94,121,127,136,191,275,355,446,584,10001,10003**;JUL 10, 1995;Build 8
+ZTMGRSET ;SF/RWF,PUG/TOAD - SET UP THE MGR ACCOUNT FOR THE SYSTEM ;2019-12-31  11:53 AM
+ ;;8.0;KERNEL;**34,36,69,94,121,127,136,191,275,355,446,584,10001,10003,10007**;JUL 10, 1995;Build 21
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine authored by Department of Veterans Affairs
  ; Sam Habiel made tiny changes throughout routine (Max Patch > 999 now, ZISHGUX
- ; instead of ZISHGTM for GT.M on Unix) 2016.
+ ; instead of ZISHGTM for GT.M on Unix) 2016, 2019.
  ; KS Bhaksar rewrote COPY and R 2014. Sam contributed bug fixes to these.
  ; Christopher Edwards contributed to *10003*
  ;
@@ -64,7 +64,7 @@ OSNUM() ;Return the OS number
  Q Y
  ;
 ALL W !!,"Now to load routines common to all systems."
- D TM,ETRAP,DEV,OTHER,FM
+ D TM,ETRAP,DEV,OTHER,FM,LM
  I ZTOS=7!(ZTOS=8) D
  . S ^%ZE="D ^ZE"
  E  D  ;With ZLoad, ZSave, ZInsert
@@ -102,6 +102,8 @@ OTHER S %S="ZTPP^ZTP1^ZTPTCH^ZTRDEL^ZTMOVE^ZTBKC"
 DEV S %S="ZIS^ZIS1^ZIS2^ZIS3^ZIS5^ZIS6^ZIS7^ZISC^ZISP^ZISS^ZISS1^ZISS2^ZISTCP^ZISUTL"
  S %D="%ZIS^%ZIS1^%ZIS2^%ZIS3^%ZIS5^%ZIS6^%ZIS7^%ZISC^%ZISP^%ZISS^%ZISS1^%ZISS2^%ZISTCP^%ZISUTL"
  D MOVE
+ Q
+LM S %S="ZLMLIB",%D="%ZLMLIB" D MOVE
  Q
 RUM ;Build the routines for Capacity Management (CM)
  S %S=""
