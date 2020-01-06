@@ -1,5 +1,7 @@
-KMPDTU01 ;OAK/RAK - CM Tools Timing Utility ;4/6/06  08:40
- ;;3.0;KMPD;;Jan 22, 2009;Build 42
+KMPDTU01 ;OAK/RAK - CM Tools Timing Utility ;Sep 17, 2018@19:10
+ ;;3.0;KMPD;*10003*;Jan 22, 2009;Build 42
+ ; *10003* - Changes by Sam Habiel (c) 2018 Sam Habiel
+ ; Licensed under Apache 2.0
  ;
 DAILY(KMPDT) ;-- transmit daily stats to national database
  ;-----------------------------------------------------------------------
@@ -78,6 +80,9 @@ TRANSMIT(KMPDTWD) ;-- format data into e-mail and send to cm national database
  ; D = date
  ; S = subscript
  ;-----------------------------------------------------------------------
+ ;
+ ; *10003* - don't send email if not inside the VA
+ I '$$VA^KMPLOG QUIT
  ;
  Q:'$G(KMPDTWD)
  Q:'$D(^TMP($J))

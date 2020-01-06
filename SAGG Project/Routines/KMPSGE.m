@@ -1,9 +1,10 @@
-KMPSGE ;OAK/KAK/JML - Master Routine ;9/1/2015
- ;;2.0;SAGG PROJECT;**1**;Jul 02, 2007;Build 67
+KMPSGE ;OAK/KAK/JML - Master Routine;Sep 17, 2018@17:47
+ ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
+ ; *10003* changes (c) Sam Habiel 2018
  ;
-EN ;-- this routine can only be run as a TaskMan background job
+EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  ;
- Q:'$D(ZTQUEUED)
+ I ^%ZOSF("OS")'["GT.M" Q:'$D(ZTQUEUED)  ; *10003* q only on Cache
  ;
  N CNT,COMPDT,HANG,KMPSVOLS,KMPSZE,LOC,MAXJOB,MGR,NOWDT,OS
  N PROD,PTCHINFO,QUIT,SESSNUM,SITENUM,TEMP,TEXT,UCI,UCIVOL
@@ -33,31 +34,34 @@ EN ;-- this routine can only be run as a TaskMan background job
  K ^XTMP("KMPS","START"),^XTMP("KMPS","STOP")
  ;
  ; routine KMPSUTL will always be updated with patch release
- S X="KMPSUTL"
- X "ZL @X S PTCHINFO=$T(+2)"
+ S PTCHINFO=$T(+2^KMPSUTL) ; *10003* ; don't use ZLOAD -- that's silly
  S PTCHINFO=$P(PTCHINFO,";",3)_" "_$P(PTCHINFO,";",5)
  ; session number^M platform^SAGG version_" "_patch^start date-time^
  ;     -> completed date-time will be set in $$PACK
  S ^XTMP("KMPS",SITENUM,0)=SESSNUM_U_OS_U_PTCHINFO_U_NOWDT_U
- S X="ERR1^KMPSGE",@^%ZOSF("TRAP")
+ N $ET,$ES S $ET="D ERR1^KMPSGE" ; *10003* use $ET, not $ZT
  S TEMP=SITENUM_U_SESSNUM_U_LOC_U_NOWDT_U_PROD
  ;
- ; KMPS*2.0*1 - Now analyzing all volumes, not just those in the SAGG PROJECT file
+ ; GT.M all OSes
+ I OS="GTM" D START^%ZOSVKSE(TEMP)  ; *10003* Do not Job on GTM since only a single "volume"
  ;
  ; NOTE:  ^XINDEX incorrectly sees SYS("UCI" as an array.  It is a global in the %SYS namespace
- S CNT=0
- S VOL=""
- F  S VOL=$O(^|"%SYS"|SYS("UCI",VOL)) Q:VOL=""  D
- .Q:$G(^|"%SYS"|SYS("UCI",VOL))]""
- .J START^%ZOSVKSE(TEMP_U_VOL)
- .S CNT=CNT+1
- .I CNT=MAXJOB S CNT=$$WAIT(HANG,MAXJOB)
+ ; KMPS*2.0*1 - Now analyzing all volumes, not just those in the SAGG PROJECT file
+ I $E(OS)="C" D  ; Cache
+ .S CNT=0
+ .S VOL=""
+ .F  S VOL=$O(^|"%SYS"|SYS("UCI",VOL)) Q:VOL=""  D
+ ..Q:$G(^|"%SYS"|SYS("UCI",VOL))]""
+ ..J START^%ZOSVKSE(TEMP_U_VOL)
+ ..S CNT=CNT+1
+ ..I CNT=MAXJOB S CNT=$$WAIT(HANG,MAXJOB)
  ;
  D EN^KMPSLK(SESSNUM,SITENUM)
  S QUIT=0
  D LOOP(HANG,SESSNUM,OS)
  I 'QUIT D
- .S RESULT=$$PACK(SESSNUM,SITENUM)
+ .I '$$VA^KMPLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10003* Dump Output to $HFS/KMPS/
+ .E  S RESULT=$$PACK(SESSNUM,SITENUM)         ; *10003* Previous VA behavior unchanged
  .S XMZSENT=+RESULT,COMPDT=$P(RESULT,U,2)
  .S X=$$OUT^KMPSLK(NOWDT,OS,SESSNUM,SITENUM,XMZSENT,.TEXT)
  .D MSG^KMPSLK(NOWDT,SESSNUM,.TEXT,COMPDT)
@@ -112,7 +116,88 @@ LOOP(HANG,SESSNUM,OS) ;
  ;
  Q
  ;
-PACK(SESSNUM,SITENUM)       ;
+LOG(SESSNUM,SITENUM) ; [Private] Log output into $HFS/KMPS/...
+ ; SESSNUM..  +$Horolog number of session
+ ; SITENUM..  site number
+ ;
+ N COMPDT S COMPDT=$$NOW^XLFDT
+ S $P(^XTMP("KMPS",SITENUM,0),U,5)=COMPDT
+ ;
+ ; SAGG Globals are not in a writable format; they are sent to Albany as
+ ; Packman globals. We will reorganize to make it in a usable format.
+ ; Line 1 is the header
+ ;
+ ; 1. Export the global sizes
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS" S L=L+1
+ N H S H=+$H
+ N D S D=$O(^XTMP("KMPS",SITENUM,H,""))
+ N GLO S GLO=""
+ N GLD S GLD="" ; global directory file; useless here.
+ F  S GLO=$O(^XTMP("KMPS",SITENUM,H,D,GLO)) Q:GLO=""  D
+ . F  S GLD=$O(^XTMP("KMPS",SITENUM,H,D,GLO,GLD)) Q:GLD=""  D
+ .. N MYGLO S MYGLO=$P(GLO,U,2) ; rm the ^ from the global name
+ .. S ^TMP($J,"KMPLOG",L)=MYGLO_U_^XTMP("KMPS",SITENUM,H,D,GLO,GLD)
+ .. S L=L+1
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","globals","W",1)
+ ;
+ ; 2. Export Installed Packages Information
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="PACKAGE NAME^NAMESPACE^CURRENT VERSION^INSTALL VERSION^INSTALL DATE"
+ S L=L+1
+ N PKGNAME S PKGNAME=""
+ F  S PKGNAME=$O(^XTMP("KMPS",SITENUM,H,"@PKG",PKGNAME)) Q:PKGNAME=""  D
+ . S ^TMP($J,"KMPLOG",L)=PKGNAME_U_^XTMP("KMPS",SITENUM,H,"@PKG",PKGNAME)
+ . S L=L+1
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","packages","W",1)
+ ;
+ ; 3. Export system version
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="MUMPS VIRTUAL MACHINE NAME AND VERSION^WINDOWS VERSION (CACHE ONLY)"
+ S L=L+1
+ S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@SYS")
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","version","W",1)
+ ;
+ ; 4. Volume sets block counts (regions in GTM)
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="VOLUME NAME^BLOCK COUNT"
+ S L=L+1
+ N VOL S VOL=""
+ F  S VOL=$O(^XTMP("KMPS",SITENUM,H,"@VOL",VOL)) Q:VOL=""  D
+ . S ^TMP($J,"KMPLOG",L)=VOL_U_^XTMP("KMPS",SITENUM,H,"@VOL",VOL)
+ . S L=L+1
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","volumes","W",1)
+ ;
+ ; 5. Fileman files information
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="FILE NAME^# OF ENTRIES^GLOBAL^FILE VERSION^LAST IEN"
+ S L=L+1
+ N FILE S FILE=""
+ ; +FILE'=FILE is intentional. There is a TM sub which I don't want to capture
+ ; Also, file 0 is ^DIC, which I want to capture too.
+ F  S FILE=$O(^XTMP("KMPS",SITENUM,H,"@ZER",FILE)) Q:+FILE'=FILE  D
+ . S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER",FILE)
+ . S L=L+1
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","files","W",1)
+ ;
+ ; 6. Taskman last entry
+ K ^TMP($J,"KMPLOG")
+ N L S L=1
+ S ^TMP($J,"KMPLOG",L)="Last Task #"
+ S L=L+1
+ S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER","TM")
+ D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","taskman","W",1)
+ ;
+ ; Bye!
+ K ^TMP($J,"KMPLOG")
+ QUIT
+ ;
+PACK(SESSNUM,SITENUM) ;
  ;---------------------------------------------------------------------
  ; PackMan ^XTMP global to KMP1-SAGG-SERVER at Albany FO
  ;
@@ -139,7 +224,7 @@ PACK(SESSNUM,SITENUM)       ;
  ;
  I SITENUM=+SITENUM S XMTEXT="^XTMP(""KMPS"","_SITENUM_","
  E  S XMTEXT="^XTMP(""KMPS"","""_SITENUM_""","
- S XMY("S.KMP1-SAGG-SERVER@FO-ALBANY.DOMAIN.EXT")=""
+ S XMY(.5)="" ; S XMY("S.KMP1-SAGG-SERVER@FO-ALBANY.DOMAIN.EXT")="" ; *10003* change to .5
  D ENT^XMPG
  ;
  S RETURN=XMZ_U_COMPDT
@@ -182,11 +267,11 @@ TOOLNG ;-- job has been running too long
  Q
  ;
 ERR1 ;
- S KMPSZE=$ZE,ZUZR=$ZR,X="",@^%ZOSF("TRAP")
- D @^%ZOSF("ERRTN")
+ S $ET="D ^%ZTER HALT" ; Emergency trap
+ D ^%ZTER
  K TEXT
- S TEXT(1)=" SAGG Project Error: "_KMPSZE
+ S TEXT(1)=" SAGG Project Error: "_$G(KMPSZE)
  S TEXT(2)=" See system error log for more details."
  S ^XTMP("KMPS","STOP")=""
  D MSG^KMPSLK(NOWDT,SESSNUM,.TEXT)
- G ^XUSCLEAN
+ S $EC="" G ^XUSCLEAN
