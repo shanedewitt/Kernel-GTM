@@ -1,4 +1,4 @@
-XULMUI ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;2019-12-31  11:35 AM
+XULMUI ;IRMFO-ALB/CJM/SWO/RGG - KERNEL LOCK MANAGER ;2020-01-06  10:57 AM
  ;;8.0;KERNEL;**608,10007**;JUL 10, 1995;Build 84
  ;;Per VA Directive 6402, this routine should not be modified
  ; Original code by Department of Veterans Affairs
@@ -37,6 +37,7 @@ BYLOCK ; display user locks sorted by lock
  ..D NEWENTRY(LOCK,NODE,LOCK,35,$$LAST8(NODE),8,$P(@LOCKS@(LOCK,NODE,"OWNER"),"^",2),13,$$GETID(LOCK,NODE,2),25)
  ;
  S VALMBCK="R"
+ D XQORM
  Q
  ;
 SYSTEM ; display system locks sorted by lock
@@ -59,12 +60,23 @@ SYSTEM ; display system locks sorted by lock
  ..D NEWENTRY(LOCK,NODE,LOCK,50,$$LAST8(NODE),8,$P(@LOCKS@(LOCK,NODE,"OWNER"),"^",2),15)
  ;
  S VALMBCK="R"
+ D XQORM
  Q
  ;
 GOTO ;Jumps to a location on the screen
  S VALMBG=$$ASKWHERE(XUTOPIC)
  S VALMBCK="R"
  Q
+ ;
+XQORM ;Set range for selection.
+ S XQORM("#")=$O(^ORD(101,"B","XULM SELECT LOCK",0))_U_"1:"_VALMCNT
+ S XQORM("A")="Select Action: "
+ Q
+ ;
+PEXIT ;Protocol XULM LOCK MANAGER MENU exit
+ S VALMSG="+ Next Screeen   - Prev Screen   ?? More Actions"
+ D XQORM
+ QUIT
  ;
 BYUSER ; display list sorted by user
  N LOCK,USER
@@ -84,6 +96,7 @@ BYUSER ; display list sorted by user
  ..S NODE=""
  ..F  S NODE=$O(@IDX@("OWNER",USER,LOCK,NODE)) Q:NODE=""  Q:$D(XUPARMS("SELECTED NODE"))&'(NODE=$G(XUPARMS("SELECTED NODE")))  Q:$G(@LOCKS@(LOCK,NODE,"SYSTEM"))  D
  ...D NEWENTRY(LOCK,NODE,$P(@LOCKS@(LOCK,NODE,"OWNER"),"^",2),14,LOCK,33,$$LAST8(NODE),8,$$GETID(LOCK,NODE,2),25)
+ D XQORM
  S VALMBCK="R"
  Q
  ;
@@ -111,6 +124,7 @@ BYPAT ; display list sorted by Patient
  ..S NODE=""
  ..F  S NODE=$O(@IDX@("FILE/ID",PAT,LOCK,NODE)) Q:NODE=""  Q:$D(XUPARMS("SELECTED NODE"))&'(NODE=$G(XUPARMS("SELECTED NODE")))  D
  ...D NEWENTRY(LOCK,NODE,PAT,15,LOCK,33,$$LAST8(NODE),8,$P(@LOCKS@(LOCK,NODE,"OWNER"),"^",2),25)
+ D XQORM
  S VALMBCK="R"
  Q
  ;
@@ -159,6 +173,7 @@ BYFILE(FILE) ; Display locks that have a computable references to a particular f
  ...N NODE S NODE=""
  ...F  S NODE=$O(@IDX@("FILE/ID",FID,LOCK,NODE)) Q:NODE=""  Q:NODE=""  Q:$D(XUPARMS("SELECTED NODE"))&'(NODE=$G(XUPARMS("SELECTED NODE")))  D
  ....D NEWENTRY(LOCK,NODE,FID,15,$P(@LOCKS@(LOCK,NODE,"OWNER"),"^",2),14,$$LAST8(NODE),8,LOCK,60)
+ D XQORM
  S VALMBCK="R"
  Q
 ASKWHERE(TOPIC) ;Asks the user where to jump to.
@@ -219,16 +234,27 @@ EXIT ; -- exit code
  Q
 SELECT ;
  N START,END,DIR,XULMLOCK,Y,XULMNODE,XULMEXIT
- S START=$G(@VALMAR@("IDX1",VALMBG),1)
- I START,$G(@VALMAR@("IDX1",(VALMBG-1)))=START,(START+1)'>VALMCNT S START=START+1
- S END=$G(@VALMAR@("IDX1",VALMBG+17))
- I 'END S END=VALMCNT
- I START,START=END S Y=START
+ ; User selected an entry by number
+ I XQORNOD(0)["=" D  Q:'$D(Y)#2
+ . N SEL S SEL=$P(XQORNOD(0),"=",2)
+ . ;Remove trailing ,
+ . I $E(SEL,$L(SEL))="," S SEL=$E(SEL,1,$L(SEL)-1)
+ . ;Invalid selection
+ . I SEL["," D  Q
+ . . W !,"Only one item number allowed." H 2
+ . . S VALMBCK="R"
+ . S Y=SEL
  E  D
- .S DIR(0)="NO^"_START_":"_END_":0"
- .S DIR("A")="Select a lock: "
- .S DIR("?")="Enter the number of an entry on the screen to select a lock."
- .D ^DIR
+ .S START=$G(@VALMAR@("IDX1",VALMBG),1)
+ .I START,$G(@VALMAR@("IDX1",(VALMBG-1)))=START,(START+1)'>VALMCNT S START=START+1
+ .S END=$G(@VALMAR@("IDX1",VALMBG+17))
+ .I 'END S END=VALMCNT
+ .I START,START=END S Y=START
+ .E  D
+ ..S DIR(0)="NO^"_START_":"_END_":0"
+ ..S DIR("A")="Select a lock: "
+ ..S DIR("?")="Enter the number of an entry on the screen to select a lock."
+ ..D ^DIR
  ;
  I +Y D
  .N X
