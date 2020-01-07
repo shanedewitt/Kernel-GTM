@@ -1,4 +1,4 @@
-KMPLOG ; OSE/SMH - Logging Utility for KMP* Packages;Sep 18, 2018@15:02
+KMPLOG ; OSE/SMH - Logging Utility for KMP* Packages;2020-01-06  3:45 PM
  ;;3.0;CAPACITY MANAGEMENT;**10003**;
  ;
  I $T(^%ut)]"" D EN^%ut($t(+0),3) quit
@@ -75,7 +75,7 @@ VA() ; [Public] Are we running inside of the VA?
 SETUP ; Startup
  N %
  S %=$$DEL1^%ZISH($$DEFDIR^%ZISH_"KMPD/CV/CV-DAILY.dat")
- S %=$$DEL1^%ZISH($$DEFDIR^%ZISH_"KMPD/CV/CV-DAILY-3180807.dat")
+ S %=$$DEL1^%ZISH($$DEFDIR^%ZISH_"KMPD/CV/CV-DAILY-"_DT_".dat")
  QUIT
  ;
 T1 ; @TEST Simple Case no date
@@ -92,7 +92,7 @@ T1 ; @TEST Simple Case no date
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="SYSTEM CONFIG="_$$SYSCFG^KMPVCCFG(),KMPDLN=KMPDLN+1
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="boo^boo^boo^boo^boo^boo"
  ;
- D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY") ; [Public] Main Entry Point
+ D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY","W") ; [Public] Main Entry Point
  D CHKTF^%ut($$SIZE^%ZISH($$DEFDIR^%ZISH_"KMPD/CV","CV-DAILY.dat"))
  QUIT
  ;
@@ -110,7 +110,7 @@ T2 ; @TEST Simple Case w/ date
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="SYSTEM CONFIG="_$$SYSCFG^KMPVCCFG(),KMPDLN=KMPDLN+1
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="boo^boo^boo^boo^boo^boo"
  ;
- D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY",1) ; [Public] Main Entry Point
+ D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY","W",1) ; [Public] Main Entry Point
  D CHKTF^%ut($$SIZE^%ZISH($$DEFDIR^%ZISH_"KMPD/CV","CV-DAILY-"_DT_".dat"))
  QUIT
  ;
@@ -128,7 +128,7 @@ T3 ; @TEST Simple Case w/ ext no date
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="SYSTEM CONFIG="_$$SYSCFG^KMPVCCFG(),KMPDLN=KMPDLN+1
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="boo^boo^boo^boo^boo^boo"
  ;
- D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY.DAT") ; [Public] Main Entry Point
+ D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY.dat","A") ; [Public] Main Entry Point
  D CHKTF^%ut($$SIZE^%ZISH($$DEFDIR^%ZISH_"KMPD/CV","CV-DAILY.dat"))
  QUIT
  ;
@@ -146,7 +146,7 @@ T4 ; @TEST Simple Case w/ ext w/ date
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="SYSTEM CONFIG="_$$SYSCFG^KMPVCCFG(),KMPDLN=KMPDLN+1
  S ^KMPTMP("KMPD","RDAT",KMPDLN)="boo^boo^boo^boo^boo^boo"
  ;
- D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY.DAT",1) ; [Public] Main Entry Point
- D CHKTF^%ut($$SIZE^%ZISH($$DEFDIR^%ZISH_"KMPD/CV","CV-DAILY-"_DT_".DAT"))
+ D EN($na(^KMPTMP("KMPD","RDAT")),"KMPD/CV","CV-DAILY.DAT","A",1) ; [Public] Main Entry Point
+ D CHKTF^%ut($$SIZE^%ZISH($$DEFDIR^%ZISH_"KMPD/CV","CV-DAILY-"_DT_".dat"))
  QUIT
  ;
