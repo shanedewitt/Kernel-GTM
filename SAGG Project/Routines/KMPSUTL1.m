@@ -1,13 +1,18 @@
-KMPSUTL1        ;OAK/KAK - SAGG Utilities ;9/1/2015
- ;;2.0;SAGG PROJECT;**1**;Jul 02, 2007;Build 67
+KMPSUTL1        ;OAK/KAK - SAGG Utilities ;2020-01-06  3:54 PM
+ ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
  ;
 MPLTF() ;-- returns the type of M platform
  ;---------------------------------------------------------------------
  ; Returns:  CVMS   for Cache for OpenVMS platform
  ;           CWINNT for Cache for Windows NT platform
+ ; *10003*:
+ ;           GTM for GTM all platforms
  ;---------------------------------------------------------------------
  ;
  N MPLTF,ZV
+ ;
+ ; *10003*
+ I ^%ZOSF("OS")["GT.M" Q "GTM"
  ;
  S ZV=$$OS^%ZOSV ; IA# 10097
  S MPLTF=$S(ZV["VMS":"CVMS",ZV["UNIX":"CUNIX",ZV["NT":"CWINNT",1:"UNK")
