@@ -1,8 +1,12 @@
-%ZOSVKSD ;OAK/KAK/RAK/JML - ZOSVKSD - Calculate Disk Capacity ;7/25/2004
- ;;8.0;KERNEL;**121,197,268,456,568,670**;3/1/2018;Build 45
+%ZOSVKSD ;OAK/KAK/RAK/JML - ZOSVKSD - Calculate Disk Capacity ;2020-01-07  2:53 PM
+ ;;8.0;KERNEL;**121,197,268,456,568,670,10003**;3/1/2018;Build 45
  ;
  ; This routine will help to calculate disk capacity for
  ; Cache system platforms by looking up volume set table information
+ ;
+ ; *10003* (c) Sam Habiel 2020
+ ; See inline notes for changes
+ ; *10003* changes licensed under Apache 2.0
  ;
 EN(SITENUM,SESSNUM,OS) ;-- called by routine SYS+2^KMPSLK
  ;--------------------------------------------------------------------
@@ -86,6 +90,25 @@ KMPVVTCM(KMPVDATA) ; Get Cache metrics for Vista Timed Collection Monitor (VTCM)
  S KMPVDATA("KMPVROUT")=##class(SYS.Stats.Routine).Sample()
  S KMPVDATA("KMPVSMH")=##class(%SYSTEM.Config.SharedMemoryHeap).GetUsageSummary()
  S KMPVDATA("KMPVMEM")=##class(%SYSTEM.Config.SharedMemoryHeap).FreeCount()
+ ;
+ ; *10003* Move Class Data into array format so that caller KMPVVTCM won't have
+ ; Cache class code and caller will work for both Cache and GT.M
+ S KMPVDATA("KMPVDASH","GloRefs")=KMPVDATA("KMPVDASH").GloRefs
+ S KMPVDATA("KMPVDASH","GloRefsPerSec")=KMPVDATA("KMPVDASH").GloRefsPerSec
+ S KMPVDATA("KMPVDASH","GloSets")=KMPVDATA("KMPVDASH").GloSets
+ S KMPVDATA("KMPVDASH","LogicalReads")=KMPVDATA("KMPVDASH").LogicalReads
+ S KMPVDATA("KMPVDASH","DiskReads")=KMPVDATA("KMPVDASH").DiskReads
+ S KMPVDATA("KMPVDASH","DiskWrites")=KMPVDATA("KMPVDASH").DiskWrites
+ S KMPVDATA("KMPVDASH","Processes")=KMPVDATA("KMPVDASH").Processes
+ S KMPVDATA("KMPVROUT","RtnCommands")=KMPVDATA("KMPVROUT").RtnCommands
+ S KMPVDATA("KMPVROUT","RtnLines")=KMPVDATA("KMPVROUT").RtnLines
+ S KMPVDATA("KMPVDASH","RouRefs")=KMPVDATA("KMPVDASH").RouRefs
+ S KMPVDATA("KMPVDASH","CSPSessions")=KMPVDATA("KMPVDASH").CSPSessions
+ S KMPVDATA("KMPVDASH","CacheEfficiency")=KMPVDATA("KMPVDASH").CacheEfficiency
+ S KMPVDATA("KMPVDASH","ECPAppSrvRate")=KMPVDATA("KMPVDASH").ECPAppSrvRate
+ S KMPVDATA("KMPVDASH","ECPDataSrvRate")=KMPVDATA("KMPVDASH").ECPDataSrvRate
+ S KMPVDATA("KMPVDASH","JournalEntries")=KMPVDATA("KMPVDASH").JournalEntries
+ S KMPVDATA("KMPVDASH","ApplicationErrors")=KMPVDATA("KMPVDASH").ApplicationErrors
  ;
  ; Return to 'from' namespace
  S KMPVTNS=$ZU(5,KMPVRNS)
