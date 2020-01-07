@@ -1,11 +1,13 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for GT.M VistA Port;Sep 18, 2018@15:20
+ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-07  4:30 PM
  ;;8.0;KERNEL;**10003**;;
- ; Submitted to OSEHRA in 2018 by Sam Habiel for OSEHRA
- ; (c) Sam Habiel 2018
- D EN^%ut($t(+0),2)
  ;
+ ; (c) Sam Habiel 2018
+ ; Licensed under Apache 2.0
+ D EN^%ut($t(+0),3)
  QUIT
  ;
+CACHE() Q ^%ZOSF("OS")["OpenM"
+GTM()   Q ^%ZOSF("OS")["GT.M"
 STARTUP ;
  ; ZEXCEPT: KMPVTEST
  ;
@@ -25,22 +27,31 @@ STARTUP ;
  I $D(DIERR) S $EC=",U1,"
  F ZOSVV="VTCM","VSTM","VBEM","VMCM","VHLM" D STARTMON^KMPVCBG(ZOSVV,1)
  S KMPVTEST="TESTING"
+ ;
+ ; Set-up DUZ(2) if not there as we need it for some tests
+ I '$D(DUZ(2)) D DUZ^XUP(.5)
+ ;
+ ; Set-up DUZ("AG") to not be "V"
+ I $G(DUZ("AG"))="V" D
+ . N FDA S FDA(8989.3,"1,","AGENCY CODE")="O"
+ . N DIERR D FILE^DIE("","FDA")
+ . I $D(DIERR) S $EC=",U-CHECK-ME,"
+ . S DUZ("AG")="O"
  QUIT
  ;
-SHUTDOWN ; 
+SHUTDOWN ;
  ; ZEXCEPT: KMPVTEST
- S $ZSOURCE="ZOSVGUT4"
+ I $$GTM S $ZSOURCE="ZOSVGUT4"
  K KMPVTEST
  QUIT
  ;
-PATCH ; @TEST $$PATCH^XPDUTL, which prv accepted only 3 digits
- D CHKTF^%ut($$PATCH^XPDUTL("XU*8.0*10001"))
- QUIT
- ;
  ; -- RUM --
-RUMSET ; @TEST ZTMGRSET RUM Rename GTM Routines
+RUMSET ; @TEST ZTMGRSET RUM Rename GTM/Cache Routines
+ N IOP,POP S IOP="NULL" D ^%ZIS U IO
  D PATCH^ZTMGRSET(10003)
- D CHKTF^%ut($T(+2^%ZOSVKR)[10003)
+ D ^%ZISC
+ ; Picked this routine specifically as *10003* is for both GTM and Cache
+ D CHKTF^%ut($T(+2^%ZOSVKSD)[10003)
  QUIT
  ;
 LOGRSRC ; @TEST LOGRSRC^%ZOSV Resource Logger
@@ -49,12 +60,13 @@ LOGRSRC ; @TEST LOGRSRC^%ZOSV Resource Logger
  D FILE^DIE(,"FDA")
  S FDA(8989.3,"1,",300)="Y"
  D FILE^DIE(,"FDA") ;
- ; Collect this shitload so that we can find out later if we got captured in ^KMPTMP
+ ; Get these variables so that we can find out later if we got captured in ^KMPTMP
  N KMPVNODE,Y D GETENV^%ZOSV S KMPVNODE=$P(Y,U,3)_":"_$P($P(Y,U,4),":",2) ;  IA 10097
  N KMPVH S KMPVH=$H
  N KMPVSINT S KMPVSINT=$$GETVAL^KMPVCCFG("VBEM","COLLECTION INTERVAL",8969)
  I 'KMPVSINT S KMPVSINT=15
- N KMPVHRSEC S KMPVHRSEC=$ZD(KMPVH,"24:60")
+ N TIME S TIME=$P($$NOW^XLFDT,".",2)
+ N KMPVHRSEC S KMPVHRSEC=$E(TIME,1,2)_":"_$E(TIME,3,4)
  N KMPVHOUR S KMPVHOUR=$P(KMPVHRSEC,":")
  N KMPVMIN S KMPVMIN=$P(KMPVHRSEC,":",2)
  N KMPVSLOT S KMPVSLOT=+$P(KMPVMIN/KMPVSINT,".")
@@ -69,17 +81,6 @@ LOGRSRC ; @TEST LOGRSRC^%ZOSV Resource Logger
  N FOUND S FOUND=0
  F  S OPT=$O(^KMPTMP("KMPV","VBEM","DLY",+KMPVH,KMPVNODE,KMPVHTIME,OPT)) Q:OPT=""  I OPT["$UNIT TEST$" S FOUND=1
  D CHKTF^%ut(FOUND)
- QUIT
- ;
- ; -- EC^%ZOSV fix --
- ; 
-EC ; @TEST $$EC^%ZOSV
- N EC
- N V S V=$name(^PS(222,333,444,555,666,777,888))
- D
- . N $ET,$ES S $ET="S EC=$$EC^%ZOSV,$EC="""" D UNWIND^ZU"
- . I @V
- D CHKTF^%ut($P(EC,",",4)["GVUNDEF")
  QUIT
  ;
  ; -- Capacity Management --
@@ -163,10 +164,7 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  I I>10 D FAIL^%ut("BG CV Job never finished. Is taskman running?")
  QUIT
  ;
-SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (2.5m on Cygwin)
- ; It takes too long to run this -- quit if run today already.
- I $$RETURN^%ZOSV("stat "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat",1)=0 QUIT
- ;
+SAGG ; @TEST SAGG Data Collection
  D ^KMPSGE
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat")>1000)
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/globals-"_DT_".dat")>100)
@@ -181,18 +179,22 @@ SAGG ; @TEST SAGG Data Collection -- TAKES A LONG TIME (2.5m on Cygwin)
 VSTM ; @TEST VSM Storage Monitor
  K ^KMPTMP("KMPV","VSTM")
  D RUN^KMPVVSTM
- D CHKTF^%ut($data(^KMPTMP("KMPV","VSTM","DLY")))
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_DT_".dat")>0)
  D SEND^KMPVVSTM
  D SUCCEED^%ut
  QUIT
  ;
 VBEM ; @TEST VSM Business Event Monitor (replaces old CM task)
  ; make sure RUM is on - this test runs after LOGRSRC above, which turns it on and records data.
+ K ^KMPTMP("KMPV","VBEM","TRANSMIT")
+ K ^KMPTMP("KMPV","VBEM","COMPRESS")
+ ; Only runs on Yesterday's data!
+ M ^KMPTMP("KMPV","VBEM","DLY",+$H-1)=^KMPTMP("KMPV","VBEM","DLY",+$H)
  D ^KMPVBETR
  D CHKTF^%ut($data(^KMPTMP("KMPV","VBEM","COMPRESS")))
  QUIT
  ;
-VHLM ; @TEST VSM Section HL7 mointor
+VHLM ; !TEST VSM Section HL7 mointor
  ; Turn on patient registration messages
  N IEN43 S IEN43=$O(^DG(43,0))
  I 'IEN43 D FAIL^%ut("MAS PARAMETERS NOT DEFINED") QUIT
@@ -206,12 +208,12 @@ VHLM ; @TEST VSM Section HL7 mointor
  ; Get Registration Message Number
  N PIVOT S PIVOT=$O(^VAT(391.71," "),-1)
  N MESS S MESS=$G(^VAT(391.71,PIVOT,1))
- I 'MESS D FAIL^%ut("Message not generated")
+ I 'MESS D FAIL^%ut("Message not generated") QUIT
  ;
  ; Get Message number in HLMA (message - site number from the beginning)
  N SITE S SITE=+$P($$PARAM^HLCS2,U,6)
  N HLMA S HLMA=$P(MESS,SITE,2,99)
- ; 
+ ;
  ; Get HL7 message number
  N HLIEN S HLIEN=+^HLMA(HLMA,0)
  ;
@@ -222,9 +224,12 @@ VHLM ; @TEST VSM Section HL7 mointor
  D FILE^DIE(,"FDA")
  ;
  D ^KMPVVHLM
+ ; NB: Transmit nodes are created and then killed; but eventually we want those
+ ; to be the basis of the file we write out.
+ d CHKTF^%ut($d(^KMPTMP("KMPV","VHLM","DLY",+$H-1)))
  QUIT
  ;
-VHLMERR ; 
+VHLMERR ;
  S $ET="W ""EMERGENCY"" HALT"
  ; The following is an expected error due to 2 digit vs 3 digit site numbers
  I $ST($ST-1,"PLACE")["RGADTP" S $EC="" QUIT  ; clear error and just continue
@@ -239,12 +244,21 @@ VMCM ; @TEST VSM Message Count Monitor
  ; thus the HALTONE^ZSY.
  ; ZEXCEPT: IN,OUT,ERROR
  K ^KMPTMP("KMPV","VMCM","DLY",+$H)
- J ^KMPVVMCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
- N %J S %J=$ZJOB
- D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
- H 1
- D HALTONE^ZSY(%J)
- F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
+ N %J
+ I $$GTM D
+ . J ^KMPVVMCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
+ . S %J=$ZJOB
+ . D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
+ . H 1
+ . D HALTONE^ZSY(%J)
+ . F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
+ I $$CACHE D
+ . J ^KMPVVMCM
+ . S %J=$ZCHILD
+ . D CHKTF^%ut($D(^$J(%J)))
+ . H 1
+ . N % S %=$ZU(4,$J)
+ . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
  D CHKTF^%ut($data(^KMPTMP("KMPV","VMCM","DLY",+$H)))
  D SEND^KMPVVMCM
  QUIT
@@ -254,12 +268,21 @@ VTCM ; @TEST VSM Timed Collection Monitor
  ; thus the HALTONE^ZSY.
  ; ZEXCEPT: IN,OUT,ERROR
  K ^KMPTMP("KMPV","VTCM","DLY",+$H)
- J ^KMPVVTCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
- N %J S %J=$ZJOB
- D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
- H 2 ; Cygwin wants some time I think
- D HALTONE^ZSY(%J)
- F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
+ N %J
+ I $$GTM D
+ . J ^KMPVVTCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
+ . S %J=$ZJOB
+ . D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
+ . H 1
+ . D HALTONE^ZSY(%J)
+ . F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
+ I $$CACHE D
+ . J ^KMPVVTCM
+ . S %J=$ZCHILD
+ . D CHKTF^%ut($D(^$J(%J)))
+ . H 1
+ . N % S %=$ZU(4,$J)
+ . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
  D SEND^KMPVVTCM
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_DT_".dat")>1)
  QUIT
