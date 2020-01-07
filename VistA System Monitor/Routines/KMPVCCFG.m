@@ -1,4 +1,4 @@
-KMPVCCFG ;SP/JML - VSM configuration functions -- APIs for data access ;2018-07-24
+KMPVCCFG ;SP/JML - VSM configuration functions -- APIs for data access ;2020-01-07  1:22 PM
  ;;4.0;CAPACITY MANAGEMENT;*10003*;
  ;
  ; *10003* changes (c) Sam Habiel 2018
@@ -194,7 +194,7 @@ SLOT(KMPTIME,KMPSINT,KMPTFORM) ;
  Q KMPSTIME
  ;
 ISBENODE(KMPNODE) ;
- I +$SY=47 QUIT 1  ; *10003* - ISBENODE has no meaning for GT.M systems
+ I ^%ZOSF("OS")["GT.M" QUIT 1  ; *10003* - ISBENODE has no meaning for GT.M systems
  N RET,KMPINST,KMPNTYP
  S RET=0
  Q:$P(KMPNODE,":",2)="" -1

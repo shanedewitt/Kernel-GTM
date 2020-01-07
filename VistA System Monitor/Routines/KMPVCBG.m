@@ -1,4 +1,4 @@
-KMPVCBG ;SP/JML VSM background utility functions ;Aug 03, 2018@17:39
+KMPVCBG ;SP/JML VSM background utility functions ;2020-01-07  2:29 PM
  ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018;Build 38
  ;
  ; *10003* Changes by Sam Habiel (c) Sam Habiel 2018
@@ -202,7 +202,7 @@ PURGEDLY(KMPVMKEY) ; Purge any data older than VSM CONFIURATION file specifies
 KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
  N I,KMPVMSG,KMPVNSPE,KMPVROLS,KMPVTASK,KMPVTFLG,KMPVTSK,KMPVTSKS
  ;
- I +$SY=47 D GTMTSK QUIT  ; *10003* GTM Support
+ I ^%ZOSF("OS")["GT.M" D GTMTSK QUIT  ; *10003* GTM Support
  ;
  ; Start: only in KMPVCBG version - comment out for ZSTU
  S KMPVROLS=$ROLES
@@ -274,7 +274,7 @@ KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
  ;
 GTMTSK ; [Private] GTM Task support
  W !
- W "GT.M/YDB SUPPORT",!!
+ W "GT.M/YottaDB SUPPORT",!!
  W "For the VistA system monitor to work, you need to run a cron job every night",!
  W "The cron job needs to source environment variables and then run RUN^KMPVRUN",!
  W "Here's an example crontab: ",!
