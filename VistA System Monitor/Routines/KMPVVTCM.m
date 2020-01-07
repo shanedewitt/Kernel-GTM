@@ -1,4 +1,4 @@
-KMPVVTCM ;SP/JML - Collect Cache Metrics for the VistA Timed Collection Monitor ;Sep 18, 2018@15:16
+KMPVVTCM ;SP/JML - Collect Cache Metrics for the VistA Timed Collection Monitor ;2020-01-07  2:27 PM
  ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018;Build 38
  ; *10003* - Changes by OSEHRA/Sam Habiel (c) Sam Habiel 2018
  ;           Licensed under Apache 2.0.
@@ -63,16 +63,17 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM"
  .S KMPVMET=KMPVMET_U_$P(KMPVMEM,",")_U_$P(KMPVMEM,",",2)_U_$P(KMPVMEM,",",3)_U_$P(KMPVMEM,",",4)
  .S KMPVMET=KMPVMET_U_$P(KMPVBLK,",")_U_$P(KMPVBLK,",",2)_U_$P(KMPVBLK,",",3)  ; *10003* - added extra piece here.
  .;
+ .S KMPVHTIME=$$SLOT^KMPVCCFG(KMPVH,KMPVSINT,"HOROLOG")
  .; *10003* - If outside of the VA, just write to a file directly
  .I '$$VA^KMPLOG D
- ..N H S H="GloRefs^GloRefsPerSec^GloSets^LogicalReads^DiskReads^DiskWrites^Processes^RtnCommands^"
+ ..N H S H="Time^GloRefs^GloRefsPerSec^GloSets^LogicalReads^DiskReads^DiskWrites^Processes^RtnCommands^"
  ..S H=H_"RtnLines^RouRefs^CSPSessions^CacheEfficiency^ECPAppSrvRate^ECPDataSrvRate^JournalEntries^"
  ..S H=H_"ApplicationErrors^TotalSMHMemUsed^SMHPagesUsed^ConfiguredSMHMemory^"
  ..S H=H_"SHMHeapAvail^SMHHeapPages^SMTMemTotal^strtabTotal^blksamples/CS Total^blkcoll/CS fails^CS latch (ns)"
  ..D HEAD^KMPLOG(H,"KMPV","VTCM",1)
+ ..S KMPVMET=KMPVHTIME_U_KMPVMET
  ..D EN^KMPLOG("KMPVMET","KMPV","VTCM","A",1)
  .E  D  ; /*10003*
- ..S KMPVHTIME=$$SLOT^KMPVCCFG(KMPVH,KMPVSINT,"HOROLOG")
  ..S ^KMPTMP("KMPV","VTCM","DLY",+KMPVH,KMPVNODE,KMPVHTIME)=KMPVMET
  .;
  .H KMPVHANG
