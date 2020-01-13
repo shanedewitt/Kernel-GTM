@@ -1,7 +1,9 @@
-KMPVCBG ;SP/JML VSM background utility functions ;2020-01-07  2:29 PM
- ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018;Build 38
+KMPVCBG ;SP/JML VSM background utility functions ;Jan 13, 2020@17:18
+ ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
  ;
- ; *10003* Changes by Sam Habiel (c) Sam Habiel 2018
+ ; *10003* Changes by (c) Sam Habiel 2018
+ ; Licensed under Apache 2.0
+ ; Look for *10003* for specific changes
  ;
 MONLIST(KMPVML) ; Return list of configured Monitors
  K KMPVML
@@ -197,6 +199,7 @@ PURGEDLY(KMPVMKEY) ; Purge any data older than VSM CONFIURATION file specifies
  S KMPVH="",KMPVCURH=+$H,KMPVKEEP=$$GETVAL^KMPVCCFG(KMPVMKEY,"DAYS TO KEEP DATA",8969)
  F  S KMPVH=$O(^KMPTMP("KMPV",KMPVMKEY,"DLY",KMPVH)) Q:KMPVH=""  D
  .I (KMPVCURH-KMPVH)>KMPVKEEP K ^KMPTMP("KMPV",KMPVMKEY,"DLY",KMPVH)
+ I '$$VA^KMPVLOG D DELLOG^KMPVLOG("KMPV",KMPVMKEY,KMPVKEEP)
  Q
  ;
 KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
@@ -229,19 +232,19 @@ KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
  D DisplayError^%apiOBJ(KMPVSTAT)
  while KMPVTSKS.Next() {
  if (KMPVTSKS.GetDataByName("Task Name")=KMPVTSK) {
- 	set KMPVTID=KMPVTSKS.GetDataByName("ID")
- 	set KMPVTRUN=KMPVTSKS.GetDataByName("Next Scheduled Date")_" at "_KMPVTSKS.GetDataByName("Next Scheduled Time")
- 	if KMPVTSKS.GetDataByName("Suspended")'="" {
- 		do ##class(%SYS.Task).Resume(KMPVTID)
- 		S KMPVMSG=KMPVTSK_" Task #"_KMPVTID_" Exists and Resumed to Run at "_KMPVTRUN
- 	} Else {
- 		S KMPVMSG=KMPVTSK_" Task #"_KMPVTID_" Exists and Scheduled to Run at "_KMPVTRUN
- 		}
- 	set KMPVTFLG=1
- 	W !,KMPVMSG
- 	DO ##class(%SYS.System).WriteToConsoleLog("ZSTU: "_KMPVMSG,0,0)
- 	quit
- 		}
+  set KMPVTID=KMPVTSKS.GetDataByName("ID")
+  set KMPVTRUN=KMPVTSKS.GetDataByName("Next Scheduled Date")_" at "_KMPVTSKS.GetDataByName("Next Scheduled Time")
+  if KMPVTSKS.GetDataByName("Suspended")'="" {
+   do ##class(%SYS.Task).Resume(KMPVTID)
+   S KMPVMSG=KMPVTSK_" Task #"_KMPVTID_" Exists and Resumed to Run at "_KMPVTRUN
+  } Else {
+   S KMPVMSG=KMPVTSK_" Task #"_KMPVTID_" Exists and Scheduled to Run at "_KMPVTRUN
+   }
+  set KMPVTFLG=1
+  W !,KMPVMSG
+  DO ##class(%SYS.System).WriteToConsoleLog("ZSTU: "_KMPVMSG,0,0)
+  quit
+   }
  }
  ;
  ;create task if it doesn't exist

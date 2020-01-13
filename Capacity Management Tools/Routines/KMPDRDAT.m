@@ -1,5 +1,5 @@
-KMPDRDAT ;SP/JML - Cover Sheet Load Raw Data Extract ;Sep 17, 2018@19:28
- ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018;Build 38
+KMPDRDAT ;SP/JML - Cover Sheet Load Raw Data Extract ;2020-01-13  5:50 PM
+ ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
  ;
  ; *10003* (c) Sam Habiel 2018
  ; *10003 changes: Change VA email address to postmaster
@@ -59,7 +59,7 @@ ORONE(KMPDSUB) ;
  .S $P(KMPDDATA,U,7)=KMPDSUB
  .; application title
  .S $P(KMPDDATA,U,8)="CPRS Cover Sheet"
- .; ip address 
+ .; ip address
  .S $P(KMPDDATA,U,9)=$P($P(KMPDID,"-")," ",2)
  .; patient DFN
  .S $P(KMPDDATA,U,10)=$P(KMPDID,"-",3)
@@ -111,14 +111,15 @@ TRANSMIT ;
  Q:'$D(^KMPTMP("KMPD","RDAT"))
  ;
  ; *10003* - if outside of the VA, export to text file
- I '$$VA^KMPLOG D  QUIT 
+ I '$$VA^KMPVLOG D  QUIT
+ . D DELLOG^KMPVLOG("KMPD","cvload",1) ; Keep only one day's worth of data
  . K ^KMPTMP("KMPD","RDAT",1),^(2),^(3)  ; remove headers we dont want!
  . ; add the header we want
  . S ^KMPTMP("KMPD","RDAT",1)="START TIME^FG DELTA^BG DELTA^TOT DELTA^CLIENT DUZ^CLIENT NAME^KMPTMP SUBSCRIPT KEY^APPLICATION TITLE^IP^DFN"
  . ; Remove "CVLOAD DATA=" from each entry
  . N I S I=3 F  S I=$O(^KMPTMP("KMPD","RDAT",I)) Q:'I  S ^(I)=$P(^(I),"CVLOAD DATA=",2)
  . ; log
- . D EN^KMPLOG($NA(^KMPTMP("KMPD","RDAT")),"KMPD","cv-load","W",1)
+ . D EN^KMPVLOG($NA(^KMPTMP("KMPD","RDAT")),"KMPD","cvload","W",1)
  ; /*10003*
  ;
  N XMSUB,XMTEXT,XMY,XMZ

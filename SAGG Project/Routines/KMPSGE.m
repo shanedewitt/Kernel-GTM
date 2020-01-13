@@ -1,4 +1,4 @@
-KMPSGE ;OAK/KAK/JML - Master Routine;Sep 17, 2018@17:47
+KMPSGE ;OAK/KAK/JML - Master Routine;2020-01-10  11:42 AM ;Jan 13, 2020@13:45
  ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
  ; *10003* changes (c) Sam Habiel 2018
  ;
@@ -60,7 +60,7 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  S QUIT=0
  D LOOP(HANG,SESSNUM,OS)
  I 'QUIT D
- .I '$$VA^KMPLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10003* Dump Output to $HFS/KMPS/
+ .I '$$VA^KMPVLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10003* Dump Output to $HFS/KMPS/
  .E  S RESULT=$$PACK(SESSNUM,SITENUM)         ; *10003* Previous VA behavior unchanged
  .S XMZSENT=+RESULT,COMPDT=$P(RESULT,U,2)
  .S X=$$OUT^KMPSLK(NOWDT,OS,SESSNUM,SITENUM,XMZSENT,.TEXT)
@@ -123,14 +123,23 @@ LOG(SESSNUM,SITENUM) ; [Private] Log output into $HFS/KMPS/...
  N COMPDT S COMPDT=$$NOW^XLFDT
  S $P(^XTMP("KMPS",SITENUM,0),U,5)=COMPDT
  ;
+ ; Delete Old Files
+ N DAYS S DAYS=14*4 ; keep data for 56 days, or 4 runs
+ D DELLOG^KMPVLOG("KMPS","globals",DAYS)
+ D DELLOG^KMPVLOG("KMPS","packages",DAYS)
+ D DELLOG^KMPVLOG("KMPS","version",DAYS)
+ D DELLOG^KMPVLOG("KMPS","volumes",DAYS)
+ D DELLOG^KMPVLOG("KMPS","files",DAYS)
+ D DELLOG^KMPVLOG("KMPS","taskman",DAYS)
+ ;
  ; SAGG Globals are not in a writable format; they are sent to Albany as
  ; Packman globals. We will reorganize to make it in a usable format.
  ; Line 1 is the header
  ;
  ; 1. Export the global sizes
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS" S L=L+1
+ S ^TMP($J,"KMPVLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS" S L=L+1
  N H S H=+$H
  N D S D=$O(^XTMP("KMPS",SITENUM,H,""))
  N GLO S GLO=""
@@ -138,63 +147,63 @@ LOG(SESSNUM,SITENUM) ; [Private] Log output into $HFS/KMPS/...
  F  S GLO=$O(^XTMP("KMPS",SITENUM,H,D,GLO)) Q:GLO=""  D
  . F  S GLD=$O(^XTMP("KMPS",SITENUM,H,D,GLO,GLD)) Q:GLD=""  D
  .. N MYGLO S MYGLO=$P(GLO,U,2) ; rm the ^ from the global name
- .. S ^TMP($J,"KMPLOG",L)=MYGLO_U_^XTMP("KMPS",SITENUM,H,D,GLO,GLD)
+ .. S ^TMP($J,"KMPVLOG",L)=MYGLO_U_^XTMP("KMPS",SITENUM,H,D,GLO,GLD)
  .. S L=L+1
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","globals","W",1)
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","globals","W",1)
  ;
  ; 2. Export Installed Packages Information
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="PACKAGE NAME^NAMESPACE^CURRENT VERSION^INSTALL VERSION^INSTALL DATE"
+ S ^TMP($J,"KMPVLOG",L)="PACKAGE NAME^NAMESPACE^CURRENT VERSION^INSTALL VERSION^INSTALL DATE"
  S L=L+1
  N PKGNAME S PKGNAME=""
  F  S PKGNAME=$O(^XTMP("KMPS",SITENUM,H,"@PKG",PKGNAME)) Q:PKGNAME=""  D
- . S ^TMP($J,"KMPLOG",L)=PKGNAME_U_^XTMP("KMPS",SITENUM,H,"@PKG",PKGNAME)
+ . S ^TMP($J,"KMPVLOG",L)=PKGNAME_U_^XTMP("KMPS",SITENUM,H,"@PKG",PKGNAME)
  . S L=L+1
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","packages","W",1)
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","packages","W",1)
  ;
  ; 3. Export system version
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="MUMPS VIRTUAL MACHINE NAME AND VERSION^WINDOWS VERSION (CACHE ONLY)"
+ S ^TMP($J,"KMPVLOG",L)="MUMPS VIRTUAL MACHINE NAME AND VERSION^WINDOWS VERSION (CACHE ONLY)"
  S L=L+1
- S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@SYS")
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","version","W",1)
+ S ^TMP($J,"KMPVLOG",L)=^XTMP("KMPS",SITENUM,H,"@SYS")
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","version","W",1)
  ;
  ; 4. Volume sets block counts (regions in GTM)
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="VOLUME NAME^BLOCK COUNT"
+ S ^TMP($J,"KMPVLOG",L)="VOLUME NAME^BLOCK COUNT"
  S L=L+1
  N VOL S VOL=""
  F  S VOL=$O(^XTMP("KMPS",SITENUM,H,"@VOL",VOL)) Q:VOL=""  D
- . S ^TMP($J,"KMPLOG",L)=VOL_U_^XTMP("KMPS",SITENUM,H,"@VOL",VOL)
+ . S ^TMP($J,"KMPVLOG",L)=VOL_U_^XTMP("KMPS",SITENUM,H,"@VOL",VOL)
  . S L=L+1
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","volumes","W",1)
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","volumes","W",1)
  ;
  ; 5. Fileman files information
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="FILE NAME^# OF ENTRIES^GLOBAL^FILE VERSION^LAST IEN"
+ S ^TMP($J,"KMPVLOG",L)="FILE NAME^# OF ENTRIES^GLOBAL^FILE VERSION^LAST IEN"
  S L=L+1
  N FILE S FILE=""
  ; +FILE'=FILE is intentional. There is a TM sub which I don't want to capture
  ; Also, file 0 is ^DIC, which I want to capture too.
  F  S FILE=$O(^XTMP("KMPS",SITENUM,H,"@ZER",FILE)) Q:+FILE'=FILE  D
- . S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER",FILE)
+ . S ^TMP($J,"KMPVLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER",FILE)
  . S L=L+1
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","files","W",1)
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","files","W",1)
  ;
  ; 6. Taskman last entry
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPLOG",L)="Last Task #"
+ S ^TMP($J,"KMPVLOG",L)="Last Task #"
  S L=L+1
- S ^TMP($J,"KMPLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER","TM")
- D EN^KMPLOG($NA(^TMP($J,"KMPLOG")),"KMPS","taskman","W",1)
+ S ^TMP($J,"KMPVLOG",L)=^XTMP("KMPS",SITENUM,H,"@ZER","TM")
+ D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","taskman","W",1)
  ;
  ; Bye!
- K ^TMP($J,"KMPLOG")
+ K ^TMP($J,"KMPVLOG")
  QUIT
  ;
 PACK(SESSNUM,SITENUM) ;
