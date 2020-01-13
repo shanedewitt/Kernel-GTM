@@ -1,5 +1,5 @@
-KMPDUTL ;OAK/RAK - CM Tools Utility ;9/1/2015
- ;;3.0;Capacity Management Tools;**3**;Jan 15, 2013;Build 42
+KMPDUTL ;OAK/RAK - CM Tools Utility ;2020-01-13  2:46 PM
+ ;;3.0;Capacity Management Tools;**3,10003**;Jan 15, 2013;Build 42
  ;
 QUEBKG(KMPDOPT,KMPDTIME,KMPDFREQ,KMPDDEL) ;-- queue background job
  ;-----------------------------------------------------------------------
@@ -87,27 +87,27 @@ PTCHINFO ; -- patch information: routine name ^ current version ^ current patch(
  ;;KMPDHU03^3.0
  ;;KMPDHUA^3.0
  ;;KMPDPOST^3.0^
- ;;KMPDSS^3.0^
+ ;;KMPDSS^4.0^
  ;;KMPDSS1^3.0^
  ;;KMPDSSD^3.0^
  ;;KMPDSSD1^3.0^
  ;;KMPDSSR^3.0^
  ;;KMPDSSS^3.0^**3**
  ;;KMPDTM^3.0^**3**
- ;;KMPDTP1^3.0^**3**
+ ;;KMPDTP1^3.0^**3,10003**
  ;;KMPDTP2^3.0^**3**
  ;;KMPDTP3^3.0^**3**
  ;;KMPDTP4^3.0^**3**
  ;;KMPDTP5^3.0^**3**
  ;;KMPDTP6^3.0^**3**
  ;;KMPDTP7^3.0^**3**
- ;;KMPDTU01^3.0^
+ ;;KMPDTU01^3.0^**10003**
  ;;KMPDTU02^3.0^
  ;;KMPDTU10^3.0^**3**
  ;;KMPDTU11^3.0^**3**
  ;;KMPDU^3.0^
  ;;KMPDU1^3.0^
- ;;KMPDU2^3.0^
+ ;;KMPDU2^3.0^**10003**
  ;;KMPDU3^3.0^
  ;;KMPDU4^3.0
  ;;KMPDU5^3.0^
@@ -124,13 +124,13 @@ PTCHINFO ; -- patch information: routine name ^ current version ^ current patch(
  ;;KMPDUT4B^3.0^
  ;;KMPDUT4C^3.0^
  ;;KMPDUT5^3.0^
- ;;KMPDUTL^3.0^**3**
- ;;KMPDUTL1^3.0^
- ;;KMPDUTL2^3.0^
+ ;;KMPDUTL^3.0^**3,10003**
+ ;;KMPDUTL1^4.0^**10003**
+ ;;KMPDUTL2^3.0^**10003**
  ;;KMPDUTL3^3.0^
  ;;KMPDUTL4^3.0^
- ;;KMPDUTL5^3.0^
+ ;;KMPDUTL5^3.0^**10003**
  ;;KMPDUTL6^3.0^
  ;;KMPDUTL7^3.0^
  ;;KMPDUTL8^3.0^
- ;;KMPDRDAT^3.0^**3**
+ ;;KMPDRDAT^4.0^**10003**

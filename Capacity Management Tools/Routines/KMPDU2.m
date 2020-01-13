@@ -1,5 +1,5 @@
-KMPDU2 ;OAK/RAK - CM Tools Routine Utilities ;2018-06-13  10:44 AM
- ;;3.0;KMPD;*10003*;Jan 22, 2009;Build 42
+KMPDU2 ;OAK/RAK - CM Tools Routine Utilities ;2020-01-13  2:41 PM
+ ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
  ;
  ; *10003* Port to GT.M (c) Sam Habiel 2018
  ;

@@ -1,5 +1,5 @@
-KMPDUTL1 ;OAK/RAK,KAK,JML - CM TOOLS Utilities ;2018-06-11  1:14 PM
- ;;4.0;CAPACITY MANAGEMENT;*10003*;11/15/2017;Build 38
+KMPDUTL1 ;OAK/RAK,KAK,JML - CM TOOLS Utilities ;2020-01-13  2:41 PM
+ ;;4.0;CAPACITY MANAGEMENT;**10003**;11/15/2017;Build 38
  ;
  ; *10003* changes by OSEHRA/Sam Habiel
  ; (c) Sam Habiel 2018
@@ -184,6 +184,10 @@ VERPTCH(PKG,RTNARRY)    ;-- returns current version and patch status of specifie
  .S INFO=$P($T(@TAG),";;",2)
  .I INFO="" S OUT=1 Q
  .S RTN=$P(INFO,U),VER=$P(INFO,U,2),PTCH=$P(INFO,U,3)
+ .;*10003* Add OS for % routines so we can distinguish patch levels of different % routines
+ .N OS S OS=$P(INFO,U,5)
+ .I $E(RTN)="%",^%ZOSF("OS")'[OS QUIT
+ .;/*10003*
  .; if routine is missing
  .I $T(@(RTN_"^"_RTN))="" D  Q
  ..S TOTMISS=TOTMISS+1,TOTRTN=TOTRTN+1

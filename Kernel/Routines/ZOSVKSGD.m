@@ -1,5 +1,7 @@
-%ZOSVKSD ; OSE/SMH - ZOSVKSD for GT.M - Disk, VSTM, and VTCM ;Aug 02, 2018@11:25
+%ZOSVKSD ; OSE/SMH - ZOSVKSD for GT.M - Disk, VSTM, and VTCM ;2020-01-07  3:10 PM
  ;;8.0;KERNEL;**10003**;3/1/2018
+ ; (c) Sam Habiel 2020
+ ; Licensed under Apache 2.0
  ;
 EN(SITENUM,SESSNUM,OS) ;-- called by routine SYS+2^KMPSLK
  ;--------------------------------------------------------------------

@@ -1,5 +1,5 @@
-KMPSUTL ;OAK/KAK/JML - SAGG Utilities ;9/1/2015
- ;;2.0;SAGG PROJECT;**1**;Jul 02, 2007;Build 67
+KMPSUTL ;OAK/KAK/JML - SAGG Utilities ;2020-01-13  2:46 PM
+ ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
  ;
 CURSTAT(STAT)   ;-- current status
  ;---------------------------------------------------------------------
@@ -72,10 +72,13 @@ VERSION() ;-- extrinsic - return current version.
  Q $P($T(+2^KMPSUTL),";",3)_"^"_$P($T(+2^KMPSUTL),";",5)
  ;
 PTCHINFO        ; -- patch information: routine name ^ current version ^ current patch(es) ^ package namespace
- ;;KMPSGE^2.0^**1**^KMPS
- ;;KMPSLK^2.0^**1**^KMPS
- ;;KMPSUTL^2.0^**1**^KMPS
- ;;KMPSUTL1^2.0^**1**^KMPS
- ;;%ZOSVKSD^8.0^**121,197,268,456,568**^XU
- ;;%ZOSVKSE^8.0^**90,94,197,268,456,568**^XU
- ;;%ZOSVKSS^8.0^**90,94,197,268,456**^XU
+ ;;KMPSGE^2.0^**1,10003**^KMPS
+ ;;KMPSLK^2.0^**1,10003**^KMPS
+ ;;KMPSUTL^2.0^**1,10003**^KMPS
+ ;;KMPSUTL1^2.0^**1,10003**^KMPS
+ ;;%ZOSVKSD^8.0^**121,197,268,456,568**^XU^OpenM-NT
+ ;;%ZOSVKSE^8.0^**90,94,197,268,456,568**^XU^OpenM-NT
+ ;;%ZOSVKSS^8.0^**90,94,197,268,456**^XU^OpenM-NT
+ ;;%ZOSVKSD^8.0^**10003**^XU^GT.M
+ ;;%ZOSVKSE^8.0^**10003**^XU^GT.M
+ ;;%ZOSVKSS^8.0^**10003**^XU^GT.M

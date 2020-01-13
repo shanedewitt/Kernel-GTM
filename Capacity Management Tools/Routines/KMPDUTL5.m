@@ -1,5 +1,5 @@
-KMPDUTL5 ;OIFO/KAK - Obtain CPU Configuration;2018-06-12  4:49 PM;2/17/04  10:56
- ;;3.0;KMPD;*10003*;Jan 22, 2009;Build 42
+KMPDUTL5 ;OIFO/KAK - Obtain CPU Configuration;2020-01-13  2:42 PM;2/17/04  10:56
+ ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
  ;
  ; *10003* changes by OSEHRA/Sam Habiel: GTM support
  ; (c) 2018 Sam Habiel
