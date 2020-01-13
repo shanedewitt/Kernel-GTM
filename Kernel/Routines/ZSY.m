@@ -1,4 +1,4 @@
-ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2019-12-27  5:00 PM
+ZSY ;ISF/RWF,VEN/SMH - GT.M/VA system status display ;2020-01-07  11:56 AM
  ;;8.0;KERNEL;**349,10001,10002,10004,10006**;Jul 10, 1995;Build 3
  ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
  ; Original Routine of unknown provenance -- was in unreleased VA patch XU*8.0*349 and thus perhaps in the public domain.
@@ -630,6 +630,7 @@ PRINTEXAMDATA(%J,FLAG) ; [Private] Print the exam data
  . N PLACE S PLACE=$P(ZSY("JE","R",S),":")
  . I $E(PLACE)=" " QUIT  ; GTM adds an extra level sometimes for display -- messes me up
  . W CNT,". "
+ . S PLACE=$P(PLACE," ")
  . I PLACE'["GTM$DMOD" W PLACE,?40,$T(@PLACE)
  . W !
  . S CNT=CNT+1
