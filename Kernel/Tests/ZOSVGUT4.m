@@ -1,4 +1,4 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-07  4:30 PM
+ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-13  2:52 PM
  ;;8.0;KERNEL;**10003**;;
  ;
  ; (c) Sam Habiel 2018
@@ -12,6 +12,7 @@ STARTUP ;
  ; ZEXCEPT: KMPVTEST
  ;
  ; Fix the email address to which messages are sent
+ s hl7date=$$FMTHL7^XLFDT(DT)
  N FDA,DIERR
  N CNT S CNT=0
  N ZOSVV F ZOSVV="VTCM","VSTM","VBEM","VMCM","VHLM" D
@@ -40,9 +41,10 @@ STARTUP ;
  QUIT
  ;
 SHUTDOWN ;
- ; ZEXCEPT: KMPVTEST
+ ; ZEXCEPT: KMPVTEST,hl7date
  I $$GTM S $ZSOURCE="ZOSVGUT4"
  K KMPVTEST
+ k hl7date
  QUIT
  ;
  ; -- RUM --
@@ -132,7 +134,7 @@ COVER ; @TEST Cover Sheet Statistics Calculations
  ;
  ; Run nightly job
  D ^KMPDBD01
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPD/cv-load-"_DT_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPD/cvload-"_hl7date_".dat")>0)
  QUIT
  ;
 COVER1(DFN) ; [Private] Inner worker for each patient
@@ -166,12 +168,12 @@ COVER1(DFN) ; [Private] Inner worker for each patient
  ;
 SAGG ; @TEST SAGG Data Collection
  D ^KMPSGE
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/files-"_DT_".dat")>1000)
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/globals-"_DT_".dat")>100)
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/packages-"_DT_".dat")>100)
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/taskman-"_DT_".dat")>0)
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/version-"_DT_".dat")>0)
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/volumes-"_DT_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/files-"_hl7date_".dat")>1000)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/globals-"_hl7date_".dat")>100)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/packages-"_hl7date_".dat")>100)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/taskman-"_hl7date_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/version-"_hl7date_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPS/volumes-"_hl7date_".dat")>0)
  QUIT
  ;
  ; -- VistA System Monitor Unit Tests --
@@ -179,7 +181,7 @@ SAGG ; @TEST SAGG Data Collection
 VSTM ; @TEST VSM Storage Monitor
  K ^KMPTMP("KMPV","VSTM")
  D RUN^KMPVVSTM
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_DT_".dat")>0)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")>0)
  D SEND^KMPVVSTM
  D SUCCEED^%ut
  QUIT
@@ -192,9 +194,10 @@ VBEM ; @TEST VSM Business Event Monitor (replaces old CM task)
  M ^KMPTMP("KMPV","VBEM","DLY",+$H-1)=^KMPTMP("KMPV","VBEM","DLY",+$H)
  D ^KMPVBETR
  D CHKTF^%ut($data(^KMPTMP("KMPV","VBEM","COMPRESS")))
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VBEM-"_hl7date_".dat")>0)
  QUIT
  ;
-VHLM ; !TEST VSM Section HL7 mointor
+VHLM ; @TEST VSM Section HL7 mointor
  ; Turn on patient registration messages
  N IEN43 S IEN43=$O(^DG(43,0))
  I 'IEN43 D FAIL^%ut("MAS PARAMETERS NOT DEFINED") QUIT
@@ -224,9 +227,7 @@ VHLM ; !TEST VSM Section HL7 mointor
  D FILE^DIE(,"FDA")
  ;
  D ^KMPVVHLM
- ; NB: Transmit nodes are created and then killed; but eventually we want those
- ; to be the basis of the file we write out.
- d CHKTF^%ut($d(^KMPTMP("KMPV","VHLM","DLY",+$H-1)))
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VHLM-"_hl7date_".dat")>1)
  QUIT
  ;
 VHLMERR ;
@@ -259,8 +260,8 @@ VMCM ; @TEST VSM Message Count Monitor
  . H 1
  . N % S %=$ZU(4,$J)
  . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
- D CHKTF^%ut($data(^KMPTMP("KMPV","VMCM","DLY",+$H)))
  D SEND^KMPVVMCM
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VMCM-"_hl7date_".dat")>1)
  QUIT
  ;
 VTCM ; @TEST VSM Timed Collection Monitor
@@ -284,7 +285,7 @@ VTCM ; @TEST VSM Timed Collection Monitor
  . N % S %=$ZU(4,$J)
  . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
  D SEND^KMPVVTCM
- D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_DT_".dat")>1)
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_hl7date_".dat")>1)
  QUIT
  ;
 TASK ; @TEST Task Creator
@@ -293,4 +294,14 @@ TASK ; @TEST Task Creator
  D KMPVTSK^KMPVCBG
  D ^%ZISC
  D SUCCEED^%ut
+ QUIT
+ ;
+PATCHS ; @TEST Test SAGG Patch Listing that they are correct
+ N X D VERPTCH^KMPDUTL1("S",.X)
+ D TF^%ut(+$P(X(0),U,3)=0)
+ QUIT
+ ;
+PATCHD ; @TEST Test CM Patch Listing that they are correct
+ N X D VERPTCH^KMPDUTL1("D",.X)
+ D TF^%ut(+$P(X(0),U,3)=0)
  QUIT
