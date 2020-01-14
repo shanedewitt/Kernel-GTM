@@ -1,8 +1,5 @@
-KMPDUTL2 ;OAK/RAK - CM Tools Utility ;2020-01-13  2:42 PM
- ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
- ;
- ; *10003* (c) Sam Habiel
- ; *10003 change is to email address
+KMPDUTL2 ;OAK/RAK - CM Tools Utility ;6/21/05  10:18
+ ;;3.0;KMPD;;Jan 22, 2009;Build 42
  ;
 DATERNG(KMPUY,KMPUSTR,KMPUEND) ;-- date range
  ;---------------------------------------------------------------------
@@ -73,8 +70,7 @@ EMAIL(KMPDSUBJ,KMPDTEXT,KMPDTO) ; check and process errors.
  ;
  Q:$G(KMPDTEXT)=""
  S KMPDSUBJ=$S($G(KMPDSUBJ)="":"CM Error",1:KMPDSUBJ)
- S KMPDTO=$S($G(KMPDTO)="":.5,1:KMPDTO) ; *10003* - Change email address
- ; *10003* was S KMPDTO=$S($G(KMPDTO)="":"G.KMP4-CMTOOLS@FO-ALBANY.DOMAIN.EXT",1:KMPDTO)
+ S KMPDTO=$S($G(KMPDTO)="":"G.KMP4-CMTOOLS@FO-ALBANY.DOMAIN.EXT",1:KMPDTO)
  ;
  N H,I,LN,N,O,SITE,TEXT,TL,XMSUB,X,XMTEXT,XMY,XMZ,Y,Z
  ;
