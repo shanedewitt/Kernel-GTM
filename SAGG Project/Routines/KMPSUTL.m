@@ -1,5 +1,9 @@
 KMPSUTL ;OAK/KAK/JML - SAGG Utilities ;2020-01-13  2:46 PM
- ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
+ ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 67
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2020
+ ; Changes licensed under Apache 2.0.
+ ; *10001* updates patch signatures in PTCHINFO
  ;
 CURSTAT(STAT)   ;-- current status
  ;---------------------------------------------------------------------
@@ -72,10 +76,10 @@ VERSION() ;-- extrinsic - return current version.
  Q $P($T(+2^KMPSUTL),";",3)_"^"_$P($T(+2^KMPSUTL),";",5)
  ;
 PTCHINFO        ; -- patch information: routine name ^ current version ^ current patch(es) ^ package namespace
- ;;KMPSGE^2.0^**1,10003**^KMPS
- ;;KMPSLK^2.0^**1,10003**^KMPS
- ;;KMPSUTL^2.0^**1,10003**^KMPS
- ;;KMPSUTL1^2.0^**1,10003**^KMPS
+ ;;KMPSGE^2.0^**1,10001**^KMPS
+ ;;KMPSLK^2.0^**1,10001**^KMPS
+ ;;KMPSUTL^2.0^**1,10001**^KMPS
+ ;;KMPSUTL1^2.0^**1,10001**^KMPS
  ;;%ZOSVKSD^8.0^**121,197,268,456,568**^XU^OpenM-NT
  ;;%ZOSVKSE^8.0^**90,94,197,268,456,568**^XU^OpenM-NT
  ;;%ZOSVKSS^8.0^**90,94,197,268,456**^XU^OpenM-NT

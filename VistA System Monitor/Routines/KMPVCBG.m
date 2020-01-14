@@ -1,9 +1,9 @@
 KMPVCBG ;SP/JML VSM background utility functions ;Jan 13, 2020@17:18
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
- ;
- ; *10003* Changes by (c) Sam Habiel 2018
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* Changes by (c) Sam Habiel 2018
  ; Licensed under Apache 2.0
- ; Look for *10003* for specific changes
+ ; Look for *10001* for specific changes
  ;
 MONLIST(KMPVML) ; Return list of configured Monitors
  K KMPVML
@@ -205,7 +205,7 @@ PURGEDLY(KMPVMKEY) ; Purge any data older than VSM CONFIURATION file specifies
 KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
  N I,KMPVMSG,KMPVNSPE,KMPVROLS,KMPVTASK,KMPVTFLG,KMPVTSK,KMPVTSKS
  ;
- I ^%ZOSF("OS")["GT.M" D GTMTSK QUIT  ; *10003* GTM Support
+ I ^%ZOSF("OS")["GT.M" D GTMTSK QUIT  ; *10001* GTM Support
  ;
  ; Start: only in KMPVCBG version - comment out for ZSTU
  S KMPVROLS=$ROLES

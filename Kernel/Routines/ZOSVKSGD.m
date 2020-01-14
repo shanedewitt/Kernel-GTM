@@ -1,6 +1,6 @@
 %ZOSVKSD ; OSE/SMH - ZOSVKSD for GT.M - Disk, VSTM, and VTCM ;2020-01-07  3:10 PM
  ;;8.0;KERNEL;**10003**;3/1/2018
- ; (c) Sam Habiel 2020
+ ; (c) Sam Habiel 2018,2020
  ; Licensed under Apache 2.0
  ;
 EN(SITENUM,SESSNUM,OS) ;-- called by routine SYS+2^KMPSLK
@@ -44,7 +44,7 @@ KMPVVSTM(KMPVDATA) ; Get storage metrics for Vista Storage Monitor (VSTM) within
  .S KMPVBSIZ=blockSize,KMPVBPM="n/a"
  .S KMPVFMB=freeBlocks*blockSizeMB,KMPVFBLK=freeBlocks
  .S KMPVSYSD="n/a",KMPVESIZ=$$^%PEEKBYNAME("sgmnt_data.extension_size",region)*blockSizeMB
- .S KMPVDF=$$RETURN^%ZOSV("df -m "_$view("gvfile",region)_" | awk '{ if (NR!=1) {print $4} }'")
+ .N KMPVDF S KMPVDF=$$RETURN^%ZOSV("df -m "_$view("gvfile",region)_" | awk '{ if (NR!=1) {print $4} }'")
  .; MaxSize(MB)^Current Size(MB)^Block Size(int)^Blocks per Map(int)^Free space(MB)^
  .; Free Space(int-Blocks)^System Dir(bool)^Expansion size^disk free space (MB)
  .S KMPVDATA(region)=$J(KMPVMAX,"",2)_U_$J(KMPVSIZE,"",2)_U_KMPVBSIZ_U_KMPVBPM_U_$J(KMPVFMB,"",2)_U_KMPVFBLK_U_KMPVSYSD_U_KMPVESIZ_U_KMPVDF
@@ -146,7 +146,7 @@ KMPVVTCM(KMPVDATA) ; Get metrics for Vista Timed Collection Monitor (VTCM) withi
  S KMPVSMH("ConfiguredSHMMemory")=$$SHMALL()
  S KMPVSMH=KMPVSMH("TotalSHMMemUsed")_","_KMPVSMH("TotalSMHPagesUsed")_","_KMPVSMH("ConfiguredSHMMemory")
  ;
- S KMPVMEM="n/a,n/a,n/a,n/a"
+ N KMPVMEM S KMPVMEM="n/a,n/a,n/a,n/a"
  ;
  M KMPVDATA("KMPVDASH")=KMPVDASH
  M KMPVDATA("KMPVROUT")=KMPVROUT

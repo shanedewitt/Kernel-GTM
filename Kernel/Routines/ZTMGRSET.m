@@ -1,11 +1,12 @@
 ZTMGRSET ;SF/RWF,PUG/TOAD - SET UP THE MGR ACCOUNT FOR THE SYSTEM ;2019-12-31  11:53 AM
- ;;8.0;KERNEL;**34,36,69,94,121,127,136,191,275,355,446,584,10001,10003,10007**;JUL 10, 1995;Build 21
- ; Submitted to OSEHRA in 2017 by Sam Habiel for OSEHRA
+ ;;8.0;KERNEL;**34,36,69,94,121,127,136,191,275,355,446,584,10001,10007,10003**;JUL 10, 1995;Build 21
  ; Original Routine authored by Department of Veterans Affairs
  ; Sam Habiel made tiny changes throughout routine (Max Patch > 999 now, ZISHGUX
- ; instead of ZISHGTM for GT.M on Unix) 2016, 2019.
+ ; instead of ZISHGTM for GT.M on Unix) 2016, 2019-2020.
  ; KS Bhaksar rewrote COPY and R 2014. Sam contributed bug fixes to these.
  ; Christopher Edwards contributed to *10003*
+ ; Modified portions licensed under Apache 2.0.
+ ; Individual authors retain copyright.
  ;
  N %D,%S,I,OSMAX,U,X,X1,X2,Y,Z1,Z2,ZTOS,ZTMODE,SCR
  S ZTMODE=0

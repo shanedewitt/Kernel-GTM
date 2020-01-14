@@ -1,9 +1,10 @@
 KMPDRDAT ;SP/JML - Cover Sheet Load Raw Data Extract ;2020-01-13  5:50 PM
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
  ;
- ; *10003* (c) Sam Habiel 2018
- ; *10003 changes: Change VA email address to postmaster
- ;               : Log entries if outside of the VA; and don't send mail
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018
+ ; *10001 changes: Log entries if outside of the VA; and don't send mail
+ ; Changes licensed under Apache 2.0.
  ;
  ; Send raw data to CPE database
  ; START TIME^FG DELTA^BG DELTA^TOT DELTA^CLIENT DUZ^CLIENT NAME^KMPTMP SUBSCRIPT KEY^APPLICATION TITLE^IP^DFN
@@ -110,7 +111,7 @@ TRANSMIT ;
  ; quit if no data to transmit.
  Q:'$D(^KMPTMP("KMPD","RDAT"))
  ;
- ; *10003* - if outside of the VA, export to text file
+ ; *10001* - if outside of the VA, export to text file
  I '$$VA^KMPVLOG D  QUIT
  . D DELLOG^KMPVLOG("KMPD","cvload",1) ; Keep only one day's worth of data
  . K ^KMPTMP("KMPD","RDAT",1),^(2),^(3)  ; remove headers we dont want!
@@ -120,12 +121,12 @@ TRANSMIT ;
  . N I S I=3 F  S I=$O(^KMPTMP("KMPD","RDAT",I)) Q:'I  S ^(I)=$P(^(I),"CVLOAD DATA=",2)
  . ; log
  . D EN^KMPVLOG($NA(^KMPTMP("KMPD","RDAT")),"KMPD","cvload","W",1)
- ; /*10003*
+ ; /*10001*
  ;
  N XMSUB,XMTEXT,XMY,XMZ
  ; send data via mail message.
  S XMTEXT="^KMPTMP(""KMPD"",""RDAT"","
  S XMSUB="CVLOAD DAILY DATA"
- S XMY(.5)="" ; *10003* ; was S XMY("S.KMPD-ORWCV-SERVER@VISTA.CPE.DOMAIN.EXT")=""
+ S XMY("S.KMPD-ORWCV-SERVER@VISTA.CPE.DOMAIN.EXT")=""
  D ^XMD
  Q

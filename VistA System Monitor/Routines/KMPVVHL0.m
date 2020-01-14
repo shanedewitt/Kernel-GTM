@@ -1,6 +1,6 @@
 KMPVVHL0 ; OSE/SMH - Continuation of KMPVVHLM;2020-01-10  11:45 AM
- ;;4.0;CAPACITY MANAGEMENT;*10003*;3/1/2018
- ; (c) Sam Habiel 2018
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018
+ ; (c) Sam Habiel 2020
  ; Licnesed under Apache 2.0.
  ;
 LOG ; [Private] Log output to file system for HL7 messages

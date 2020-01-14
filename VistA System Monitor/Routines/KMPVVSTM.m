@@ -1,7 +1,8 @@
 KMPVVSTM ;SP/JML - Collect Metrics for the VistA Storage Monitor ;Jan 13, 2020@17:16
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
- ; *10003* changed by OSE/SMH (c) Sam Habiel 2018
- ; Licnesed under Apache 2.0.
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* changed by OSE/SMH (c) Sam Habiel 2018
+ ; Changes licensed under Apache 2.0.
  ;
  ;
  ;
@@ -34,16 +35,16 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VSTM"
  S KMPVEND=$$LASTDAY()
  ; SET KMPVTEST="TESTING" TO RUN TEST ON DAYS OTHER THAN THE 15TH OR LAST DAY OF MONTH
  I $G(KMPVTEST)="TESTING" S KMPVEND=1 K KMPVTEST
- ; *10003* on GTM/YDB always run daily -- it's really cheap to get this info
+ ; *10001* on GTM/YDB always run daily -- it's really cheap to get this info
  I ^%ZOSF("OS")["GT.M" S KMPVEND=1
- ; /*10003*
+ ; /*10001*
  ;W !,$G(KMPVTEST),!
  I (KMPVDNUM=15)!(KMPVEND) D 
  .D KMPVVSTM^%ZOSVKSD(.KMPVDATA) ; IA 6342
  .D GETENV^%ZOSV S KMPVNODE=$P(Y,U,3)_":"_$P($P(Y,U,4),":",2) ;  IA 10097
  .S KMPVDIR=""
  .F  S KMPVDIR=$O(KMPVDATA(KMPVDIR)) Q:KMPVDIR=""  D
- ..; *10003* log file outside of the VA
+ ..; *10001* log file outside of the VA
  ..I '$$VA^KMPVLOG D
  ...N H S H="Region^MaxSize(MB)^Current Size(MB)^Block Size(int)^Blocks per Map(int)^Free space(MB)^"
  ...S H=H_"Free Space(int-Blocks)^System Dir(bool)^Expansion size(MB)^disk free space (MB)"
@@ -52,7 +53,7 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VSTM"
  ...; Append region name
  ...S KMPVDATA(KMPVDIR)=KMPVDIR_U_KMPVDATA(KMPVDIR)
  ...D EN^KMPVLOG("KMPVDATA(KMPVDIR)","KMPV","VSTM","A",1)
- ..E  D  ; /*10003*
+ ..E  D  ; /*10001*
  ...S ^KMPTMP("KMPV","VSTM","DLY",+$H,KMPVNODE,KMPVDIR)=$G(KMPVDATA(KMPVDIR))
  Q
  ;
@@ -66,7 +67,7 @@ LASTDAY() ; Return 1 if today is the last day of the month
  ;
  ;
 SEND ; Format and send data to CPE once a day -- TASKED VIA TASKMAN
- I '$$VA^KMPVLOG QUIT  ; *10003*
+ I '$$VA^KMPVLOG QUIT  ; *10001*
  N KMPVCFG,KMPVDATA,KMPVDOM,KMPVFMDAY,KMPVHDAY,KMPVHLAST,KMPVHOUR,KMPVHSTRT,KMPVHTODAY,KMPVHYDAY
  N KMPVKEEP,KMPVLAST,KMPVLN,KMPVNODE,KMPVRT,KMPVSINF,KMPVSITE,KMPVWD
  N %H

@@ -1,7 +1,8 @@
-%ZOSVKR ;YDB/CJE&OSE/SMH - ZOSVKRG - Collect RUM Statistics for GT.M on Linux ;2018-08-01
+%ZOSVKR ;YDB/CJE&OSE/SMH - ZOSVKRG - Collect RUM Statistics for GT.M on Linux ;2020-01-14  10:01 AM
  ;;8.0;KERNEL;**10003**;3/1/2018
  ;
  ; (c) Sam Habiel & Chirsopher Edwards 2018
+ ; Licensed under Apache 2.0
  ;
  ; This routine implements Resource Monitoring for GT.M/YDB
  ;
@@ -162,7 +163,6 @@ STATS() ;  return current stats for this $job
  ; Adjust day if UTC seconds is more or less than one day
  I UTCS>86400 S ZD=ZD+1,UTCS=UTCS-86400
  I UTCS<1     S ZD=ZD-1,UTCS=UTCS+86400
-
  S $P(KMPVRET,U,5)=$ZD(ZD_","_UTCS,"24:60")
  Q KMPVRET
  ;

@@ -1,7 +1,7 @@
 KMPDUTL5 ;OIFO/KAK - Obtain CPU Configuration;2020-01-13  2:42 PM;2/17/04  10:56
- ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
- ;
- ; *10003* changes by OSEHRA/Sam Habiel: GTM support
+ ;;3.0;KMPD;**10001**;Jan 22, 2009;Build 42
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* changes by OSEHRA/Sam Habiel: GTM support
  ; (c) 2018 Sam Habiel
  ; Licensed under Apache 2.0
  ;
@@ -24,7 +24,7 @@ CPU(ARRAY) ;-- get cpu configuration information
  I (ZV["DSM") D DSM(.ARRAY)
  I (ZV["CVMS") D CVMS(.ARRAY,1)
  I (ZV["CWINNT") D CWINNT(.ARRAY,1)
- I (ZV["GTM") D GTM(.ARRAY,1) ; *10003*
+ I (ZV["GTM") D GTM(.ARRAY,1) ; *10001*
  Q
  ;
  ;
@@ -270,7 +270,7 @@ PARSE(LOG,CPUARRY,TYP) ;-- parse log file data
  S X="ERR^ZU",@^%ZOSF("TRAP")
  Q
  ;
-GTM(CPUINFO,TYP) ;-- for GT.M all versions *10003*
+GTM(CPUINFO,TYP) ;-- for GT.M all versions *10001*
  ;---------------------------------------------------------------------
  ; input: TYP = type of system information requested
  ;                1 : cpu system information

@@ -1,10 +1,12 @@
 KMPSGE ;OAK/KAK/JML - Master Routine;2020-01-10  11:42 AM ;Jan 13, 2020@13:45
- ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
- ; *10003* changes (c) Sam Habiel 2018
+ ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 67
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018,2020
+ ; Changes licensed under Apache 2.0.
  ;
 EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  ;
- I ^%ZOSF("OS")'["GT.M" Q:'$D(ZTQUEUED)  ; *10003* q only on Cache
+ I ^%ZOSF("OS")'["GT.M" Q:'$D(ZTQUEUED)  ; *10001* q only on Cache
  ;
  N CNT,COMPDT,HANG,KMPSVOLS,KMPSZE,LOC,MAXJOB,MGR,NOWDT,OS
  N PROD,PTCHINFO,QUIT,SESSNUM,SITENUM,TEMP,TEXT,UCI,UCIVOL
@@ -34,16 +36,16 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  K ^XTMP("KMPS","START"),^XTMP("KMPS","STOP")
  ;
  ; routine KMPSUTL will always be updated with patch release
- S PTCHINFO=$T(+2^KMPSUTL) ; *10003* ; don't use ZLOAD -- that's silly
+ S PTCHINFO=$T(+2^KMPSUTL) ; *10001* ; don't use ZLOAD -- that's silly
  S PTCHINFO=$P(PTCHINFO,";",3)_" "_$P(PTCHINFO,";",5)
  ; session number^M platform^SAGG version_" "_patch^start date-time^
  ;     -> completed date-time will be set in $$PACK
  S ^XTMP("KMPS",SITENUM,0)=SESSNUM_U_OS_U_PTCHINFO_U_NOWDT_U
- N $ET,$ES S $ET="D ERR1^KMPSGE" ; *10003* use $ET, not $ZT
+ N $ET,$ES S $ET="D ERR1^KMPSGE" ; *10001* use $ET, not $ZT
  S TEMP=SITENUM_U_SESSNUM_U_LOC_U_NOWDT_U_PROD
  ;
  ; GT.M all OSes
- I OS="GTM" D START^%ZOSVKSE(TEMP)  ; *10003* Do not Job on GTM since only a single "volume"
+ I OS="GTM" D START^%ZOSVKSE(TEMP)  ; *10001* Do not Job on GTM since only a single "volume"
  ;
  ; NOTE:  ^XINDEX incorrectly sees SYS("UCI" as an array.  It is a global in the %SYS namespace
  ; KMPS*2.0*1 - Now analyzing all volumes, not just those in the SAGG PROJECT file
@@ -60,8 +62,8 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  S QUIT=0
  D LOOP(HANG,SESSNUM,OS)
  I 'QUIT D
- .I '$$VA^KMPVLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10003* Dump Output to $HFS/KMPS/
- .E  S RESULT=$$PACK(SESSNUM,SITENUM)         ; *10003* Previous VA behavior unchanged
+ .I '$$VA^KMPVLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10001* Dump Output to $HFS/KMPS/
+ .E  S RESULT=$$PACK(SESSNUM,SITENUM)         ; *10001* Previous VA behavior unchanged
  .S XMZSENT=+RESULT,COMPDT=$P(RESULT,U,2)
  .S X=$$OUT^KMPSLK(NOWDT,OS,SESSNUM,SITENUM,XMZSENT,.TEXT)
  .D MSG^KMPSLK(NOWDT,SESSNUM,.TEXT,COMPDT)
@@ -233,7 +235,7 @@ PACK(SESSNUM,SITENUM) ;
  ;
  I SITENUM=+SITENUM S XMTEXT="^XTMP(""KMPS"","_SITENUM_","
  E  S XMTEXT="^XTMP(""KMPS"","""_SITENUM_""","
- S XMY(.5)="" ; S XMY("S.KMP1-SAGG-SERVER@FO-ALBANY.DOMAIN.EXT")="" ; *10003* change to .5
+ S XMY("S.KMP1-SAGG-SERVER@FO-ALBANY.DOMAIN.EXT")=""
  D ENT^XMPG
  ;
  S RETURN=XMZ_U_COMPDT

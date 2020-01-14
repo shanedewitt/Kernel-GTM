@@ -1,7 +1,8 @@
 KMPDU2 ;OAK/RAK - CM Tools Routine Utilities ;2020-01-13  2:41 PM
- ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
- ;
- ; *10003* Port to GT.M (c) Sam Habiel 2018
+ ;;3.0;KMPD;**10001**;Jan 22, 2009;Build 42
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018
+ ; Changes licensed under Apache 2.0.
  ;
 IRSRC(KMPDDA) ;-- extrinsic function - check for local mods in INSTALL file
  ;-----------------------------------------------------------------------
@@ -55,26 +56,26 @@ ROUFIND(KMPDY,KMPDRNM,KMPDGBL) ;-- find routines.
  .; if invalid routine name
  .I '$$ROUNAME(KMPDRNM) S @KMPDGBL@(0)="<"_KMPDRNM_" contains invalid characters or is greater than 8 characters length>" Q
  .; if routine not defined.
- .; was I '$D(^$ROUTINE(KMPDRNM)) S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q ; 10003
- .I $T(^@KMPDRNM)="" S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q  ; /*10003*/
+ .; was I '$D(^$ROUTINE(KMPDRNM)) S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q ; 10001
+ .I $T(^@KMPDRNM)="" S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q  ; /*10001*/
  .I $G(^%ZOSF("OS"))["OpenM",'$D(^ROUTINE(KMPDRNM)) S @KMPDGBL@(0)="<Routine "_KMPDRNM_" missing source code>" Q
  .; if defined.
  .S $P(@KMPDGBL@(0),U)=KMPDRNM
  .; checksum
  .S X=KMPDRNM X ^%ZOSF("RSUM1") S $P(@KMPDGBL@(0),U,2)=Y
  ;
- ; *10003* Many changes to support GT.M
- N KMPGTM S KMPGTM=$G(^%ZOSF("OS"))["GT.M" ; *10003*
+ ; *10001* Many changes to support GT.M
+ N KMPGTM S KMPGTM=$G(^%ZOSF("OS"))["GT.M" ; *10001*
  S:$E(KMPDRNM,$L(KMPDRNM))="*" KMPDRNM=$E(KMPDRNM,1,$L(KMPDRNM)-1)
  I '$$ROUNAME(KMPDRNM) S @KMPDGBL@(0)="<"_KMPDRNM_" contains invalid characters or is greater than 8 characters in length>" Q
  S ROU=$$ENDCHAR(KMPDRNM),RTN=KMPDRNM,LN=0
  ;
- I KMPGTM N %ZR S ROU=KMPDRNM_"*" D SILENT^%RSEL(ROU,"SRC") ; *10003*
- I KMPGTM S ROU="" F  S ROU=$O(%ZR(ROU)) Q:ROU=""!($E(ROU,1,$L(RTN))'=RTN)!(LN>1000)  D ROUADD(ROU) ; *10003*
- I 'KMPGTM F  S ROU=$O(^$ROUTINE(ROU)) Q:ROU=""!($E(ROU,1,$L(RTN))'=RTN)!(LN>1000)  D ROUADD(ROU) ; *10003*
- QUIT  ; *10003*
+ I KMPGTM N %ZR S ROU=KMPDRNM_"*" D SILENT^%RSEL(ROU,"SRC") ; *10001*
+ I KMPGTM S ROU="" F  S ROU=$O(%ZR(ROU)) Q:ROU=""!($E(ROU,1,$L(RTN))'=RTN)!(LN>1000)  D ROUADD(ROU) ; *10001*
+ I 'KMPGTM F  S ROU=$O(^$ROUTINE(ROU)) Q:ROU=""!($E(ROU,1,$L(RTN))'=RTN)!(LN>1000)  D ROUADD(ROU) ; *10001*
+ QUIT  ; *10001*
  ;
-ROUADD(ROU) ; [Private] Add routine to list *10003*
+ROUADD(ROU) ; [Private] Add routine to list *10001*
  I $G(^%ZOSF("OS"))["OpenM",'$D(^ROUTINE(ROU)) S @KMPDGBL@(LN)=ROU_"^no source",LN=LN+1 Q
  S $P(@KMPDGBL@(LN),U)=ROU
  ; checksum
@@ -94,9 +95,9 @@ ROUINQ(KMPDY,KMPDROU) ;-- routine inquiry.
  ;
  S KMPDROU=$G(KMPDROU)
  I KMPDROU="" S KMPDY(0)="[Routine name not defined]" Q
- I '$$ROUNAME(KMPDROU) S @KMPDGBL@(0)="<"_KMPDROU_" contains invalid characters or is greater than 16 characters in length>" Q  ; *10003 ; was 8
- .; was I '$D(^$ROUTINE(KMPDRNM)) S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q ; 10003
- .I $T(^@KMPDROU)="" S @KMPDGBL@(0)="<Routine "_KMPDROU_" not defined>" Q  ; /*10003*/
+ I '$$ROUNAME(KMPDROU) S @KMPDGBL@(0)="<"_KMPDROU_" contains invalid characters or is greater than 16 characters in length>" Q  ; *10001 ; was 8
+ .; was I '$D(^$ROUTINE(KMPDRNM)) S @KMPDGBL@(0)="<Routine "_KMPDRNM_" not defined>" Q ; 10001
+ .I $T(^@KMPDROU)="" S @KMPDGBL@(0)="<Routine "_KMPDROU_" not defined>" Q  ; /*10001*/
  ;
  N DIF,I,LN,ROU,X,XCNP
  ;
@@ -142,11 +143,11 @@ ROUSRC(KMPDY,KMPDROU,KMPDTXT) ;-- routine search
  .; else no match.
  .S KMPDY(0)="<No Matches Found>"
  ;
- N KMPGTM S KMPGTM=$G(^%ZOSF("OS"))["GT.M" ; *10003*
- I KMPGTM N %ZR S ROU=KMPDROU D SILENT^%RSEL(ROU,"SRC") ; *10003*
+ N KMPGTM S KMPGTM=$G(^%ZOSF("OS"))["GT.M" ; *10001*
+ I KMPGTM N %ZR S ROU=KMPDROU D SILENT^%RSEL(ROU,"SRC") ; *10001*
  S RN=RTN,LN=0
- I 'KMPGTM F  S RN=$O(^$ROUTINE(RN)) Q:RN=""!($E(RN,1,$L(RTN))'=RTN)  I $$ROUSRC1(RN,KMPDTXT) S KMPDY(LN)=RN,LN=LN+1 ; *10003*
- I KMPGTM S ROU="" F  S ROU=$O(%ZR(ROU)) Q:ROU=""  I $$ROUSRC1(RN,KMPDTXT) S KMPDY(LN)=RN,LN=LN+1                    ; *10003*
+ I 'KMPGTM F  S RN=$O(^$ROUTINE(RN)) Q:RN=""!($E(RN,1,$L(RTN))'=RTN)  I $$ROUSRC1(RN,KMPDTXT) S KMPDY(LN)=RN,LN=LN+1 ; *10001*
+ I KMPGTM S ROU="" F  S ROU=$O(%ZR(ROU)) Q:ROU=""  I $$ROUSRC1(RN,KMPDTXT) S KMPDY(LN)=RN,LN=LN+1                    ; *10001*
  ;
  S:'$D(KMPDY) KMPDY(0)="<No Matches Found>"
  ;
@@ -233,8 +234,8 @@ ROULABEL(TEXT) ;-- routine label.
 ROUNAME(KMPDRNM) ;-- extrinsic function - determine if routine name is valid
  ;--------------------------------------------------------------------
  ; KMPDRNM... free text - routine name
- ; *10003* - Changed max len to 16 from 8 characters for routine name.
- ; *10003* - Routine named % is valid (e.g. GFT's % routine)
+ ; *10001* - Changed max len to 16 from 8 characters for routine name.
+ ; *10001* - Routine named % is valid (e.g. GFT's % routine)
  ;--------------------------------------------------------------------
  ; routine name must begin with alpha and then be 1 to 15 additional
  ; alpha or numeric characters.

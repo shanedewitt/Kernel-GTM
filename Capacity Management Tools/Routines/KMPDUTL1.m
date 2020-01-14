@@ -1,8 +1,8 @@
 KMPDUTL1 ;OAK/RAK,KAK,JML - CM TOOLS Utilities ;2020-01-13  2:41 PM
- ;;4.0;CAPACITY MANAGEMENT;**10003**;11/15/2017;Build 38
- ;
- ; *10003* changes by OSEHRA/Sam Habiel
- ; (c) Sam Habiel 2018
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;11/15/2017;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018
+ ; Changes licensed under Apache 2.0.
  ;
 CONT(KMPDEXT)  ;-- function displays 'return to continue' message at bottom of page
  ;--------------------------------------------------------------------
@@ -68,7 +68,7 @@ MPLTF() ;-- returns the type of M platform
  N MPLTF,ZV
  ;
  S ZV=$ZV
- S MPLTF=$S(ZV["DSM":"DSM",ZV["VMS":"CVMS",ZV["Windows":"CWINNT",ZV["GT.M":"GTM",1:"UNK") ; *10003* added GTM
+ S MPLTF=$S(ZV["DSM":"DSM",ZV["VMS":"CVMS",ZV["Windows":"CWINNT",ZV["GT.M":"GTM",1:"UNK") ; *10001* added GTM
  Q MPLTF
  ;
 OSVER(MPLTF) ;-- returns the operating system version
@@ -81,7 +81,7 @@ OSVER(MPLTF) ;-- returns the operating system version
  I MPLTF["DSM" Q $ZC(%GETSYI,"VERSION")
  I MPLTF["CVMS" Q $$CVMSVER^KMPDUTL5()
  I MPLTF["CWINNT" Q $$CWNTVER^KMPDUTL5()
- I MPLTF["GTM" Q $$RETURN^%ZOSV("uname -r") ; *10003* Linux/Darwin/Cygwin Version
+ I MPLTF["GTM" Q $$RETURN^%ZOSV("uname -r") ; *10001* Linux/Darwin/Cygwin Version
  Q ""
  ;
 TSKSTAT(OPT) ;-- status of scheduled task option
@@ -184,15 +184,15 @@ VERPTCH(PKG,RTNARRY)    ;-- returns current version and patch status of specifie
  .S INFO=$P($T(@TAG),";;",2)
  .I INFO="" S OUT=1 Q
  .S RTN=$P(INFO,U),VER=$P(INFO,U,2),PTCH=$P(INFO,U,3)
- .;*10003* Add OS for % routines so we can distinguish patch levels of different % routines
+ .;*10001* Add OS for % routines so we can distinguish patch levels of different % routines
  .N OS S OS=$P(INFO,U,5)
  .I $E(RTN)="%",^%ZOSF("OS")'[OS QUIT
- .;/*10003*
+ .;/*10001*
  .; if routine is missing
  .I $T(@(RTN_"^"_RTN))="" D  Q
  ..S TOTMISS=TOTMISS+1,TOTRTN=TOTRTN+1
  ..S RTNARRY(RTN)="2^"_VER_U_PTCH_"^^"
- .S INFOSITE=$T(+2^@RTN) ; *10003*; was: .X "ZL @RTN S INFOSITE=$T(+2)"
+ .S INFOSITE=$T(+2^@RTN) ; *10001*; was: .X "ZL @RTN S INFOSITE=$T(+2)"
  .S VERSITE=$P(INFOSITE,";",3),PTCHSITE=$P(INFOSITE,";",5)
  .I VERSITE'=VER!(PTCHSITE'=PTCH) S BAD=1,OK=0
  .E  S BAD=0,OK=1

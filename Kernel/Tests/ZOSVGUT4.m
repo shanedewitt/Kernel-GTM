@@ -1,7 +1,7 @@
 ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-13  2:52 PM
  ;;8.0;KERNEL;**10003**;;
  ;
- ; (c) Sam Habiel 2018
+ ; (c) Sam Habiel 2018-2020
  ; Licensed under Apache 2.0
  D EN^%ut($t(+0),3)
  QUIT
@@ -9,7 +9,7 @@ ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-1
 CACHE() Q ^%ZOSF("OS")["OpenM"
 GTM()   Q ^%ZOSF("OS")["GT.M"
 STARTUP ;
- ; ZEXCEPT: KMPVTEST
+ ; ZEXCEPT: KMPVTEST,hl7date
  ;
  ; Fix the email address to which messages are sent
  s hl7date=$$FMTHL7^XLFDT(DT)

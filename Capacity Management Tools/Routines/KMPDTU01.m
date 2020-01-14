@@ -1,6 +1,7 @@
 KMPDTU01 ;OAK/RAK - CM Tools Timing Utility ;2020-01-13  2:40 PM
- ;;3.0;KMPD;**10003**;Jan 22, 2009;Build 42
- ; *10003* - Changes by Sam Habiel (c) 2018 Sam Habiel
+ ;;3.0;KMPD;**10001**;Jan 22, 2009;Build 42
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* - Changes by Sam Habiel (c) 2018 Sam Habiel
  ; Licensed under Apache 2.0
  ;
 DAILY(KMPDT) ;-- transmit daily stats to national database
@@ -81,7 +82,7 @@ TRANSMIT(KMPDTWD) ;-- format data into e-mail and send to cm national database
  ; S = subscript
  ;-----------------------------------------------------------------------
  ;
- ; *10003* - don't send email if not inside the VA
+ ; *10001* - don't send email if not inside the VA
  I '$$VA^KMPVLOG QUIT
  ;
  Q:'$G(KMPDTWD)

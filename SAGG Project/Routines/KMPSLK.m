@@ -1,6 +1,7 @@
 KMPSLK ;OAK/KAK - Thru The Looking Glass ;2020-01-07  8:38 AM
- ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
- ; *10003* changes (c) Sam Habiel 2019
+ ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 67
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* changes (c) Sam Habiel 2019
  ; Licensed Under Apache 2.0
  ;
 EN(SESSNUM,SITENUM) ;
@@ -50,7 +51,7 @@ SYS ;  Collect volume set (@VOL) and system (@SYS) information
  Q
  ;
 CUNIX ;-- Cache for Unix/Linux
-GTM  ;-- GTM all Versions *10003*
+GTM  ;-- GTM all Versions *10001*
 CVMS ;-- Cache for VMS platform
  S ^XTMP("KMPS",SITENUM,SESSNUM,"@SYS")=$ZV_U
  Q

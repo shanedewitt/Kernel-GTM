@@ -1,7 +1,8 @@
-KMPVBETR ;SP/JML - VBEM Nightly compression and transmission;2020-01-13  5:39 PM; ;Jan 13, 2020@17:17
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
- ; *10003* changed by OSE/SMH (c) Sam Habiel 2018
- ; Licnesed under Apache 2.0.
+KMPVBETR ;SP/JML - VBEM Nightly compression and transmission;2020-01-10  11:45 AM; ;Jan 13, 2020@17:17
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2020
+ ; Changes licensed under Apache 2.0.
  ;
  ;
 EN ;  Format and send data to CPE once a day -- TASKED VIA TASKMAN
@@ -102,7 +103,7 @@ TRANSMIT ; Transmit data
  ; ^KMPTMP("KMPV","VBEM","TRANSMIT",15140,55)="VBEM DATA=ibis:ibis^EVE***^32400^1^0^0^0^23^.000495^1"
  ; ^KMPTMP("KMPV","VBEM","TRANSMIT",15140,56)="VBEM DATA=ibis:ibis^EVE***^33300^1^0^0^0^25^.000495^1"
  ; ^KMPTMP("KMPV","VBEM","TRANSMIT",15140,57)="VBEM DATA=ibis:ibis^XTCM MAIN***^32400^1^0^0^0^25^.000154^1"
- I '$$VA^KMPVLOG D  ; *10003*
+ I '$$VA^KMPVLOG D  ; *10001*
  . N H S H="node^vista object^time section (sec since mid)^times invoked^"
  . S H=H_"cpu time(ms)^lines^comamnds^global references^elapsed time(ms)^"
  . S H=H_"# of distinct jobs"
@@ -115,7 +116,7 @@ TRANSMIT ; Transmit data
  .. N D S D=$P(L,"VBEM DATA=",2)
  .. S C=C+1,OUT(C)=D
  . D EN^KMPVLOG($NA(OUT),"KMPV","VBEM","A",1)
- E  D  ; Else added *10003*. Rest of block is original code.
+ E  D  ; Else added *10001*. Rest of block is original code.
  . N KMPVEMAIL,X,XMSUB,XMTEXT,XMY,XMZ
  . ; send packman message.
  . S XMTEXT="^KMPTMP(""KMPV"",""VBEM"",""TRANSMIT"","_$J_","

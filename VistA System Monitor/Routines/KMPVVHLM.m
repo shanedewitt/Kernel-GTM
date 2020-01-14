@@ -1,7 +1,8 @@
 KMPVVHLM ;SP/JML - Collecthl7 Metrics for the VistA HL7 Monitor ;Jan 13, 2020@17:17
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
- ; *10003* changed by OSE/SMH (c) Sam Habiel 2018
- ; Licnesed under Apache 2.0.
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2020
+ ; Changes licensed under Apache 2.0.
  ;
  ;
  ;
@@ -302,8 +303,8 @@ PREPARE ; PUT DATA INTO FORM FOR SENDING
 TRANSMIT(KMPMT) ;
  ; quit if no data to transmit.
  Q:'$D(^KMPTMP("KMPV","VHLM","TRANSMIT",$J))
- I '$$VA^KMPVLOG D LOG^KMPVVHL0 I 1  ; *10003*
- E  D  ; Else added *10003*. Rest of block is original code.
+ I '$$VA^KMPVLOG D LOG^KMPVVHL0 I 1  ; *10001*
+ E  D  ; Else added *10001*. Rest of block is original code.
  . N KMPVEMAIL,X,XMSUB,XMTEXT,XMY,XMZ
  . ; send data via mail message.
  . S XMTEXT="^KMPTMP(""KMPV"",""VHLM"",""TRANSMIT"","_$J_","""_KMPMT_""","

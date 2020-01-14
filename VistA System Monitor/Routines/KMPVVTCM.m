@@ -1,7 +1,8 @@
 KMPVVTCM ;SP/JML - Collect Cache Metrics for the VistA Timed Collection Monitor ;Jan 13, 2020@17:19
- ;;4.0;CAPACITY MANAGEMENT;**10003**;3/1/2018;Build 38
- ; *10003* - Changes by OSEHRA/Sam Habiel (c) Sam Habiel 2018
- ;           Licensed under Apache 2.0.
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018,2020
+ ; Changes licensed under Apache 2.0.
  ;
  ;
 RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM","DLY" -- CALLED VIA CACHE TASK MANAGER
@@ -22,9 +23,9 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM"
  ;
  N KMPVARR,KMPVBLK,KMPVCHKH,KMPVDASH,KMPVDATA,KMPVHANG,KMPVH,KMPVHOUR,KMPVHRSEC,KMPVHTIME,KMPVMEM,KMPVMET,KMPVMETS,KMPVMIN
  N KMPVNODE,KMPVOSET,KMPVROUT,KMPVSMH,KMPVSINT,KMPVSLOT,KMPVSTOP,Y
- ; *10003*
+ ; *10001*
  D SETNM^%ZOSV("VSM TCM")
- ; /*10003*
+ ; /*10001*
  ; ALWAYS - verify data is not building past configured number of days - if so for any reason, delete it
  D PURGEDLY^KMPVCBG("VTCM")
  ; Quit if monitor is not turned on
@@ -64,10 +65,10 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM"
  .S KMPVMET=KMPVMET_U_KMPVDASH("JournalEntries")_U_KMPVDASH("ApplicationErrors")
  .S KMPVMET=KMPVMET_U_$P(KMPVSMH,",")_U_$P(KMPVSMH,",",2)_U_$P(KMPVSMH,",",3)
  .S KMPVMET=KMPVMET_U_$P(KMPVMEM,",")_U_$P(KMPVMEM,",",2)_U_$P(KMPVMEM,",",3)_U_$P(KMPVMEM,",",4)
- .S KMPVMET=KMPVMET_U_$P(KMPVBLK,",")_U_$P(KMPVBLK,",",2)_U_$P(KMPVBLK,",",3)  ; *10003* - added extra piece here.
+ .S KMPVMET=KMPVMET_U_$P(KMPVBLK,",")_U_$P(KMPVBLK,",",2)_U_$P(KMPVBLK,",",3)  ; *10001* - added extra piece here.
  .;
  .S KMPVHTIME=$$SLOT^KMPVCCFG(KMPVH,KMPVSINT,"HOROLOG")
- .; *10003* - If outside of the VA, just write to a file directly
+ .; *10001* - If outside of the VA, just write to a file directly
  .I '$$VA^KMPVLOG D
  ..N H S H="Time Slot^GloRefs^GloRefsPerSec^GloSets^LogicalReads^DiskReads^DiskWrites^Processes^RtnCommands^"
  ..S H=H_"RtnLines^RouRefs^CSPSessions^CacheEfficiency^ECPAppSrvRate^ECPDataSrvRate^JournalEntries^"
@@ -76,7 +77,7 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM"
  ..D HEAD^KMPVLOG(H,"KMPV","VTCM",1)
  ..S KMPVMET=KMPVHTIME_U_KMPVMET
  ..D EN^KMPVLOG("KMPVMET","KMPV","VTCM","A",1)
- .E  D  ; /*10003*
+ .E  D  ; /*10001*
  ..S ^KMPTMP("KMPV","VTCM","DLY",+KMPVH,KMPVNODE,KMPVHTIME)=KMPVMET
  .;
  .H KMPVHANG
@@ -84,7 +85,7 @@ RUN ; Collect metrics per configured interval and store in ^KMPTMP("KMPV","VTCM"
  ;
  ;
 SEND ; Format and send data to CPE once a day -- TASKED VIA TASKMAN
- I '$$VA^KMPVLOG QUIT  ; *10003*
+ I '$$VA^KMPVLOG QUIT  ; *10001*
  N KMPVCFG,KMPVDATA,KMPVDOM,KMPVFMDAY,KMPVHDAY,KMPVHLAST,KMPVHOUR,KMPVHSTRT,KMPVHTODAY,KMPVHYDAY
  N KMPVKEEP,KMPVLAST,KMPVLN,KMPVNODE,KMPVRT,KMPVSINF,KMPVSITE,KMPVWD
  N %H

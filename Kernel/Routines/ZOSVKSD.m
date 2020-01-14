@@ -1,9 +1,10 @@
-%ZOSVKSD ;OAK/KAK/RAK/JML - ZOSVKSD - Calculate Disk Capacity ;2020-01-07  2:53 PM
+%ZOSVKSD ;OAK/KAK/RAK/JML - ZOSVKSD - Calculate Disk Capacity ;2020-01-14  10:00 AM
  ;;8.0;KERNEL;**121,197,268,456,568,670,10003**;3/1/2018;Build 45
  ;
  ; This routine will help to calculate disk capacity for
  ; Cache system platforms by looking up volume set table information
  ;
+ ; Original Code by Department of Veterans Affairs as Public Domain
  ; *10003* (c) Sam Habiel 2020
  ; See inline notes for changes
  ; *10003* changes licensed under Apache 2.0

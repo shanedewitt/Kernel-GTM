@@ -1,6 +1,7 @@
 KMPDTP1 ;OAK/RAK/JML - CP Timing Time to Load Summary ;2020-01-06  1:53 PM
- ;;3.0;Capacity Management Tools;**3,10003**;Jan 15, 2013;Build 42
- ; *10003* changes (c) Sam Habiel 2019
+ ;;3.0;Capacity Management Tools;**3,10001**;Jan 15, 2013;Build 42
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* changes (c) Sam Habiel 2019
  ; See inline for changes.
  ; Licensed under Apache 2.0 license
  ;
@@ -141,7 +142,7 @@ PRNTBOTH ;
  D PRINTONE("ORWCV","BACKGROUND")
  D PRINTONE("ORWCV-FT","FOREGROUND")
  D PRINTONE("ORWCV-BOTH","Combined FOREGROUND and BACKGROUND")
- Q  ; *10003* add missing quit
+ Q  ; *10001* add missing quit
  ;
 HDR(KMPDSTTL) ;-- print header
  W @IOF

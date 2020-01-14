@@ -1,5 +1,9 @@
 KMPDUTL ;OAK/RAK - CM Tools Utility ;2020-01-13  2:46 PM
- ;;3.0;Capacity Management Tools;**3,10003**;Jan 15, 2013;Build 42
+ ;;3.0;Capacity Management Tools;**3,10001**;Jan 15, 2013;Build 42
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2018
+ ; Changes licensed under Apache 2.0.
+ ; *10001* updates patch signatures in PTCHINFO
  ;
 QUEBKG(KMPDOPT,KMPDTIME,KMPDFREQ,KMPDDEL) ;-- queue background job
  ;-----------------------------------------------------------------------
@@ -94,20 +98,20 @@ PTCHINFO ; -- patch information: routine name ^ current version ^ current patch(
  ;;KMPDSSR^3.0^
  ;;KMPDSSS^3.0^**3**
  ;;KMPDTM^3.0^**3**
- ;;KMPDTP1^3.0^**3,10003**
+ ;;KMPDTP1^3.0^**3,10001**
  ;;KMPDTP2^3.0^**3**
  ;;KMPDTP3^3.0^**3**
  ;;KMPDTP4^3.0^**3**
  ;;KMPDTP5^3.0^**3**
  ;;KMPDTP6^3.0^**3**
  ;;KMPDTP7^3.0^**3**
- ;;KMPDTU01^3.0^**10003**
+ ;;KMPDTU01^3.0^**10001**
  ;;KMPDTU02^3.0^
  ;;KMPDTU10^3.0^**3**
  ;;KMPDTU11^3.0^**3**
  ;;KMPDU^3.0^
  ;;KMPDU1^3.0^
- ;;KMPDU2^3.0^**10003**
+ ;;KMPDU2^3.0^**10001**
  ;;KMPDU3^3.0^
  ;;KMPDU4^3.0
  ;;KMPDU5^3.0^
@@ -124,13 +128,13 @@ PTCHINFO ; -- patch information: routine name ^ current version ^ current patch(
  ;;KMPDUT4B^3.0^
  ;;KMPDUT4C^3.0^
  ;;KMPDUT5^3.0^
- ;;KMPDUTL^3.0^**3,10003**
- ;;KMPDUTL1^4.0^**10003**
- ;;KMPDUTL2^3.0^**10003**
+ ;;KMPDUTL^3.0^**3,10001**
+ ;;KMPDUTL1^4.0^**10001**
+ ;;KMPDUTL2^3.0^**10001**
  ;;KMPDUTL3^3.0^
  ;;KMPDUTL4^3.0^
- ;;KMPDUTL5^3.0^**10003**
+ ;;KMPDUTL5^3.0^**10001**
  ;;KMPDUTL6^3.0^
  ;;KMPDUTL7^3.0^
  ;;KMPDUTL8^3.0^
- ;;KMPDRDAT^4.0^**10003**
+ ;;KMPDRDAT^4.0^**10001**

@@ -1,6 +1,11 @@
 %ZOSVKSE ;YDB/CJE&OSE/SMH - ZOSVKSGE - Global data (GT.M) ;2020-01-07  12:18 PM
  ;;8.0;KERNEL;**10003**;Jul 26, 2004;Build 48
  ;
+ ; (c) Sam Habiel 2018, 2020
+ ; (c) Chirsopher Edwards 2018
+ ; Licensed under Apache 2.0
+ ;
+ ; This routine implements Resource Monitoring for GT.M/YDB
  Q
  ;
 START(KMPSTEMP) ;-- called by routine ^KMPSGE

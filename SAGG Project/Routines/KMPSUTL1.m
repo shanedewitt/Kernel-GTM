@@ -1,17 +1,20 @@
 KMPSUTL1        ;OAK/KAK - SAGG Utilities ;2020-01-06  3:54 PM
- ;;2.0;SAGG PROJECT;**1,10003**;Jul 02, 2007;Build 67
+ ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 67
+ ; Original Code by Department of Veterans Affairs in Public Domain
+ ; *10001* (c) Sam Habiel 2020
+ ; Changes licensed under Apache 2.0.
  ;
 MPLTF() ;-- returns the type of M platform
  ;---------------------------------------------------------------------
  ; Returns:  CVMS   for Cache for OpenVMS platform
  ;           CWINNT for Cache for Windows NT platform
- ; *10003*:
+ ; *10001*:
  ;           GTM for GTM all platforms
  ;---------------------------------------------------------------------
  ;
  N MPLTF,ZV
  ;
- ; *10003*
+ ; *10001*
  I ^%ZOSF("OS")["GT.M" Q "GTM"
  ;
  S ZV=$$OS^%ZOSV ; IA# 10097

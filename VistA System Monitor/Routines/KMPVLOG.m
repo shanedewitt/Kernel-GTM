@@ -1,6 +1,7 @@
 KMPVLOG ; OSE/SMH - Logging Utility for KMP* Packages;2020-01-10  2:03 PM
- ;;3.0;CAPACITY MANAGEMENT;**10003**;
- ;
+ ;;3.0;CAPACITY MANAGEMENT;**10001**;
+ ;(c) Sam Habiel 2018
+ ; Changes licensed under Apache 2.0
  I $T(^%ut)]"" D EN^%ut($t(+0),3) quit
  ;
 HEAD(string,filePath,fileName,addDate) ; [Public] Add header
@@ -76,7 +77,7 @@ VA() ; [Public] Are we running inside of the VA?
  I $G(DUZ("AG"))="V" Q 1
  Q 0
  ;
-DELLOG(filePath,fileName,days) ; Delete (Old) Log Files
+DELLOG(filePath,fileName,days) ; [Public] Delete (Old) Log Files
  ; filePath: Category of file; seperate multiple categories by "/"
  ; fileName: name of file
  ; days: days to keep
@@ -96,6 +97,11 @@ DELLOG(filePath,fileName,days) ; Delete (Old) Log Files
  . i hl7date=0 quit
  . i hl7date<hl7dateDelAfter d DEL1^%ZISH(fullDir_file)
  quit
+ ;
+ ;
+ ;
+ ; -- Rest is M Unit Code --
+ ;
  ;
 SETUP    ; M-Unit Startup
  ; ZEXCEPT: hl7date
