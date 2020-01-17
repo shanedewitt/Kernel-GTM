@@ -186,6 +186,16 @@ VSTM ; @TEST VSM Storage Monitor
  D SUCCEED^%ut
  QUIT
  ;
+VSTM2 ; @TEST VSM Storage Monitor w/o DUZ("AG")
+ K DUZ("AG")
+ N % S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")
+ K ^KMPTMP("KMPV","VSTM")
+ D RUN^KMPVVSTM
+ D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")>0)
+ D SEND^KMPVVSTM
+ D SUCCEED^%ut
+ QUIT
+ ;
 VBEM ; @TEST VSM Business Event Monitor (replaces old CM task)
  ; make sure RUM is on - this test runs after LOGRSRC above, which turns it on and records data.
  K ^KMPTMP("KMPV","VBEM","TRANSMIT")

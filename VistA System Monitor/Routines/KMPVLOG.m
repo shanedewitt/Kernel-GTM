@@ -74,8 +74,8 @@ EN(arrayName,filePath,fileName,flag,addDate) ; [Public] Main Entry Point
  quit
  ;
 VA() ; [Public] Are we running inside of the VA?
- I $G(DUZ("AG"))="V" Q 1
- Q 0
+ I $G(DUZ("AG"))'="" Q DUZ("AG")="V"
+ Q $$GET1^DIQ(8989.3,1,9,"I")="V"
  ;
 DELLOG(filePath,fileName,days) ; [Public] Delete (Old) Log Files
  ; filePath: Category of file; seperate multiple categories by "/"
