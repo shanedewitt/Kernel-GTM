@@ -39,6 +39,21 @@ STARTUP ;
  . N DIERR D FILE^DIE("","FDA")
  . I $D(DIERR) S $EC=",U-CHECK-ME,"
  . S DUZ("AG")="O"
+ ;
+ ; Delete all old files
+ N %
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VMCM-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VBEM-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VHLM-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/files-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/globals-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/packages-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/taskman-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/version-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPS/volumes-"_hl7date_".dat")
+ S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPD/cvload-"_hl7date_".dat")
  QUIT
  ;
 SHUTDOWN ;
