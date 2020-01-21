@@ -57,11 +57,6 @@ RUMSET ; @TEST ZTMGRSET RUM Rename GTM/Cache Routines
  QUIT
  ;
 LOGRSRC ; @TEST LOGRSRC^%ZOSV Resource Logger
- ; Turn it off and on again (just in case we are on a transplanted system and the xref is wrong)
- N FDA S FDA(8989.3,"1,",300)="@"
- D FILE^DIE(,"FDA")
- S FDA(8989.3,"1,",300)="Y"
- D FILE^DIE(,"FDA") ;
  ; Get these variables so that we can find out later if we got captured in ^KMPTMP
  N KMPVNODE,Y D GETENV^%ZOSV S KMPVNODE=$P(Y,U,3)_":"_$P($P(Y,U,4),":",2) ;  IA 10097
  N KMPVH S KMPVH=$H
@@ -216,6 +211,7 @@ VHLM ; @TEST VSM Section HL7 mointor
  ; Create patient registration message
  N $ET,$ES S $ET="D VHLMERR^ZOSVGUT4"
  N DFN S DFN=1
+ I '$D(^DPT(DFN,0)) QUIT  ; **NO PATIENTS REGISTERED IN THIS SYSTEM
  N % S %=$$EN^VAFCA04(DFN,$$NOW^XLFDT)
  ;
  ; Get Registration Message Number
