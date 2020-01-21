@@ -12,6 +12,7 @@ STARTUP ;
  ; ZEXCEPT: KMPVTEST,hl7date
  ;
  ; Fix the email address to which messages are sent
+ D DT^DICRW
  s hl7date=$$FMTHL7^XLFDT(DT)
  N FDA,DIERR
  N CNT S CNT=0
