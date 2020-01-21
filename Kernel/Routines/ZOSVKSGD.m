@@ -119,7 +119,7 @@ KMPVVTCM(KMPVDATA) ; Get metrics for Vista Timed Collection Monitor (VTCM) withi
  S KMPVDASH("LogicalReads")=NBR+TBR
  S KMPVDASH("DiskReads")=DRD
  S KMPVDASH("DiskWrites")=DWT
- S KMPVDASH("Processes")=$$UNIXLSOF^ZSY()
+ S KMPVDASH("Processes")=$$^%PEEKBYNAME("node_local.ref_cnt",$$DEFREG^%ZOSV())
  ;
  ; No routine stats avail in GTM
  N KMPVROUT
