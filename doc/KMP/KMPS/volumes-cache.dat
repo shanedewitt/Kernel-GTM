@@ -1,0 +1,10 @@
+VOLUME NAME^BLOCK COUNT
+/opt/cachesys/foia/mgr/^21760
+/opt/cachesys/foia/mgr/cache/^1408
+/opt/cachesys/foia/mgr/cacheaudit/^128
+/opt/cachesys/foia/mgr/cachelib/^57600
+/opt/cachesys/foia/mgr/cachetemp/^1408
+/opt/cachesys/foia/mgr/docbook/^25600
+/opt/cachesys/foia/mgr/samples/^10368
+/opt/cachesys/foia/mgr/user/^128
+/opt/cachesys/foia/vista/^987520

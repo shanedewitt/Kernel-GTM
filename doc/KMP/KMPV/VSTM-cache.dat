@@ -1,0 +1,10 @@
+Region^MaxSize(MB)^Current Size(MB)^Block Size(int)^Blocks per Map(int)^Free space(MB)^Free Space(int-Blocks)^System Dir(bool)^Expansion size(MB)^disk free space (MB)
+/opt/cachesys/foia/mgr/^0^170^8192^62464^126^16075^1^0^59.16GB
+/opt/cachesys/foia/mgr/cache/^0^11^8192^62464^10^1333^1^0^59.16GB
+/opt/cachesys/foia/mgr/cacheaudit/^0^1^8192^62464^0.43^55^1^0^59.16GB
+/opt/cachesys/foia/mgr/cachelib/^0^450^8192^62464^51^6587^1^0^59.16GB
+/opt/cachesys/foia/mgr/cachetemp/^0^11^8192^62464^9.3^1185^1^0^59.16GB
+/opt/cachesys/foia/mgr/docbook/^0^200^8192^62464^61^7825^0^0^59.16GB
+/opt/cachesys/foia/mgr/samples/^0^81^8192^62464^7.2^923^0^0^59.16GB
+/opt/cachesys/foia/mgr/user/^0^1^8192^62464^0.45^57^0^0^59.16GB
+/opt/cachesys/foia/vista/^0^7715^8192^62464^4034^516301^0^0^59.16GB

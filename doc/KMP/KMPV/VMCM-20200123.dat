@@ -1,0 +1,3121 @@
+Time Slot^Node^Logical Link^Last Incoming Message^First Incoming Message^Last Outgoing Message^First Outgoing Message^Link State
+48600^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+48600^foia:foia^BPS NCPDP:^0^0^0^0^
+48600^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+48600^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+48600^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+48600^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+48600^foia:foia^DG HTH:^0^0^0^0^Shutdown
+48600^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+48600^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+48600^foia:foia^EPHARM OUT:^0^0^0^0^
+48600^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+48600^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+48600^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+48600^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+48600^foia:foia^HLO:^0^0^0^0^
+48600^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+48600^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+48600^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+48600^foia:foia^IIV EC:^0^0^0^0^
+48600^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+48600^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+48600^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+48600^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+48600^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+48600^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+48600^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+48600^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+48600^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+48600^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+48600^foia:foia^MCAR INST:^0^0^0^0^Halting
+48600^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+48600^foia:foia^MDHL IN:^0^0^0^0^
+48600^foia:foia^MHVVA:^0^0^0^0^Shutdown
+48600^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+48600^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+48600^foia:foia^ORHDR:^0^0^0^0^Shutdown
+48600^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+48600^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+48600^foia:foia^PSD HLLP:SH^0^0^0^0^
+48600^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+48600^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+48600^foia:foia^PSO LLP1:NC^0^0^0^0^
+48600^foia:foia^PSO LLPO:^0^0^0^0^
+48600^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+48600^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+48600^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+48600^foia:foia^PXRM7-RECO:^0^0^0^0^
+48600^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+48600^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+48600^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+48600^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+48600^foia:foia^SR AAIS:^0^0^0^0^
+48600^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+48600^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+48600^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+48600^foia:foia^VAORL:^0^0^0^0^Shutdown
+48600^foia:foia^VAVCB:^0^0^0^0^Shutdown
+48600^foia:foia^VBECS-OERR:^0^0^0^0^
+48600^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+48600^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+48600^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+48600^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+48600^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+48600^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+48600^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+49500^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+49500^foia:foia^BPS NCPDP:^0^0^0^0^
+49500^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+49500^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+49500^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+49500^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+49500^foia:foia^DG HTH:^0^0^0^0^Shutdown
+49500^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+49500^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+49500^foia:foia^EPHARM OUT:^0^0^0^0^
+49500^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+49500^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+49500^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+49500^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+49500^foia:foia^HLO:^0^0^0^0^
+49500^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+49500^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+49500^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+49500^foia:foia^IIV EC:^0^0^0^0^
+49500^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+49500^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+49500^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+49500^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+49500^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+49500^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+49500^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+49500^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+49500^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+49500^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+49500^foia:foia^MCAR INST:^0^0^0^0^Halting
+49500^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+49500^foia:foia^MDHL IN:^0^0^0^0^
+49500^foia:foia^MHVVA:^0^0^0^0^Shutdown
+49500^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+49500^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+49500^foia:foia^ORHDR:^0^0^0^0^Shutdown
+49500^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+49500^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+49500^foia:foia^PSD HLLP:SH^0^0^0^0^
+49500^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+49500^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+49500^foia:foia^PSO LLP1:NC^0^0^0^0^
+49500^foia:foia^PSO LLPO:^0^0^0^0^
+49500^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+49500^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+49500^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+49500^foia:foia^PXRM7-RECO:^0^0^0^0^
+49500^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+49500^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+49500^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+49500^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+49500^foia:foia^SR AAIS:^0^0^0^0^
+49500^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+49500^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+49500^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+49500^foia:foia^VAORL:^0^0^0^0^Shutdown
+49500^foia:foia^VAVCB:^0^0^0^0^Shutdown
+49500^foia:foia^VBECS-OERR:^0^0^0^0^
+49500^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+49500^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+49500^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+49500^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+49500^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+49500^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+49500^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+50400^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+50400^foia:foia^BPS NCPDP:^0^0^0^0^
+50400^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+50400^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+50400^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+50400^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+50400^foia:foia^DG HTH:^0^0^0^0^Shutdown
+50400^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+50400^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+50400^foia:foia^EPHARM OUT:^0^0^0^0^
+50400^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+50400^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+50400^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+50400^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+50400^foia:foia^HLO:^0^0^0^0^
+50400^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+50400^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+50400^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+50400^foia:foia^IIV EC:^0^0^0^0^
+50400^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+50400^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+50400^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+50400^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+50400^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+50400^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+50400^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+50400^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+50400^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+50400^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+50400^foia:foia^MCAR INST:^0^0^0^0^Halting
+50400^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+50400^foia:foia^MDHL IN:^0^0^0^0^
+50400^foia:foia^MHVVA:^0^0^0^0^Shutdown
+50400^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+50400^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+50400^foia:foia^ORHDR:^0^0^0^0^Shutdown
+50400^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+50400^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+50400^foia:foia^PSD HLLP:SH^0^0^0^0^
+50400^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+50400^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+50400^foia:foia^PSO LLP1:NC^0^0^0^0^
+50400^foia:foia^PSO LLPO:^0^0^0^0^
+50400^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+50400^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+50400^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+50400^foia:foia^PXRM7-RECO:^0^0^0^0^
+50400^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+50400^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+50400^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+50400^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+50400^foia:foia^SR AAIS:^0^0^0^0^
+50400^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+50400^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+50400^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+50400^foia:foia^VAORL:^0^0^0^0^Shutdown
+50400^foia:foia^VAVCB:^0^0^0^0^Shutdown
+50400^foia:foia^VBECS-OERR:^0^0^0^0^
+50400^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+50400^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+50400^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+50400^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+50400^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+50400^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+50400^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+51300^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+51300^foia:foia^BPS NCPDP:^0^0^0^0^
+51300^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+51300^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+51300^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+51300^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+51300^foia:foia^DG HTH:^0^0^0^0^Shutdown
+51300^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+51300^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+51300^foia:foia^EPHARM OUT:^0^0^0^0^
+51300^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+51300^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+51300^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+51300^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+51300^foia:foia^HLO:^0^0^0^0^
+51300^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+51300^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+51300^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+51300^foia:foia^IIV EC:^0^0^0^0^
+51300^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+51300^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+51300^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+51300^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+51300^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+51300^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+51300^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+51300^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+51300^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+51300^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+51300^foia:foia^MCAR INST:^0^0^0^0^Halting
+51300^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+51300^foia:foia^MDHL IN:^0^0^0^0^
+51300^foia:foia^MHVVA:^0^0^0^0^Shutdown
+51300^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+51300^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+51300^foia:foia^ORHDR:^0^0^0^0^Shutdown
+51300^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+51300^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+51300^foia:foia^PSD HLLP:SH^0^0^0^0^
+51300^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+51300^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+51300^foia:foia^PSO LLP1:NC^0^0^0^0^
+51300^foia:foia^PSO LLPO:^0^0^0^0^
+51300^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+51300^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+51300^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+51300^foia:foia^PXRM7-RECO:^0^0^0^0^
+51300^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+51300^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+51300^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+51300^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+51300^foia:foia^SR AAIS:^0^0^0^0^
+51300^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+51300^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+51300^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+51300^foia:foia^VAORL:^0^0^0^0^Shutdown
+51300^foia:foia^VAVCB:^0^0^0^0^Shutdown
+51300^foia:foia^VBECS-OERR:^0^0^0^0^
+51300^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+51300^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+51300^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+51300^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+51300^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+51300^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+51300^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+52200^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+52200^foia:foia^BPS NCPDP:^0^0^0^0^
+52200^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+52200^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+52200^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+52200^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+52200^foia:foia^DG HTH:^0^0^0^0^Shutdown
+52200^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+52200^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+52200^foia:foia^EPHARM OUT:^0^0^0^0^
+52200^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+52200^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+52200^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+52200^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+52200^foia:foia^HLO:^0^0^0^0^
+52200^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+52200^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+52200^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+52200^foia:foia^IIV EC:^0^0^0^0^
+52200^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+52200^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+52200^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+52200^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+52200^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+52200^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+52200^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+52200^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+52200^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+52200^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+52200^foia:foia^MCAR INST:^0^0^0^0^Halting
+52200^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+52200^foia:foia^MDHL IN:^0^0^0^0^
+52200^foia:foia^MHVVA:^0^0^0^0^Shutdown
+52200^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+52200^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+52200^foia:foia^ORHDR:^0^0^0^0^Shutdown
+52200^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+52200^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+52200^foia:foia^PSD HLLP:SH^0^0^0^0^
+52200^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+52200^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+52200^foia:foia^PSO LLP1:NC^0^0^0^0^
+52200^foia:foia^PSO LLPO:^0^0^0^0^
+52200^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+52200^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+52200^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+52200^foia:foia^PXRM7-RECO:^0^0^0^0^
+52200^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+52200^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+52200^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+52200^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+52200^foia:foia^SR AAIS:^0^0^0^0^
+52200^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+52200^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+52200^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+52200^foia:foia^VAORL:^0^0^0^0^Shutdown
+52200^foia:foia^VAVCB:^0^0^0^0^Shutdown
+52200^foia:foia^VBECS-OERR:^0^0^0^0^
+52200^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+52200^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+52200^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+52200^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+52200^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+52200^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+52200^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+53100^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+53100^foia:foia^BPS NCPDP:^0^0^0^0^
+53100^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+53100^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+53100^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+53100^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+53100^foia:foia^DG HTH:^0^0^0^0^Shutdown
+53100^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+53100^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+53100^foia:foia^EPHARM OUT:^0^0^0^0^
+53100^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+53100^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+53100^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+53100^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+53100^foia:foia^HLO:^0^0^0^0^
+53100^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+53100^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+53100^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+53100^foia:foia^IIV EC:^0^0^0^0^
+53100^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+53100^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+53100^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+53100^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+53100^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+53100^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+53100^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+53100^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+53100^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+53100^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+53100^foia:foia^MCAR INST:^0^0^0^0^Halting
+53100^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+53100^foia:foia^MDHL IN:^0^0^0^0^
+53100^foia:foia^MHVVA:^0^0^0^0^Shutdown
+53100^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+53100^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+53100^foia:foia^ORHDR:^0^0^0^0^Shutdown
+53100^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+53100^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+53100^foia:foia^PSD HLLP:SH^0^0^0^0^
+53100^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+53100^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+53100^foia:foia^PSO LLP1:NC^0^0^0^0^
+53100^foia:foia^PSO LLPO:^0^0^0^0^
+53100^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+53100^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+53100^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+53100^foia:foia^PXRM7-RECO:^0^0^0^0^
+53100^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+53100^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+53100^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+53100^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+53100^foia:foia^SR AAIS:^0^0^0^0^
+53100^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+53100^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+53100^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+53100^foia:foia^VAORL:^0^0^0^0^Shutdown
+53100^foia:foia^VAVCB:^0^0^0^0^Shutdown
+53100^foia:foia^VBECS-OERR:^0^0^0^0^
+53100^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+53100^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+53100^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+53100^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+53100^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+53100^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+53100^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+54000^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+54000^foia:foia^BPS NCPDP:^0^0^0^0^
+54000^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+54000^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+54000^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+54000^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+54000^foia:foia^DG HTH:^0^0^0^0^Shutdown
+54000^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+54000^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+54000^foia:foia^EPHARM OUT:^0^0^0^0^
+54000^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+54000^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+54000^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+54000^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+54000^foia:foia^HLO:^0^0^0^0^
+54000^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+54000^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+54000^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+54000^foia:foia^IIV EC:^0^0^0^0^
+54000^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+54000^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+54000^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+54000^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+54000^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+54000^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+54000^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+54000^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+54000^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+54000^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+54000^foia:foia^MCAR INST:^0^0^0^0^Halting
+54000^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+54000^foia:foia^MDHL IN:^0^0^0^0^
+54000^foia:foia^MHVVA:^0^0^0^0^Shutdown
+54000^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+54000^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+54000^foia:foia^ORHDR:^0^0^0^0^Shutdown
+54000^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+54000^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+54000^foia:foia^PSD HLLP:SH^0^0^0^0^
+54000^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+54000^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+54000^foia:foia^PSO LLP1:NC^0^0^0^0^
+54000^foia:foia^PSO LLPO:^0^0^0^0^
+54000^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+54000^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+54000^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+54000^foia:foia^PXRM7-RECO:^0^0^0^0^
+54000^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+54000^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+54000^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+54000^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+54000^foia:foia^SR AAIS:^0^0^0^0^
+54000^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+54000^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+54000^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+54000^foia:foia^VAORL:^0^0^0^0^Shutdown
+54000^foia:foia^VAVCB:^0^0^0^0^Shutdown
+54000^foia:foia^VBECS-OERR:^0^0^0^0^
+54000^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+54000^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+54000^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+54000^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+54000^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+54000^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+54000^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+54900^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+54900^foia:foia^BPS NCPDP:^0^0^0^0^
+54900^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+54900^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+54900^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+54900^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+54900^foia:foia^DG HTH:^0^0^0^0^Shutdown
+54900^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+54900^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+54900^foia:foia^EPHARM OUT:^0^0^0^0^
+54900^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+54900^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+54900^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+54900^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+54900^foia:foia^HLO:^0^0^0^0^
+54900^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+54900^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+54900^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+54900^foia:foia^IIV EC:^0^0^0^0^
+54900^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+54900^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+54900^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+54900^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+54900^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+54900^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+54900^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+54900^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+54900^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+54900^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+54900^foia:foia^MCAR INST:^0^0^0^0^Halting
+54900^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+54900^foia:foia^MDHL IN:^0^0^0^0^
+54900^foia:foia^MHVVA:^0^0^0^0^Shutdown
+54900^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+54900^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+54900^foia:foia^ORHDR:^0^0^0^0^Shutdown
+54900^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+54900^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+54900^foia:foia^PSD HLLP:SH^0^0^0^0^
+54900^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+54900^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+54900^foia:foia^PSO LLP1:NC^0^0^0^0^
+54900^foia:foia^PSO LLPO:^0^0^0^0^
+54900^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+54900^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+54900^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+54900^foia:foia^PXRM7-RECO:^0^0^0^0^
+54900^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+54900^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+54900^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+54900^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+54900^foia:foia^SR AAIS:^0^0^0^0^
+54900^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+54900^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+54900^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+54900^foia:foia^VAORL:^0^0^0^0^Shutdown
+54900^foia:foia^VAVCB:^0^0^0^0^Shutdown
+54900^foia:foia^VBECS-OERR:^0^0^0^0^
+54900^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+54900^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+54900^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+54900^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+54900^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+54900^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+54900^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+55800^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+55800^foia:foia^BPS NCPDP:^0^0^0^0^
+55800^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+55800^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+55800^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+55800^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+55800^foia:foia^DG HTH:^0^0^0^0^Shutdown
+55800^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+55800^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+55800^foia:foia^EPHARM OUT:^0^0^0^0^
+55800^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+55800^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+55800^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+55800^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+55800^foia:foia^HLO:^0^0^0^0^
+55800^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+55800^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+55800^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+55800^foia:foia^IIV EC:^0^0^0^0^
+55800^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+55800^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+55800^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+55800^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+55800^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+55800^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+55800^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+55800^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+55800^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+55800^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+55800^foia:foia^MCAR INST:^0^0^0^0^Halting
+55800^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+55800^foia:foia^MDHL IN:^0^0^0^0^
+55800^foia:foia^MHVVA:^0^0^0^0^Shutdown
+55800^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+55800^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+55800^foia:foia^ORHDR:^0^0^0^0^Shutdown
+55800^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+55800^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+55800^foia:foia^PSD HLLP:SH^0^0^0^0^
+55800^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+55800^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+55800^foia:foia^PSO LLP1:NC^0^0^0^0^
+55800^foia:foia^PSO LLPO:^0^0^0^0^
+55800^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+55800^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+55800^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+55800^foia:foia^PXRM7-RECO:^0^0^0^0^
+55800^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+55800^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+55800^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+55800^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+55800^foia:foia^SR AAIS:^0^0^0^0^
+55800^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+55800^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+55800^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+55800^foia:foia^VAORL:^0^0^0^0^Shutdown
+55800^foia:foia^VAVCB:^0^0^0^0^Shutdown
+55800^foia:foia^VBECS-OERR:^0^0^0^0^
+55800^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+55800^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+55800^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+55800^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+55800^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+55800^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+55800^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+58500^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+58500^foia:foia^BPS NCPDP:^0^0^0^0^
+58500^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+58500^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+58500^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+58500^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+58500^foia:foia^DG HTH:^0^0^0^0^Shutdown
+58500^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+58500^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+58500^foia:foia^EPHARM OUT:^0^0^0^0^
+58500^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+58500^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+58500^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+58500^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+58500^foia:foia^HLO:^0^0^0^0^
+58500^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+58500^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+58500^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+58500^foia:foia^IIV EC:^0^0^0^0^
+58500^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+58500^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+58500^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+58500^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+58500^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+58500^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+58500^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+58500^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+58500^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+58500^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+58500^foia:foia^MCAR INST:^0^0^0^0^Halting
+58500^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+58500^foia:foia^MDHL IN:^0^0^0^0^
+58500^foia:foia^MHVVA:^0^0^0^0^Shutdown
+58500^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+58500^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+58500^foia:foia^ORHDR:^0^0^0^0^Shutdown
+58500^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+58500^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+58500^foia:foia^PSD HLLP:SH^0^0^0^0^
+58500^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+58500^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+58500^foia:foia^PSO LLP1:NC^0^0^0^0^
+58500^foia:foia^PSO LLPO:^0^0^0^0^
+58500^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+58500^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+58500^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+58500^foia:foia^PXRM7-RECO:^0^0^0^0^
+58500^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+58500^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+58500^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+58500^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+58500^foia:foia^SR AAIS:^0^0^0^0^
+58500^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+58500^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+58500^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+58500^foia:foia^VAORL:^0^0^0^0^Shutdown
+58500^foia:foia^VAVCB:^0^0^0^0^Shutdown
+58500^foia:foia^VBECS-OERR:^0^0^0^0^
+58500^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+58500^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+58500^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+58500^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+58500^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+58500^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+58500^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+59400^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+59400^foia:foia^BPS NCPDP:^0^0^0^0^
+59400^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+59400^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+59400^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+59400^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+59400^foia:foia^DG HTH:^0^0^0^0^Shutdown
+59400^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+59400^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+59400^foia:foia^EPHARM OUT:^0^0^0^0^
+59400^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+59400^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+59400^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+59400^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+59400^foia:foia^HLO:^0^0^0^0^
+59400^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+59400^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+59400^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+59400^foia:foia^IIV EC:^0^0^0^0^
+59400^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+59400^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+59400^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+59400^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+59400^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+59400^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+59400^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+59400^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+59400^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+59400^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+59400^foia:foia^MCAR INST:^0^0^0^0^Halting
+59400^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+59400^foia:foia^MDHL IN:^0^0^0^0^
+59400^foia:foia^MHVVA:^0^0^0^0^Shutdown
+59400^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+59400^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+59400^foia:foia^ORHDR:^0^0^0^0^Shutdown
+59400^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+59400^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+59400^foia:foia^PSD HLLP:SH^0^0^0^0^
+59400^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+59400^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+59400^foia:foia^PSO LLP1:NC^0^0^0^0^
+59400^foia:foia^PSO LLPO:^0^0^0^0^
+59400^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+59400^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+59400^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+59400^foia:foia^PXRM7-RECO:^0^0^0^0^
+59400^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+59400^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+59400^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+59400^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+59400^foia:foia^SR AAIS:^0^0^0^0^
+59400^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+59400^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+59400^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+59400^foia:foia^VAORL:^0^0^0^0^Shutdown
+59400^foia:foia^VAVCB:^0^0^0^0^Shutdown
+59400^foia:foia^VBECS-OERR:^0^0^0^0^
+59400^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+59400^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+59400^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+59400^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+59400^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+59400^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+59400^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+60300^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+60300^foia:foia^BPS NCPDP:^0^0^0^0^
+60300^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+60300^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+60300^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+60300^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+60300^foia:foia^DG HTH:^0^0^0^0^Shutdown
+60300^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+60300^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+60300^foia:foia^EPHARM OUT:^0^0^0^0^
+60300^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+60300^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+60300^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+60300^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+60300^foia:foia^HLO:^0^0^0^0^
+60300^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+60300^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+60300^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+60300^foia:foia^IIV EC:^0^0^0^0^
+60300^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+60300^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+60300^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+60300^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+60300^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+60300^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+60300^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+60300^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+60300^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+60300^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+60300^foia:foia^MCAR INST:^0^0^0^0^Halting
+60300^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+60300^foia:foia^MDHL IN:^0^0^0^0^
+60300^foia:foia^MHVVA:^0^0^0^0^Shutdown
+60300^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+60300^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+60300^foia:foia^ORHDR:^0^0^0^0^Shutdown
+60300^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+60300^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+60300^foia:foia^PSD HLLP:SH^0^0^0^0^
+60300^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+60300^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+60300^foia:foia^PSO LLP1:NC^0^0^0^0^
+60300^foia:foia^PSO LLPO:^0^0^0^0^
+60300^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+60300^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+60300^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+60300^foia:foia^PXRM7-RECO:^0^0^0^0^
+60300^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+60300^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+60300^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+60300^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+60300^foia:foia^SR AAIS:^0^0^0^0^
+60300^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+60300^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+60300^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+60300^foia:foia^VAORL:^0^0^0^0^Shutdown
+60300^foia:foia^VAVCB:^0^0^0^0^Shutdown
+60300^foia:foia^VBECS-OERR:^0^0^0^0^
+60300^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+60300^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+60300^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+60300^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+60300^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+60300^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+60300^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+61200^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+61200^foia:foia^BPS NCPDP:^0^0^0^0^
+61200^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+61200^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+61200^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+61200^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+61200^foia:foia^DG HTH:^0^0^0^0^Shutdown
+61200^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+61200^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+61200^foia:foia^EPHARM OUT:^0^0^0^0^
+61200^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+61200^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+61200^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+61200^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+61200^foia:foia^HLO:^0^0^0^0^
+61200^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+61200^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+61200^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+61200^foia:foia^IIV EC:^0^0^0^0^
+61200^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+61200^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+61200^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+61200^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+61200^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+61200^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+61200^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+61200^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+61200^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+61200^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+61200^foia:foia^MCAR INST:^0^0^0^0^Halting
+61200^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+61200^foia:foia^MDHL IN:^0^0^0^0^
+61200^foia:foia^MHVVA:^0^0^0^0^Shutdown
+61200^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+61200^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+61200^foia:foia^ORHDR:^0^0^0^0^Shutdown
+61200^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+61200^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+61200^foia:foia^PSD HLLP:SH^0^0^0^0^
+61200^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+61200^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+61200^foia:foia^PSO LLP1:NC^0^0^0^0^
+61200^foia:foia^PSO LLPO:^0^0^0^0^
+61200^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+61200^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+61200^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+61200^foia:foia^PXRM7-RECO:^0^0^0^0^
+61200^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+61200^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+61200^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+61200^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+61200^foia:foia^SR AAIS:^0^0^0^0^
+61200^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+61200^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+61200^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+61200^foia:foia^VAORL:^0^0^0^0^Shutdown
+61200^foia:foia^VAVCB:^0^0^0^0^Shutdown
+61200^foia:foia^VBECS-OERR:^0^0^0^0^
+61200^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+61200^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+61200^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+61200^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+61200^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+61200^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+61200^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+62100^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+62100^foia:foia^BPS NCPDP:^0^0^0^0^
+62100^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+62100^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+62100^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+62100^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+62100^foia:foia^DG HTH:^0^0^0^0^Shutdown
+62100^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+62100^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+62100^foia:foia^EPHARM OUT:^0^0^0^0^
+62100^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+62100^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+62100^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+62100^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+62100^foia:foia^HLO:^0^0^0^0^
+62100^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+62100^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+62100^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+62100^foia:foia^IIV EC:^0^0^0^0^
+62100^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+62100^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+62100^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+62100^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+62100^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+62100^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+62100^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+62100^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+62100^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+62100^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+62100^foia:foia^MCAR INST:^0^0^0^0^Halting
+62100^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+62100^foia:foia^MDHL IN:^0^0^0^0^
+62100^foia:foia^MHVVA:^0^0^0^0^Shutdown
+62100^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+62100^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+62100^foia:foia^ORHDR:^0^0^0^0^Shutdown
+62100^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+62100^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+62100^foia:foia^PSD HLLP:SH^0^0^0^0^
+62100^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+62100^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+62100^foia:foia^PSO LLP1:NC^0^0^0^0^
+62100^foia:foia^PSO LLPO:^0^0^0^0^
+62100^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+62100^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+62100^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+62100^foia:foia^PXRM7-RECO:^0^0^0^0^
+62100^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+62100^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+62100^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+62100^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+62100^foia:foia^SR AAIS:^0^0^0^0^
+62100^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+62100^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+62100^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+62100^foia:foia^VAORL:^0^0^0^0^Shutdown
+62100^foia:foia^VAVCB:^0^0^0^0^Shutdown
+62100^foia:foia^VBECS-OERR:^0^0^0^0^
+62100^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+62100^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+62100^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+62100^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+62100^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+62100^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+62100^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+63000^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+63000^foia:foia^BPS NCPDP:^0^0^0^0^
+63000^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+63000^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+63000^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+63000^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+63000^foia:foia^DG HTH:^0^0^0^0^Shutdown
+63000^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+63000^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+63000^foia:foia^EPHARM OUT:^0^0^0^0^
+63000^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+63000^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+63000^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+63000^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+63000^foia:foia^HLO:^0^0^0^0^
+63000^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+63000^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+63000^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+63000^foia:foia^IIV EC:^0^0^0^0^
+63000^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+63000^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+63000^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+63000^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+63000^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+63000^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+63000^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+63000^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+63000^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+63000^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+63000^foia:foia^MCAR INST:^0^0^0^0^Halting
+63000^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+63000^foia:foia^MDHL IN:^0^0^0^0^
+63000^foia:foia^MHVVA:^0^0^0^0^Shutdown
+63000^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+63000^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+63000^foia:foia^ORHDR:^0^0^0^0^Shutdown
+63000^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+63000^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+63000^foia:foia^PSD HLLP:SH^0^0^0^0^
+63000^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+63000^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+63000^foia:foia^PSO LLP1:NC^0^0^0^0^
+63000^foia:foia^PSO LLPO:^0^0^0^0^
+63000^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+63000^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+63000^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+63000^foia:foia^PXRM7-RECO:^0^0^0^0^
+63000^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+63000^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+63000^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+63000^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+63000^foia:foia^SR AAIS:^0^0^0^0^
+63000^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+63000^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+63000^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+63000^foia:foia^VAORL:^0^0^0^0^Shutdown
+63000^foia:foia^VAVCB:^0^0^0^0^Shutdown
+63000^foia:foia^VBECS-OERR:^0^0^0^0^
+63000^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+63000^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+63000^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+63000^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+63000^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+63000^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+63000^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+63900^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+63900^foia:foia^BPS NCPDP:^0^0^0^0^
+63900^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+63900^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+63900^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+63900^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+63900^foia:foia^DG HTH:^0^0^0^0^Shutdown
+63900^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+63900^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+63900^foia:foia^EPHARM OUT:^0^0^0^0^
+63900^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+63900^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+63900^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+63900^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+63900^foia:foia^HLO:^0^0^0^0^
+63900^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+63900^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+63900^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+63900^foia:foia^IIV EC:^0^0^0^0^
+63900^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+63900^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+63900^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+63900^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+63900^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+63900^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+63900^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+63900^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+63900^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+63900^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+63900^foia:foia^MCAR INST:^0^0^0^0^Halting
+63900^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+63900^foia:foia^MDHL IN:^0^0^0^0^
+63900^foia:foia^MHVVA:^0^0^0^0^Shutdown
+63900^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+63900^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+63900^foia:foia^ORHDR:^0^0^0^0^Shutdown
+63900^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+63900^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+63900^foia:foia^PSD HLLP:SH^0^0^0^0^
+63900^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+63900^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+63900^foia:foia^PSO LLP1:NC^0^0^0^0^
+63900^foia:foia^PSO LLPO:^0^0^0^0^
+63900^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+63900^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+63900^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+63900^foia:foia^PXRM7-RECO:^0^0^0^0^
+63900^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+63900^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+63900^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+63900^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+63900^foia:foia^SR AAIS:^0^0^0^0^
+63900^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+63900^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+63900^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+63900^foia:foia^VAORL:^0^0^0^0^Shutdown
+63900^foia:foia^VAVCB:^0^0^0^0^Shutdown
+63900^foia:foia^VBECS-OERR:^0^0^0^0^
+63900^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+63900^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+63900^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+63900^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+63900^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+63900^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+63900^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+64800^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+64800^foia:foia^BPS NCPDP:^0^0^0^0^
+64800^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+64800^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+64800^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+64800^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+64800^foia:foia^DG HTH:^0^0^0^0^Shutdown
+64800^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+64800^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+64800^foia:foia^EPHARM OUT:^0^0^0^0^
+64800^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+64800^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+64800^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+64800^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+64800^foia:foia^HLO:^0^0^0^0^
+64800^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+64800^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+64800^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+64800^foia:foia^IIV EC:^0^0^0^0^
+64800^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+64800^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+64800^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+64800^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+64800^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+64800^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+64800^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+64800^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+64800^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+64800^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+64800^foia:foia^MCAR INST:^0^0^0^0^Halting
+64800^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+64800^foia:foia^MDHL IN:^0^0^0^0^
+64800^foia:foia^MHVVA:^0^0^0^0^Shutdown
+64800^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+64800^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+64800^foia:foia^ORHDR:^0^0^0^0^Shutdown
+64800^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+64800^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+64800^foia:foia^PSD HLLP:SH^0^0^0^0^
+64800^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+64800^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+64800^foia:foia^PSO LLP1:NC^0^0^0^0^
+64800^foia:foia^PSO LLPO:^0^0^0^0^
+64800^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+64800^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+64800^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+64800^foia:foia^PXRM7-RECO:^0^0^0^0^
+64800^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+64800^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+64800^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+64800^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+64800^foia:foia^SR AAIS:^0^0^0^0^
+64800^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+64800^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+64800^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+64800^foia:foia^VAORL:^0^0^0^0^Shutdown
+64800^foia:foia^VAVCB:^0^0^0^0^Shutdown
+64800^foia:foia^VBECS-OERR:^0^0^0^0^
+64800^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+64800^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+64800^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+64800^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+64800^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+64800^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+64800^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+65700^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+65700^foia:foia^BPS NCPDP:^0^0^0^0^
+65700^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+65700^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+65700^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+65700^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+65700^foia:foia^DG HTH:^0^0^0^0^Shutdown
+65700^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+65700^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+65700^foia:foia^EPHARM OUT:^0^0^0^0^
+65700^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+65700^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+65700^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+65700^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+65700^foia:foia^HLO:^0^0^0^0^
+65700^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+65700^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+65700^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+65700^foia:foia^IIV EC:^0^0^0^0^
+65700^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+65700^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+65700^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+65700^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+65700^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+65700^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+65700^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+65700^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+65700^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+65700^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+65700^foia:foia^MCAR INST:^0^0^0^0^Halting
+65700^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+65700^foia:foia^MDHL IN:^0^0^0^0^
+65700^foia:foia^MHVVA:^0^0^0^0^Shutdown
+65700^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+65700^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+65700^foia:foia^ORHDR:^0^0^0^0^Shutdown
+65700^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+65700^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+65700^foia:foia^PSD HLLP:SH^0^0^0^0^
+65700^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+65700^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+65700^foia:foia^PSO LLP1:NC^0^0^0^0^
+65700^foia:foia^PSO LLPO:^0^0^0^0^
+65700^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+65700^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+65700^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+65700^foia:foia^PXRM7-RECO:^0^0^0^0^
+65700^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+65700^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+65700^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+65700^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+65700^foia:foia^SR AAIS:^0^0^0^0^
+65700^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+65700^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+65700^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+65700^foia:foia^VAORL:^0^0^0^0^Shutdown
+65700^foia:foia^VAVCB:^0^0^0^0^Shutdown
+65700^foia:foia^VBECS-OERR:^0^0^0^0^
+65700^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+65700^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+65700^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+65700^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+65700^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+65700^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+65700^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+67500^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+67500^foia:foia^BPS NCPDP:^0^0^0^0^
+67500^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+67500^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+67500^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+67500^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+67500^foia:foia^DG HTH:^0^0^0^0^Shutdown
+67500^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+67500^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+67500^foia:foia^EPHARM OUT:^0^0^0^0^
+67500^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+67500^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+67500^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+67500^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+67500^foia:foia^HLO:^0^0^0^0^
+67500^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+67500^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+67500^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+67500^foia:foia^IIV EC:^0^0^0^0^
+67500^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+67500^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+67500^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+67500^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+67500^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+67500^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+67500^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+67500^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+67500^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+67500^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+67500^foia:foia^MCAR INST:^0^0^0^0^Halting
+67500^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+67500^foia:foia^MDHL IN:^0^0^0^0^
+67500^foia:foia^MHVVA:^0^0^0^0^Shutdown
+67500^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+67500^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+67500^foia:foia^ORHDR:^0^0^0^0^Shutdown
+67500^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+67500^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+67500^foia:foia^PSD HLLP:SH^0^0^0^0^
+67500^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+67500^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+67500^foia:foia^PSO LLP1:NC^0^0^0^0^
+67500^foia:foia^PSO LLPO:^0^0^0^0^
+67500^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+67500^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+67500^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+67500^foia:foia^PXRM7-RECO:^0^0^0^0^
+67500^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+67500^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+67500^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+67500^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+67500^foia:foia^SR AAIS:^0^0^0^0^
+67500^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+67500^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+67500^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+67500^foia:foia^VAORL:^0^0^0^0^Shutdown
+67500^foia:foia^VAVCB:^0^0^0^0^Shutdown
+67500^foia:foia^VBECS-OERR:^0^0^0^0^
+67500^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+67500^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+67500^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+67500^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+67500^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+67500^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+67500^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+68400^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+68400^foia:foia^BPS NCPDP:^0^0^0^0^
+68400^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+68400^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+68400^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+68400^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+68400^foia:foia^DG HTH:^0^0^0^0^Shutdown
+68400^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+68400^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+68400^foia:foia^EPHARM OUT:^0^0^0^0^
+68400^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+68400^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+68400^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+68400^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+68400^foia:foia^HLO:^0^0^0^0^
+68400^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+68400^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+68400^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+68400^foia:foia^IIV EC:^0^0^0^0^
+68400^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+68400^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+68400^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+68400^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+68400^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+68400^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+68400^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+68400^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+68400^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+68400^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+68400^foia:foia^MCAR INST:^0^0^0^0^Halting
+68400^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+68400^foia:foia^MDHL IN:^0^0^0^0^
+68400^foia:foia^MHVVA:^0^0^0^0^Shutdown
+68400^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+68400^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+68400^foia:foia^ORHDR:^0^0^0^0^Shutdown
+68400^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+68400^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+68400^foia:foia^PSD HLLP:SH^0^0^0^0^
+68400^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+68400^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+68400^foia:foia^PSO LLP1:NC^0^0^0^0^
+68400^foia:foia^PSO LLPO:^0^0^0^0^
+68400^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+68400^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+68400^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+68400^foia:foia^PXRM7-RECO:^0^0^0^0^
+68400^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+68400^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+68400^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+68400^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+68400^foia:foia^SR AAIS:^0^0^0^0^
+68400^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+68400^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+68400^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+68400^foia:foia^VAORL:^0^0^0^0^Shutdown
+68400^foia:foia^VAVCB:^0^0^0^0^Shutdown
+68400^foia:foia^VBECS-OERR:^0^0^0^0^
+68400^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+68400^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+68400^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+68400^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+68400^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+68400^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+68400^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+69300^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+69300^foia:foia^BPS NCPDP:^0^0^0^0^
+69300^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+69300^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+69300^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+69300^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+69300^foia:foia^DG HTH:^0^0^0^0^Shutdown
+69300^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+69300^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+69300^foia:foia^EPHARM OUT:^0^0^0^0^
+69300^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+69300^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+69300^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+69300^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+69300^foia:foia^HLO:^0^0^0^0^
+69300^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+69300^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+69300^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+69300^foia:foia^IIV EC:^0^0^0^0^
+69300^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+69300^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+69300^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+69300^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+69300^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+69300^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+69300^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+69300^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+69300^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+69300^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+69300^foia:foia^MCAR INST:^0^0^0^0^Halting
+69300^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+69300^foia:foia^MDHL IN:^0^0^0^0^
+69300^foia:foia^MHVVA:^0^0^0^0^Shutdown
+69300^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+69300^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+69300^foia:foia^ORHDR:^0^0^0^0^Shutdown
+69300^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+69300^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+69300^foia:foia^PSD HLLP:SH^0^0^0^0^
+69300^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+69300^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+69300^foia:foia^PSO LLP1:NC^0^0^0^0^
+69300^foia:foia^PSO LLPO:^0^0^0^0^
+69300^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+69300^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+69300^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+69300^foia:foia^PXRM7-RECO:^0^0^0^0^
+69300^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+69300^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+69300^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+69300^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+69300^foia:foia^SR AAIS:^0^0^0^0^
+69300^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+69300^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+69300^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+69300^foia:foia^VAORL:^0^0^0^0^Shutdown
+69300^foia:foia^VAVCB:^0^0^0^0^Shutdown
+69300^foia:foia^VBECS-OERR:^0^0^0^0^
+69300^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+69300^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+69300^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+69300^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+69300^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+69300^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+69300^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+70200^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+70200^foia:foia^BPS NCPDP:^0^0^0^0^
+70200^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+70200^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+70200^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+70200^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+70200^foia:foia^DG HTH:^0^0^0^0^Shutdown
+70200^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+70200^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+70200^foia:foia^EPHARM OUT:^0^0^0^0^
+70200^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+70200^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+70200^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+70200^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+70200^foia:foia^HLO:^0^0^0^0^
+70200^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+70200^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+70200^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+70200^foia:foia^IIV EC:^0^0^0^0^
+70200^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+70200^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+70200^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+70200^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+70200^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+70200^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+70200^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+70200^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+70200^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+70200^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+70200^foia:foia^MCAR INST:^0^0^0^0^Halting
+70200^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+70200^foia:foia^MDHL IN:^0^0^0^0^
+70200^foia:foia^MHVVA:^0^0^0^0^Shutdown
+70200^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+70200^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+70200^foia:foia^ORHDR:^0^0^0^0^Shutdown
+70200^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+70200^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+70200^foia:foia^PSD HLLP:SH^0^0^0^0^
+70200^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+70200^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+70200^foia:foia^PSO LLP1:NC^0^0^0^0^
+70200^foia:foia^PSO LLPO:^0^0^0^0^
+70200^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+70200^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+70200^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+70200^foia:foia^PXRM7-RECO:^0^0^0^0^
+70200^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+70200^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+70200^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+70200^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+70200^foia:foia^SR AAIS:^0^0^0^0^
+70200^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+70200^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+70200^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+70200^foia:foia^VAORL:^0^0^0^0^Shutdown
+70200^foia:foia^VAVCB:^0^0^0^0^Shutdown
+70200^foia:foia^VBECS-OERR:^0^0^0^0^
+70200^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+70200^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+70200^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+70200^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+70200^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+70200^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+70200^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+71100^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+71100^foia:foia^BPS NCPDP:^0^0^0^0^
+71100^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+71100^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+71100^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+71100^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+71100^foia:foia^DG HTH:^0^0^0^0^Shutdown
+71100^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+71100^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+71100^foia:foia^EPHARM OUT:^0^0^0^0^
+71100^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+71100^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+71100^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+71100^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+71100^foia:foia^HLO:^0^0^0^0^
+71100^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+71100^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+71100^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+71100^foia:foia^IIV EC:^0^0^0^0^
+71100^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+71100^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+71100^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+71100^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+71100^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+71100^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+71100^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+71100^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+71100^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+71100^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+71100^foia:foia^MCAR INST:^0^0^0^0^Halting
+71100^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+71100^foia:foia^MDHL IN:^0^0^0^0^
+71100^foia:foia^MHVVA:^0^0^0^0^Shutdown
+71100^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+71100^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+71100^foia:foia^ORHDR:^0^0^0^0^Shutdown
+71100^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+71100^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+71100^foia:foia^PSD HLLP:SH^0^0^0^0^
+71100^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+71100^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+71100^foia:foia^PSO LLP1:NC^0^0^0^0^
+71100^foia:foia^PSO LLPO:^0^0^0^0^
+71100^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+71100^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+71100^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+71100^foia:foia^PXRM7-RECO:^0^0^0^0^
+71100^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+71100^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+71100^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+71100^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+71100^foia:foia^SR AAIS:^0^0^0^0^
+71100^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+71100^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+71100^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+71100^foia:foia^VAORL:^0^0^0^0^Shutdown
+71100^foia:foia^VAVCB:^0^0^0^0^Shutdown
+71100^foia:foia^VBECS-OERR:^0^0^0^0^
+71100^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+71100^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+71100^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+71100^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+71100^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+71100^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+71100^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+72000^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+72000^foia:foia^BPS NCPDP:^0^0^0^0^
+72000^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+72000^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+72000^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+72000^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+72000^foia:foia^DG HTH:^0^0^0^0^Shutdown
+72000^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+72000^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+72000^foia:foia^EPHARM OUT:^0^0^0^0^
+72000^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+72000^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+72000^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+72000^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+72000^foia:foia^HLO:^0^0^0^0^
+72000^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+72000^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+72000^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+72000^foia:foia^IIV EC:^0^0^0^0^
+72000^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+72000^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+72000^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+72000^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+72000^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+72000^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+72000^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+72000^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+72000^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+72000^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+72000^foia:foia^MCAR INST:^0^0^0^0^Halting
+72000^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+72000^foia:foia^MDHL IN:^0^0^0^0^
+72000^foia:foia^MHVVA:^0^0^0^0^Shutdown
+72000^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+72000^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+72000^foia:foia^ORHDR:^0^0^0^0^Shutdown
+72000^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+72000^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+72000^foia:foia^PSD HLLP:SH^0^0^0^0^
+72000^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+72000^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+72000^foia:foia^PSO LLP1:NC^0^0^0^0^
+72000^foia:foia^PSO LLPO:^0^0^0^0^
+72000^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+72000^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+72000^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+72000^foia:foia^PXRM7-RECO:^0^0^0^0^
+72000^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+72000^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+72000^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+72000^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+72000^foia:foia^SR AAIS:^0^0^0^0^
+72000^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+72000^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+72000^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+72000^foia:foia^VAORL:^0^0^0^0^Shutdown
+72000^foia:foia^VAVCB:^0^0^0^0^Shutdown
+72000^foia:foia^VBECS-OERR:^0^0^0^0^
+72000^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+72000^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+72000^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+72000^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+72000^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+72000^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+72000^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+72900^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+72900^foia:foia^BPS NCPDP:^0^0^0^0^
+72900^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+72900^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+72900^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+72900^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+72900^foia:foia^DG HTH:^0^0^0^0^Shutdown
+72900^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+72900^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+72900^foia:foia^EPHARM OUT:^0^0^0^0^
+72900^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+72900^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+72900^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+72900^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+72900^foia:foia^HLO:^0^0^0^0^
+72900^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+72900^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+72900^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+72900^foia:foia^IIV EC:^0^0^0^0^
+72900^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+72900^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+72900^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+72900^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+72900^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+72900^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+72900^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+72900^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+72900^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+72900^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+72900^foia:foia^MCAR INST:^0^0^0^0^Halting
+72900^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+72900^foia:foia^MDHL IN:^0^0^0^0^
+72900^foia:foia^MHVVA:^0^0^0^0^Shutdown
+72900^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+72900^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+72900^foia:foia^ORHDR:^0^0^0^0^Shutdown
+72900^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+72900^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+72900^foia:foia^PSD HLLP:SH^0^0^0^0^
+72900^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+72900^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+72900^foia:foia^PSO LLP1:NC^0^0^0^0^
+72900^foia:foia^PSO LLPO:^0^0^0^0^
+72900^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+72900^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+72900^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+72900^foia:foia^PXRM7-RECO:^0^0^0^0^
+72900^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+72900^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+72900^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+72900^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+72900^foia:foia^SR AAIS:^0^0^0^0^
+72900^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+72900^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+72900^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+72900^foia:foia^VAORL:^0^0^0^0^Shutdown
+72900^foia:foia^VAVCB:^0^0^0^0^Shutdown
+72900^foia:foia^VBECS-OERR:^0^0^0^0^
+72900^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+72900^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+72900^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+72900^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+72900^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+72900^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+72900^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+73800^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+73800^foia:foia^BPS NCPDP:^0^0^0^0^
+73800^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+73800^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+73800^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+73800^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+73800^foia:foia^DG HTH:^0^0^0^0^Shutdown
+73800^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+73800^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+73800^foia:foia^EPHARM OUT:^0^0^0^0^
+73800^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+73800^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+73800^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+73800^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+73800^foia:foia^HLO:^0^0^0^0^
+73800^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+73800^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+73800^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+73800^foia:foia^IIV EC:^0^0^0^0^
+73800^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+73800^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+73800^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+73800^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+73800^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+73800^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+73800^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+73800^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+73800^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+73800^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+73800^foia:foia^MCAR INST:^0^0^0^0^Halting
+73800^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+73800^foia:foia^MDHL IN:^0^0^0^0^
+73800^foia:foia^MHVVA:^0^0^0^0^Shutdown
+73800^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+73800^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+73800^foia:foia^ORHDR:^0^0^0^0^Shutdown
+73800^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+73800^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+73800^foia:foia^PSD HLLP:SH^0^0^0^0^
+73800^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+73800^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+73800^foia:foia^PSO LLP1:NC^0^0^0^0^
+73800^foia:foia^PSO LLPO:^0^0^0^0^
+73800^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+73800^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+73800^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+73800^foia:foia^PXRM7-RECO:^0^0^0^0^
+73800^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+73800^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+73800^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+73800^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+73800^foia:foia^SR AAIS:^0^0^0^0^
+73800^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+73800^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+73800^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+73800^foia:foia^VAORL:^0^0^0^0^Shutdown
+73800^foia:foia^VAVCB:^0^0^0^0^Shutdown
+73800^foia:foia^VBECS-OERR:^0^0^0^0^
+73800^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+73800^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+73800^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+73800^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+73800^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+73800^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+73800^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+74700^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+74700^foia:foia^BPS NCPDP:^0^0^0^0^
+74700^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+74700^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+74700^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+74700^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+74700^foia:foia^DG HTH:^0^0^0^0^Shutdown
+74700^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+74700^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+74700^foia:foia^EPHARM OUT:^0^0^0^0^
+74700^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+74700^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+74700^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+74700^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+74700^foia:foia^HLO:^0^0^0^0^
+74700^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+74700^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+74700^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+74700^foia:foia^IIV EC:^0^0^0^0^
+74700^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+74700^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+74700^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+74700^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+74700^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+74700^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+74700^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+74700^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+74700^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+74700^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+74700^foia:foia^MCAR INST:^0^0^0^0^Halting
+74700^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+74700^foia:foia^MDHL IN:^0^0^0^0^
+74700^foia:foia^MHVVA:^0^0^0^0^Shutdown
+74700^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+74700^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+74700^foia:foia^ORHDR:^0^0^0^0^Shutdown
+74700^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+74700^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+74700^foia:foia^PSD HLLP:SH^0^0^0^0^
+74700^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+74700^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+74700^foia:foia^PSO LLP1:NC^0^0^0^0^
+74700^foia:foia^PSO LLPO:^0^0^0^0^
+74700^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+74700^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+74700^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+74700^foia:foia^PXRM7-RECO:^0^0^0^0^
+74700^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+74700^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+74700^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+74700^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+74700^foia:foia^SR AAIS:^0^0^0^0^
+74700^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+74700^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+74700^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+74700^foia:foia^VAORL:^0^0^0^0^Shutdown
+74700^foia:foia^VAVCB:^0^0^0^0^Shutdown
+74700^foia:foia^VBECS-OERR:^0^0^0^0^
+74700^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+74700^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+74700^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+74700^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+74700^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+74700^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+74700^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+75600^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+75600^foia:foia^BPS NCPDP:^0^0^0^0^
+75600^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+75600^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+75600^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+75600^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+75600^foia:foia^DG HTH:^0^0^0^0^Shutdown
+75600^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+75600^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+75600^foia:foia^EPHARM OUT:^0^0^0^0^
+75600^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+75600^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+75600^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+75600^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+75600^foia:foia^HLO:^0^0^0^0^
+75600^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+75600^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+75600^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+75600^foia:foia^IIV EC:^0^0^0^0^
+75600^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+75600^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+75600^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+75600^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+75600^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+75600^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+75600^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+75600^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+75600^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+75600^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+75600^foia:foia^MCAR INST:^0^0^0^0^Halting
+75600^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+75600^foia:foia^MDHL IN:^0^0^0^0^
+75600^foia:foia^MHVVA:^0^0^0^0^Shutdown
+75600^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+75600^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+75600^foia:foia^ORHDR:^0^0^0^0^Shutdown
+75600^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+75600^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+75600^foia:foia^PSD HLLP:SH^0^0^0^0^
+75600^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+75600^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+75600^foia:foia^PSO LLP1:NC^0^0^0^0^
+75600^foia:foia^PSO LLPO:^0^0^0^0^
+75600^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+75600^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+75600^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+75600^foia:foia^PXRM7-RECO:^0^0^0^0^
+75600^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+75600^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+75600^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+75600^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+75600^foia:foia^SR AAIS:^0^0^0^0^
+75600^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+75600^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+75600^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+75600^foia:foia^VAORL:^0^0^0^0^Shutdown
+75600^foia:foia^VAVCB:^0^0^0^0^Shutdown
+75600^foia:foia^VBECS-OERR:^0^0^0^0^
+75600^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+75600^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+75600^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+75600^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+75600^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+75600^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+75600^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+76500^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+76500^foia:foia^BPS NCPDP:^0^0^0^0^
+76500^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+76500^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+76500^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+76500^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+76500^foia:foia^DG HTH:^0^0^0^0^Shutdown
+76500^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+76500^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+76500^foia:foia^EPHARM OUT:^0^0^0^0^
+76500^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+76500^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+76500^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+76500^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+76500^foia:foia^HLO:^0^0^0^0^
+76500^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+76500^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+76500^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+76500^foia:foia^IIV EC:^0^0^0^0^
+76500^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+76500^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+76500^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+76500^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+76500^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+76500^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+76500^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+76500^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+76500^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+76500^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+76500^foia:foia^MCAR INST:^0^0^0^0^Halting
+76500^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+76500^foia:foia^MDHL IN:^0^0^0^0^
+76500^foia:foia^MHVVA:^0^0^0^0^Shutdown
+76500^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+76500^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+76500^foia:foia^ORHDR:^0^0^0^0^Shutdown
+76500^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+76500^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+76500^foia:foia^PSD HLLP:SH^0^0^0^0^
+76500^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+76500^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+76500^foia:foia^PSO LLP1:NC^0^0^0^0^
+76500^foia:foia^PSO LLPO:^0^0^0^0^
+76500^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+76500^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+76500^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+76500^foia:foia^PXRM7-RECO:^0^0^0^0^
+76500^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+76500^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+76500^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+76500^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+76500^foia:foia^SR AAIS:^0^0^0^0^
+76500^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+76500^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+76500^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+76500^foia:foia^VAORL:^0^0^0^0^Shutdown
+76500^foia:foia^VAVCB:^0^0^0^0^Shutdown
+76500^foia:foia^VBECS-OERR:^0^0^0^0^
+76500^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+76500^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+76500^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+76500^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+76500^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+76500^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+76500^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+77400^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+77400^foia:foia^BPS NCPDP:^0^0^0^0^
+77400^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+77400^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+77400^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+77400^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+77400^foia:foia^DG HTH:^0^0^0^0^Shutdown
+77400^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+77400^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+77400^foia:foia^EPHARM OUT:^0^0^0^0^
+77400^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+77400^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+77400^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+77400^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+77400^foia:foia^HLO:^0^0^0^0^
+77400^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+77400^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+77400^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+77400^foia:foia^IIV EC:^0^0^0^0^
+77400^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+77400^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+77400^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+77400^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+77400^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+77400^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+77400^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+77400^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+77400^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+77400^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+77400^foia:foia^MCAR INST:^0^0^0^0^Halting
+77400^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+77400^foia:foia^MDHL IN:^0^0^0^0^
+77400^foia:foia^MHVVA:^0^0^0^0^Shutdown
+77400^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+77400^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+77400^foia:foia^ORHDR:^0^0^0^0^Shutdown
+77400^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+77400^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+77400^foia:foia^PSD HLLP:SH^0^0^0^0^
+77400^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+77400^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+77400^foia:foia^PSO LLP1:NC^0^0^0^0^
+77400^foia:foia^PSO LLPO:^0^0^0^0^
+77400^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+77400^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+77400^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+77400^foia:foia^PXRM7-RECO:^0^0^0^0^
+77400^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+77400^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+77400^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+77400^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+77400^foia:foia^SR AAIS:^0^0^0^0^
+77400^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+77400^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+77400^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+77400^foia:foia^VAORL:^0^0^0^0^Shutdown
+77400^foia:foia^VAVCB:^0^0^0^0^Shutdown
+77400^foia:foia^VBECS-OERR:^0^0^0^0^
+77400^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+77400^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+77400^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+77400^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+77400^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+77400^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+77400^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+78300^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+78300^foia:foia^BPS NCPDP:^0^0^0^0^
+78300^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+78300^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+78300^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+78300^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+78300^foia:foia^DG HTH:^0^0^0^0^Shutdown
+78300^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+78300^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+78300^foia:foia^EPHARM OUT:^0^0^0^0^
+78300^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+78300^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+78300^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+78300^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+78300^foia:foia^HLO:^0^0^0^0^
+78300^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+78300^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+78300^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+78300^foia:foia^IIV EC:^0^0^0^0^
+78300^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+78300^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+78300^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+78300^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+78300^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+78300^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+78300^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+78300^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+78300^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+78300^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+78300^foia:foia^MCAR INST:^0^0^0^0^Halting
+78300^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+78300^foia:foia^MDHL IN:^0^0^0^0^
+78300^foia:foia^MHVVA:^0^0^0^0^Shutdown
+78300^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+78300^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+78300^foia:foia^ORHDR:^0^0^0^0^Shutdown
+78300^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+78300^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+78300^foia:foia^PSD HLLP:SH^0^0^0^0^
+78300^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+78300^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+78300^foia:foia^PSO LLP1:NC^0^0^0^0^
+78300^foia:foia^PSO LLPO:^0^0^0^0^
+78300^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+78300^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+78300^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+78300^foia:foia^PXRM7-RECO:^0^0^0^0^
+78300^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+78300^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+78300^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+78300^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+78300^foia:foia^SR AAIS:^0^0^0^0^
+78300^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+78300^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+78300^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+78300^foia:foia^VAORL:^0^0^0^0^Shutdown
+78300^foia:foia^VAVCB:^0^0^0^0^Shutdown
+78300^foia:foia^VBECS-OERR:^0^0^0^0^
+78300^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+78300^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+78300^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+78300^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+78300^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+78300^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+78300^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+79200^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+79200^foia:foia^BPS NCPDP:^0^0^0^0^
+79200^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+79200^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+79200^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+79200^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+79200^foia:foia^DG HTH:^0^0^0^0^Shutdown
+79200^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+79200^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+79200^foia:foia^EPHARM OUT:^0^0^0^0^
+79200^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+79200^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+79200^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+79200^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+79200^foia:foia^HLO:^0^0^0^0^
+79200^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+79200^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+79200^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+79200^foia:foia^IIV EC:^0^0^0^0^
+79200^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+79200^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+79200^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+79200^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+79200^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+79200^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+79200^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+79200^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+79200^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+79200^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+79200^foia:foia^MCAR INST:^0^0^0^0^Halting
+79200^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+79200^foia:foia^MDHL IN:^0^0^0^0^
+79200^foia:foia^MHVVA:^0^0^0^0^Shutdown
+79200^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+79200^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+79200^foia:foia^ORHDR:^0^0^0^0^Shutdown
+79200^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+79200^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+79200^foia:foia^PSD HLLP:SH^0^0^0^0^
+79200^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+79200^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+79200^foia:foia^PSO LLP1:NC^0^0^0^0^
+79200^foia:foia^PSO LLPO:^0^0^0^0^
+79200^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+79200^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+79200^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+79200^foia:foia^PXRM7-RECO:^0^0^0^0^
+79200^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+79200^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+79200^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+79200^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+79200^foia:foia^SR AAIS:^0^0^0^0^
+79200^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+79200^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+79200^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+79200^foia:foia^VAORL:^0^0^0^0^Shutdown
+79200^foia:foia^VAVCB:^0^0^0^0^Shutdown
+79200^foia:foia^VBECS-OERR:^0^0^0^0^
+79200^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+79200^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+79200^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+79200^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+79200^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+79200^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+79200^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+80100^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+80100^foia:foia^BPS NCPDP:^0^0^0^0^
+80100^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+80100^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+80100^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+80100^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+80100^foia:foia^DG HTH:^0^0^0^0^Shutdown
+80100^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+80100^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+80100^foia:foia^EPHARM OUT:^0^0^0^0^
+80100^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+80100^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+80100^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+80100^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+80100^foia:foia^HLO:^0^0^0^0^
+80100^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+80100^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+80100^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+80100^foia:foia^IIV EC:^0^0^0^0^
+80100^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+80100^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+80100^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+80100^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+80100^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+80100^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+80100^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+80100^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+80100^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+80100^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+80100^foia:foia^MCAR INST:^0^0^0^0^Halting
+80100^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+80100^foia:foia^MDHL IN:^0^0^0^0^
+80100^foia:foia^MHVVA:^0^0^0^0^Shutdown
+80100^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+80100^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+80100^foia:foia^ORHDR:^0^0^0^0^Shutdown
+80100^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+80100^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+80100^foia:foia^PSD HLLP:SH^0^0^0^0^
+80100^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+80100^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+80100^foia:foia^PSO LLP1:NC^0^0^0^0^
+80100^foia:foia^PSO LLPO:^0^0^0^0^
+80100^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+80100^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+80100^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+80100^foia:foia^PXRM7-RECO:^0^0^0^0^
+80100^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+80100^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+80100^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+80100^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+80100^foia:foia^SR AAIS:^0^0^0^0^
+80100^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+80100^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+80100^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+80100^foia:foia^VAORL:^0^0^0^0^Shutdown
+80100^foia:foia^VAVCB:^0^0^0^0^Shutdown
+80100^foia:foia^VBECS-OERR:^0^0^0^0^
+80100^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+80100^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+80100^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+80100^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+80100^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+80100^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+80100^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+81000^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+81000^foia:foia^BPS NCPDP:^0^0^0^0^
+81000^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+81000^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+81000^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+81000^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+81000^foia:foia^DG HTH:^0^0^0^0^Shutdown
+81000^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+81000^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+81000^foia:foia^EPHARM OUT:^0^0^0^0^
+81000^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+81000^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+81000^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+81000^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+81000^foia:foia^HLO:^0^0^0^0^
+81000^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+81000^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+81000^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+81000^foia:foia^IIV EC:^0^0^0^0^
+81000^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+81000^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+81000^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+81000^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+81000^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+81000^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+81000^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+81000^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+81000^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+81000^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+81000^foia:foia^MCAR INST:^0^0^0^0^Halting
+81000^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+81000^foia:foia^MDHL IN:^0^0^0^0^
+81000^foia:foia^MHVVA:^0^0^0^0^Shutdown
+81000^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+81000^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+81000^foia:foia^ORHDR:^0^0^0^0^Shutdown
+81000^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+81000^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+81000^foia:foia^PSD HLLP:SH^0^0^0^0^
+81000^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+81000^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+81000^foia:foia^PSO LLP1:NC^0^0^0^0^
+81000^foia:foia^PSO LLPO:^0^0^0^0^
+81000^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+81000^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+81000^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+81000^foia:foia^PXRM7-RECO:^0^0^0^0^
+81000^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+81000^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+81000^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+81000^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+81000^foia:foia^SR AAIS:^0^0^0^0^
+81000^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+81000^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+81000^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+81000^foia:foia^VAORL:^0^0^0^0^Shutdown
+81000^foia:foia^VAVCB:^0^0^0^0^Shutdown
+81000^foia:foia^VBECS-OERR:^0^0^0^0^
+81000^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+81000^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+81000^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+81000^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+81000^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+81000^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+81000^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+81900^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+81900^foia:foia^BPS NCPDP:^0^0^0^0^
+81900^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+81900^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+81900^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+81900^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+81900^foia:foia^DG HTH:^0^0^0^0^Shutdown
+81900^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+81900^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+81900^foia:foia^EPHARM OUT:^0^0^0^0^
+81900^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+81900^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+81900^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+81900^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+81900^foia:foia^HLO:^0^0^0^0^
+81900^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+81900^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+81900^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+81900^foia:foia^IIV EC:^0^0^0^0^
+81900^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+81900^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+81900^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+81900^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+81900^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+81900^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+81900^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+81900^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+81900^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+81900^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+81900^foia:foia^MCAR INST:^0^0^0^0^Halting
+81900^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+81900^foia:foia^MDHL IN:^0^0^0^0^
+81900^foia:foia^MHVVA:^0^0^0^0^Shutdown
+81900^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+81900^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+81900^foia:foia^ORHDR:^0^0^0^0^Shutdown
+81900^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+81900^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+81900^foia:foia^PSD HLLP:SH^0^0^0^0^
+81900^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+81900^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+81900^foia:foia^PSO LLP1:NC^0^0^0^0^
+81900^foia:foia^PSO LLPO:^0^0^0^0^
+81900^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+81900^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+81900^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+81900^foia:foia^PXRM7-RECO:^0^0^0^0^
+81900^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+81900^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+81900^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+81900^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+81900^foia:foia^SR AAIS:^0^0^0^0^
+81900^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+81900^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+81900^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+81900^foia:foia^VAORL:^0^0^0^0^Shutdown
+81900^foia:foia^VAVCB:^0^0^0^0^Shutdown
+81900^foia:foia^VBECS-OERR:^0^0^0^0^
+81900^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+81900^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+81900^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+81900^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+81900^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+81900^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+81900^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+82800^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+82800^foia:foia^BPS NCPDP:^0^0^0^0^
+82800^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+82800^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+82800^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+82800^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+82800^foia:foia^DG HTH:^0^0^0^0^Shutdown
+82800^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+82800^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+82800^foia:foia^EPHARM OUT:^0^0^0^0^
+82800^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+82800^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+82800^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+82800^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+82800^foia:foia^HLO:^0^0^0^0^
+82800^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+82800^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+82800^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+82800^foia:foia^IIV EC:^0^0^0^0^
+82800^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+82800^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+82800^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+82800^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+82800^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+82800^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+82800^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+82800^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+82800^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+82800^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+82800^foia:foia^MCAR INST:^0^0^0^0^Halting
+82800^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+82800^foia:foia^MDHL IN:^0^0^0^0^
+82800^foia:foia^MHVVA:^0^0^0^0^Shutdown
+82800^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+82800^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+82800^foia:foia^ORHDR:^0^0^0^0^Shutdown
+82800^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+82800^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+82800^foia:foia^PSD HLLP:SH^0^0^0^0^
+82800^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+82800^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+82800^foia:foia^PSO LLP1:NC^0^0^0^0^
+82800^foia:foia^PSO LLPO:^0^0^0^0^
+82800^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+82800^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+82800^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+82800^foia:foia^PXRM7-RECO:^0^0^0^0^
+82800^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+82800^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+82800^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+82800^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+82800^foia:foia^SR AAIS:^0^0^0^0^
+82800^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+82800^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+82800^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+82800^foia:foia^VAORL:^0^0^0^0^Shutdown
+82800^foia:foia^VAVCB:^0^0^0^0^Shutdown
+82800^foia:foia^VBECS-OERR:^0^0^0^0^
+82800^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+82800^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+82800^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+82800^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+82800^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+82800^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+82800^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+83700^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+83700^foia:foia^BPS NCPDP:^0^0^0^0^
+83700^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+83700^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+83700^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+83700^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+83700^foia:foia^DG HTH:^0^0^0^0^Shutdown
+83700^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+83700^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+83700^foia:foia^EPHARM OUT:^0^0^0^0^
+83700^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+83700^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+83700^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+83700^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+83700^foia:foia^HLO:^0^0^0^0^
+83700^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+83700^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+83700^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+83700^foia:foia^IIV EC:^0^0^0^0^
+83700^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+83700^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+83700^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+83700^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+83700^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+83700^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+83700^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+83700^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+83700^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+83700^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+83700^foia:foia^MCAR INST:^0^0^0^0^Halting
+83700^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+83700^foia:foia^MDHL IN:^0^0^0^0^
+83700^foia:foia^MHVVA:^0^0^0^0^Shutdown
+83700^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+83700^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+83700^foia:foia^ORHDR:^0^0^0^0^Shutdown
+83700^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+83700^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+83700^foia:foia^PSD HLLP:SH^0^0^0^0^
+83700^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+83700^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+83700^foia:foia^PSO LLP1:NC^0^0^0^0^
+83700^foia:foia^PSO LLPO:^0^0^0^0^
+83700^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+83700^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+83700^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+83700^foia:foia^PXRM7-RECO:^0^0^0^0^
+83700^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+83700^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+83700^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+83700^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+83700^foia:foia^SR AAIS:^0^0^0^0^
+83700^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+83700^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+83700^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+83700^foia:foia^VAORL:^0^0^0^0^Shutdown
+83700^foia:foia^VAVCB:^0^0^0^0^Shutdown
+83700^foia:foia^VBECS-OERR:^0^0^0^0^
+83700^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+83700^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+83700^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+83700^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+83700^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+83700^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+83700^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+84600^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+84600^foia:foia^BPS NCPDP:^0^0^0^0^
+84600^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+84600^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+84600^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+84600^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+84600^foia:foia^DG HTH:^0^0^0^0^Shutdown
+84600^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+84600^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+84600^foia:foia^EPHARM OUT:^0^0^0^0^
+84600^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+84600^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+84600^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+84600^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+84600^foia:foia^HLO:^0^0^0^0^
+84600^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+84600^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+84600^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+84600^foia:foia^IIV EC:^0^0^0^0^
+84600^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+84600^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+84600^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+84600^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+84600^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+84600^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+84600^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+84600^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+84600^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+84600^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+84600^foia:foia^MCAR INST:^0^0^0^0^Halting
+84600^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+84600^foia:foia^MDHL IN:^0^0^0^0^
+84600^foia:foia^MHVVA:^0^0^0^0^Shutdown
+84600^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+84600^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+84600^foia:foia^ORHDR:^0^0^0^0^Shutdown
+84600^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+84600^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+84600^foia:foia^PSD HLLP:SH^0^0^0^0^
+84600^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+84600^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+84600^foia:foia^PSO LLP1:NC^0^0^0^0^
+84600^foia:foia^PSO LLPO:^0^0^0^0^
+84600^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+84600^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+84600^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+84600^foia:foia^PXRM7-RECO:^0^0^0^0^
+84600^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+84600^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+84600^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+84600^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+84600^foia:foia^SR AAIS:^0^0^0^0^
+84600^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+84600^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+84600^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+84600^foia:foia^VAORL:^0^0^0^0^Shutdown
+84600^foia:foia^VAVCB:^0^0^0^0^Shutdown
+84600^foia:foia^VBECS-OERR:^0^0^0^0^
+84600^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+84600^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+84600^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+84600^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+84600^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+84600^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+84600^foia:foia^YS MHAT:^0^0^0^0^Shutdown
+85500^foia:foia^AITC_VTS:^0^0^0^0^Shutdown
+85500^foia:foia^BPS NCPDP:^0^0^0^0^
+85500^foia:foia^CCRA-NAK:^0^0^0^0^Shutdown
+85500^foia:foia^DENTVHLAAC:^0^0^0^0^Shutdown
+85500^foia:foia^DENTVHLHDR:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT AD:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT AMD:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT ATI:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT CC:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT HH:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT VIT:^0^0^0^0^Shutdown
+85500^foia:foia^DG HT VN:^0^0^0^0^Shutdown
+85500^foia:foia^DG HTH:^0^0^0^0^Shutdown
+85500^foia:foia^DGHT 200TA:^0^0^0^0^Shutdown
+85500^foia:foia^DGHT 200TB:^0^0^0^0^Shutdown
+85500^foia:foia^EPHARM OUT:^0^0^0^0^
+85500^foia:foia^FBFEE-FPPS:^0^0^0^0^Shutdown
+85500^foia:foia^GMRCCCRA:^0^0^0^0^Shutdown
+85500^foia:foia^GMRCHCP:^0^0^0^0^Shutdown
+85500^foia:foia^HCSR OUT:^0^0^0^0^Shutdown
+85500^foia:foia^HLO:^0^0^0^0^
+85500^foia:foia^IB NIF TCP:^0^0^0^0^Shutdown
+85500^foia:foia^IBTUPD OUT:^0^0^0^0^Shutdown
+85500^foia:foia^IFCAP_FPDS:^0^0^0^0^Shutdown
+85500^foia:foia^IIV EC:^0^0^0^0^
+85500^foia:foia^LA7POC1:^0^0^0^0^Shutdown
+85500^foia:foia^LA7POC2:^0^0^0^0^Shutdown
+85500^foia:foia^LA7POC3:^0^0^0^0^Shutdown
+85500^foia:foia^LA7POC4:^0^0^0^0^Shutdown
+85500^foia:foia^LA7POC5:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI10:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI1:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI2:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI3:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI4:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI5:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI6:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI7:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI8:^0^0^0^0^Shutdown
+85500^foia:foia^LA7UI9:^0^0^0^0^Shutdown
+85500^foia:foia^LISTENER:MS^184^184^1195^1195^0 server
+85500^foia:foia^LLESROUT:NC^0^0^0^0^Shutdown
+85500^foia:foia^MAG CPACS:^0^0^0^0^Shutdown
+85500^foia:foia^MAG DPS:^0^0^0^0^Shutdown
+85500^foia:foia^MCAR INST:^0^0^0^0^Halting
+85500^foia:foia^MCAR OUT:^0^0^0^0^Shutdown
+85500^foia:foia^MDHL IN:^0^0^0^0^
+85500^foia:foia^MHVVA:^0^0^0^0^Shutdown
+85500^foia:foia^NPI OUT:^0^0^0^0^Shutdown
+85500^foia:foia^OERR-VBECS:^0^0^0^0^Shutdown
+85500^foia:foia^ORHDR:^0^0^0^0^Shutdown
+85500^foia:foia^PRCHJ_ECMS:^0^0^0^0^Shutdown
+85500^foia:foia^PSBCOTS1:^0^0^0^0^Shutdown
+85500^foia:foia^PSD HLLP:SH^0^0^0^0^
+85500^foia:foia^PSJ PADE:^0^0^0^0^Shutdown
+85500^foia:foia^PSO DISP:^0^0^0^0^Shutdown
+85500^foia:foia^PSO LLP1:NC^0^0^0^0^
+85500^foia:foia^PSO LLPO:^0^0^0^0^
+85500^foia:foia^PSORRXSEND:^0^0^0^0^Shutdown
+85500^foia:foia^PSOTPBAAC:^0^0^0^0^Shutdown
+85500^foia:foia^PSU SEND:^0^0^0^0^Shutdown
+85500^foia:foia^PXRM7-RECO:^0^0^0^0^
+85500^foia:foia^RA-SCIMAGE:^0^0^0^0^Shutdown
+85500^foia:foia^RA-TALK:^0^0^0^0^Shutdown
+85500^foia:foia^RMIM LINK:MM^0^0^0^0^Halting
+85500^foia:foia^ROR SEND:NC^1^1^16^1^Shutdown
+85500^foia:foia^SR AAIS:^0^0^0^0^
+85500^foia:foia^TIUCCRA:^0^0^0^0^Shutdown
+85500^foia:foia^TMP_SEND:^0^0^0^0^Shutdown
+85500^foia:foia^VA-VIE:^0^0^0^0^Shutdown
+85500^foia:foia^VAORL:^0^0^0^0^Shutdown
+85500^foia:foia^VAVCB:^0^0^0^0^Shutdown
+85500^foia:foia^VBECS-OERR:^0^0^0^0^
+85500^foia:foia^VBECSPTM:^0^0^0^0^Shutdown
+85500^foia:foia^VBECSPTU:^0^0^0^0^Shutdown
+85500^foia:foia^XUMF ACK:NC^2352^2352^1342^1342^Shutdown
+85500^foia:foia^XUMF FORUM:^0^0^6^6^Shutdown
+85500^foia:foia^XUMF TEST:^0^0^4^4^Shutdown
+85500^foia:foia^YS GAF-SND:MM^0^0^0^0^Halting
+85500^foia:foia^YS MHAT:^0^0^0^0^Shutdown

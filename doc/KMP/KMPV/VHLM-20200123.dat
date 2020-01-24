@@ -1,0 +1,3 @@
+Message Type(Sync/Async/HLO)^Time Slot^Trasmission Type(I/O)^Priority(I/D)^Message Type(M/B/F)^Logical Link^Subscriber^Event Driver^Message Type^Event Type^Sending Application^Receiving Application^Sending Site^Receiving Site^Number of Messages^Message Length^# of HL7 Events^Transmission Time(s)^CATime(s)^AATime(s)
+ASYNC^0^O^D^M^VBECSPTU^VBECS ADT-A04 CLIENT^VAFC ADT-A04 SERVER^ACK^A04^VAFC PIMS^VBECS ADT^050~~^589~~^2^1729^2^0
+ASYNC^43200^O^D^M^VBECSPTU^VBECS ADT-A04 CLIENT^VAFC ADT-A04 SERVER^ACK^A04^VAFC PIMS^VBECS ADT^050~~^589~~^2^1732^2^0

@@ -1,0 +1,3 @@
+Region^MaxSize(MB)^Current Size(MB)^Block Size(int)^Blocks per Map(int)^Free space(MB)^Free Space(int-Blocks)^System Dir(bool)^Expansion size(MB)^disk free space (MB)
+DEFAULT^2705.25^2703.04^4096^n/a^2.21^566^n/a^4^70834
+TEMP^39.06^0.11^4096^n/a^38.95^9972^n/a^4^70834
