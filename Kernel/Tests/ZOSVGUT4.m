@@ -296,7 +296,7 @@ VTCM ; @TEST VSM Timed Collection Monitor
  . J ^KMPVVTCM:(IN="/dev/null":OUT="/dev/null":ERROR="/dev/null")
  . S %J=$ZJOB
  . D CHKTF^%ut($zgetjpi(%J,"isprocalive"))
- . H 1
+ . H 1.5 ; There is a Hang in the code first time it is ever run
  . D HALTONE^ZSY(%J)
  . F  Q:'$zgetjpi(%J,"isprocalive")  H .001 ; Wait around til shi
  I $$CACHE D
