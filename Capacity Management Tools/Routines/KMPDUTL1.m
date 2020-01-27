@@ -1,5 +1,5 @@
-KMPDUTL1 ;OAK/RAK,KAK,JML - CM TOOLS Utilities ;2020-01-13  2:41 PM
- ;;4.0;CAPACITY MANAGEMENT;**10001**;11/15/2017;Build 38
+KMPDUTL1 ;OAK/RAK,KAK,JML - CM TOOLS Utilities ;Jan 22, 2020@23:13
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;11/15/2017;Build 5
  ; Original Code by Department of Veterans Affairs in Public Domain
  ; *10001* (c) Sam Habiel 2018
  ; Changes licensed under Apache 2.0.
@@ -57,7 +57,7 @@ SYSINFO() ;-- returns system information
  S SYSINFO=MPLTF_U_$ZV_U_OSVER
  Q SYSINFO
  ;
-MPLTF() ;-- returns the type of M platform
+MPLTF()  ;-- returns the type of M platform
  ;---------------------------------------------------------------------
  ; Returns:  DSM    for DSM platform
  ;           CVMS   for Cache for OpenVMS platform
@@ -68,7 +68,7 @@ MPLTF() ;-- returns the type of M platform
  N MPLTF,ZV
  ;
  S ZV=$ZV
- S MPLTF=$S(ZV["DSM":"DSM",ZV["VMS":"CVMS",ZV["Windows":"CWINNT",ZV["GT.M":"GTM",1:"UNK") ; *10001* added GTM
+ S MPLTF=$S(ZV["DSM":"DSM",ZV["VMS":"CVMS",ZV["Windows":"CWINNT",ZV["GT.M":"GTM",ZV["UNIX":"CUNIX",1:"UNK") ; *10001* added GTM & Cache UNIX
  Q MPLTF
  ;
 OSVER(MPLTF) ;-- returns the operating system version

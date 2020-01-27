@@ -1,5 +1,5 @@
-KMPDUTL5 ;OIFO/KAK - Obtain CPU Configuration;2020-01-13  2:42 PM;2/17/04  10:56
- ;;3.0;KMPD;**10001**;Jan 22, 2009;Build 42
+KMPDUTL5 ;OIFO/KAK - Obtain CPU Configuration;2020-01-13  2:42 PM;2/17/04  10:56 ;Jan 22, 2020@23:19
+ ;;3.0;KMPD;**10001**;Jan 22, 2009;Build 5
  ; Original Code by Department of Veterans Affairs in Public Domain
  ; *10001* changes by OSEHRA/Sam Habiel: GTM support
  ; (c) 2018 Sam Habiel
@@ -25,6 +25,7 @@ CPU(ARRAY) ;-- get cpu configuration information
  I (ZV["CVMS") D CVMS(.ARRAY,1)
  I (ZV["CWINNT") D CWINNT(.ARRAY,1)
  I (ZV["GTM") D GTM(.ARRAY,1) ; *10001*
+ I (ZV["CUNIX") D CUNIX(.ARRAY,1) ; *10001*
  Q
  ;
  ;
@@ -311,6 +312,32 @@ GTM(CPUINFO,TYP) ;-- for GT.M all versions *10001*
  ;
  QUIT
  ;
+CUNIX(CPUINFO,TYP) ;-- for Cache Linux *10001*
+ ;---------------------------------------------------------------------
+ ; input: TYP = type of system information requested
+ ;                1 : cpu system information
+ ;                2 : operating system version information
+ ;
+ ; CPUINFO = array passed back by reference
+ ;           : for TYP=1 see CPU(ARRAY) line tag above
+ ;           : for TYP=2 CPUINFO(1)=os version
+ ;--------------------------------------------------------------------
+ I $ZV'["Linux" S $EC=",U-NOT-SUPPORTED,"
+ ;
+ I TYP=2 S CPUINFO(1)=$$RETURN^%ZOSV("uname -r") QUIT
+ ;
+ ; Type is 1.
+ N P
+ S P(1)=$$RETURN^%ZOSV("cat /proc/cpuinfo | grep 'model name' | uniq | cut -d':' -f2")
+ S P(1)=$$TRIM^XLFSTR(P(1))
+ S P(2)=$$RETURN^%ZOSV("cat /proc/cpuinfo | grep processor | wc -l")
+ S P(3)=$$RETURN^%ZOSV("cat /proc/cpuinfo | grep 'cpu MHz' | uniq | cut -d':' -f2")
+ S P(3)=$$TRIM^XLFSTR(P(3))
+ S P(4)=$$RETURN^%ZOSV("cat /proc/meminfo | grep 'MemTotal' | cut -d':' -f2")
+ S P(4)=$$TRIM^XLFSTR(P(4))
+ S CPUINFO($$RETURN^%ZOSV("hostname"))=P(1)_U_P(2)_U_P(3)_U_P(4)
+ ;
+ QUIT
 EOF ;-- end of file condition for CVMS
  S X="ERR^ZU",@^%ZOSF("TRAP")
  D CLOSE^%ZISH("LOG")

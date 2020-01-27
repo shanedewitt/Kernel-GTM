@@ -1,6 +1,10 @@
-%ZOSVKSE ;OAK/KAK/RAK/JML - ZOSVKSOE - Global data (Cache) ;2018-06-16
- ;;8.0;KERNEL;**90,94,197,268,456,568**;Jul 26, 2004;Build 48
+%ZOSVKSE ;OAK/KAK/RAK/JML - ZOSVKSOE - Global data (Cache) ;Jan 24, 2020@16:18
+ ;;8.0;KERNEL;**90,94,197,268,456,568,10003**;Jul 26, 2004;Build 48
  ;
+ ; Original routine authored by Department of Veterans Affairs
+ ; *10003 changed (c) Sam Habiel 2020
+ ; See inline for changes
+ ; Licensed under Apache 2.0
  Q
  ;
 START(KMPSTEMP) ;-- called by routine CVMS+2^KMPSGE/CWINNT+1^KMPSGE in VAH
@@ -24,10 +28,8 @@ START(KMPSTEMP) ;-- called by routine CVMS+2^KMPSGE/CWINNT+1^KMPSGE in VAH
  S U="^",KMPSSITE=$P(KMPSTEMP,U),NUM=$P(KMPSTEMP,U,2),KMPSLOC=$P(KMPSTEMP,U,3)
  S KMPSDT=$P(KMPSTEMP,U,4),KMPSPROD=$P(KMPSTEMP,U,5),KMPSVOL=$P(KMPSTEMP,U,6)
  K KMPSTEMP
- ; CE: begin port to GTM
- S KMPSZU=$ZNSPACE_","_KMPSVOL ; use $ZGLD
+ S KMPSZU=$ZNSPACE_","_KMPSVOL
  S ^XTMP("KMPS","START",KMPSVOL,NUM)=$H
- ;
  S VERSION=$$VERSION^%ZOSV ; IA# 10097
  I VERSION<2008 D DONE Q
  ;
@@ -36,8 +38,6 @@ START(KMPSTEMP) ;-- called by routine CVMS+2^KMPSGE/CWINNT+1^KMPSGE in VAH
  ;
  ; check for accepted operating system
  Q:'$$OSOKAY(ZV)
- ;
- ; CE: end port to GTM
  ;
  D ALLOS
  ;
@@ -51,13 +51,8 @@ ALLOS ;-- entry point now for all OS's
  ;
  N GLOARRAY,RC
  ;
- ; CE: begin port to GTM
- ; Appears to be the equivalent of %GD (Global Directory)
- ; create stuff in %ZOSV to do this
- ;
  ; set up GLOARRAY array indexed by global name
  S RC=$$GetDirGlobals^%SYS.DATABASE(KMPSVOL,.GLOARRAY)
- ; CE: end port to GTM
  ;
  I ('+RC) D ERRVMS G ERROR
  ;
@@ -69,30 +64,21 @@ ALLOS ;-- entry point now for all OS's
  ;
 ALLGLO ;- collect global info
  ;
+ ; *10003* This entire section extensively re-written
+ ; Data set into ^XTMP for each global in the following format:
+ ; Blocks ^ Pointer Blocks ^ Total Bytes ^ Pointer Bytes ^ Big Blocks
+ ; ^ Big Bytes ^ Big Strings ^ Data size ^ Top Pointer Block
+ ; ^ Top Pointer Eff ^ Bottom Pointer Block ^ Bottom Pointer Eff
+ ; ^ Pointer Block - Pointer Eff ; Pointer Block - Pointer Eff ; etc
+ ; ^ Data Block ^ Data Eff ^ Big Strings Block ^ Big Strings Eff
+ ;
  N COLLATE,DATASIZE,FBLK,GLO,GLOINFO,GLOTOTBLKS,GLOPNTBLKS,GLOTOTBYTES
  N GLOPNTBYTES,GLOBIGBLKS,GLOBIGBYTES,GLOBIGSTRINGS,GRWBLK
  N I,INFO,JRNL,LEV,MSGLIST,PROT,PROTECT,PROTINFO,RC,TPTRBLK,TRY
  ;
  S GLO="",RC=1
- S PROT(0)="N",PROT(1)="R",PROT(2)="RW",PROT(3)="RWD"
  ;
  F  S GLO=$O(GLOARRAY(GLO)) Q:GLO=""!+$G(^XTMP("KMPS","STOP"))  D  Q:+$G(^XTMP("KMPS","STOP"))!('+RC)
- .;
- .S (COLLATE,FBLK,GRWBLK,JRNL,PROTECT,TPTRBLK)=""
- .S PROTINFO="^^^"
- .;
- .; global info - '^' delimited
- .;         piece 1: first block
- .;         piece 2: jrnl^collate
- .;         piece 3: bits(blank)
- .;         piece 4: growth area block
- .;         piece 5: protection:system(blank)
- .;         piece 6: protection:world
- .;         piece 7: group^owner
- .;         piece 8: network^top (first) pointer block
- .S GLOINFO=FBLK_U_JRNL_U_COLLATE_"^^"_GRWBLK_"^^"_PROTINFO_U_TPTRBLK
- .;
- .S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,GLO,KMPSZU)=GLOINFO
  .;
  .; get global total blocks.... GLOTOTBLKS
  .;     global pointer blocks.. GLOPNTBLKS
@@ -103,16 +89,10 @@ ALLGLO ;- collect global info
  .;     global big strings..... GLOBIGSTRINGS
  .;     data size.............. DATASIZE
  .; will stop if there are more than 999 errors with this global
- .;
- .; CE: begin port to GTM
- .; This looks promising
- .; mupip integ -fast -sub=<gvn> -r <region>
- .; directory blocks, records
- .; index blocks are pointer blocks
- .; big blocks are kinda like spanning blocks, probably not necessary
- .; YDB>w $$^%PEEKBYNAME("sgmnt_data.blk_size","DEFAULT")
- .; 4096
  .S RC=$$CheckGlobalIntegrity^%SYS.DATABASE(KMPSVOL,GLO,999,.GLOTOTBLKS,.GLOPNTBLKS,.GLOTOTBYTES,.GLOPNTBYTES,.GLOBIGBLKS,.GLOBIGBYTES,.GLOBIGSTRINGS,.DATASIZE)
+ .S GLOINFO=$G(GLOTOTBLKS)_U_$G(GLOPNTBLKS)_U_$G(GLOTOTBYTES)_U
+ .S GLOINFO=GLOINFO_$G(GLOPNTBYTE)_U_$G(GLOBIGBLKS)_U
+ .S GLOINFO=GLOINFO_$G(GLOBIGBYTES)_U_$G(GLOBIGSTRINGS)_U_$G(DATASIZE)
  .;
  .K MSGLIST
  .D DecomposeStatus^%SYS.DATABASE(RC,.MSGLIST,0,"")
@@ -124,24 +104,28 @@ ALLGLO ;- collect global info
  ..; more than 999 errors reported
  ..I INFO["***Further checking of this global is aborted." S RC=0 D ERRVMS Q
  ..;
- ..; This does not make much sense...
- ..; Probably omit for GTM
- ..; ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,1)
- ..; ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,n)
- ..; ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,"D") ; Data
- ..; ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,"L") ; Long String
- ..I ($P(INFO,":")["Top Pointer Level")!($P(INFO,":")["Top/Bottom Pnt Level") D  Q
- ...S ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,1)=BLK_"^"_EFF_"%^Pointer"
- ..I $P(INFO,":")["Pointer Level" D  Q
- ...S LEV=LEV+1,^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,LEV)=BLK_"^"_EFF_"%^Pointer"
+ ..I $P(INFO,":")["Top Pointer Level" D  Q
+ ...S $P(GLOINFO,U,9)=BLK
+ ...S $P(GLOINFO,U,10)=EFF
+ ..I $P(INFO,":")["Top/Bottom Pnt Level" D  Q
+ ...S $P(GLOINFO,U,9)=BLK
+ ...S $P(GLOINFO,U,10)=EFF
+ ...S $P(GLOINFO,U,11)=BLK
+ ...S $P(GLOINFO,U,12)=EFF
  ..I $P(INFO,":")["Bottom Pointer Level" D  Q
- ...S LEV=LEV+1,^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,LEV)=BLK_"^"_EFF_"%^Bottom pointer"
+ ...S $P(GLOINFO,U,11)=BLK
+ ...S $P(GLOINFO,U,12)=EFF
+ ..I $P(INFO,":")["Pointer Level" D  Q  ; *10003* Multiple of these
+ ...S $P(GLOINFO,U,13)=$P(GLOINFO,U,13)_BLK_"/"_EFF_";"
  ..I $P(INFO,":")["Data Level" D  Q
- ...S ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,"D")=BLK_"^"_EFF_"%^Data"
+ ...S $P(GLOINFO,U,14)=BLK
+ ...S $P(GLOINFO,U,15)=EFF
  ..I $P(INFO,":")["Big Strings" D  Q
- ...S ^XTMP("KMPS",KMPSSITE,NUM,GLO,KMPSZU,KMPSDT,"L")=BLK_"^"_EFF_"%^LongString"
+ ...S $P(GLOINFO,U,16)=BLK
+ ...S $P(GLOINFO,U,17)=EFF
+ .;
+ .S ^XTMP("KMPS",KMPSSITE,NUM,KMPSDT,GLO,KMPSZU)=GLOINFO
  ;
- ; CE: End port to GTM
  I ('+RC) G ERROR
  ;
  Q
@@ -177,14 +161,11 @@ OSOKAY(ZV) ;-- extrinsic function - operating system ok for SAGG
  ;         "" - os not okay
  ;---------------------------------------------------------------
  ;
- ; CE: Begin port to GTM
- ; Fix this for GTM
  Q:$G(ZV)="" ""
  Q:ZV="Cache for OpenVMS" 1
  Q:$E(ZV,1,14)="Cache for UNIX" 1
  Q:$E(ZV,1,17)="Cache for Windows" 1
  Q ""
- ; CE: End port to GTM
  ;
 ERROR ; ERROR - Tell all SAGG jobs to STOP collection
  ;

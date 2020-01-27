@@ -1,5 +1,5 @@
-KMPVCBG ;SP/JML VSM background utility functions ;Jan 13, 2020@17:18
- ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 38
+KMPVCBG ;SP/JML VSM background utility functions ;Jan 23, 2020@16:29
+ ;;4.0;CAPACITY MANAGEMENT;**10001**;3/1/2018;Build 5
  ; Original Code by Department of Veterans Affairs in Public Domain
  ; *10001* Changes by (c) Sam Habiel 2018
  ; Licensed under Apache 2.0
@@ -213,9 +213,9 @@ KMPVTSK(KMPVNSP) ; CHECK CREATE OR RESUME KMPVRUN TASK IN CACHE TASKMGR
  .W !,"You must have either the %Manager or the %All Role",!
  ; End: only in KMPV version ----
  ;
- I '$D(KMPVNSP)||'##Class(%SYS.Namespace).Exists(KMPVNSP) S KMPVNSP=$ZDEFNSP
+ I '$D(KMPVNSP)||'##Class(%SYS.Namespace).Exists(KMPVNSP) S KMPVNSP=$NAMESPACE
  S KMPVTSK="KMPVRUN"
- I KMPVNSP'=$ZDEFNSP S KMPVTSK=KMPVTSK_"_"_KMPVNSP
+ I KMPVNSP'=$NAMESPACE S KMPVTSK=KMPVTSK_"_"_KMPVNSP
  S KMPVMSG="CHECKING KMPV SETUP IN "_KMPVNSP_" NAMESPACE..."
  W !,KMPVMSG,!!
  DO ##class(%SYS.System).WriteToConsoleLog("ZSTU: "_KMPVMSG,0,0)

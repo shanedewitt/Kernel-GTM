@@ -1,5 +1,5 @@
-ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-13  2:52 PM
- ;;8.0;KERNEL;**10003**;;
+ZOSVGUT4 ; OSE/SMH - Unit Tests for Capacity Management Community Port;2020-01-13  2:52 PM ;Jan 23, 2020@15:50
+ ;;8.0;KERNEL;**10003**;;Build 5
  ;
  ; (c) Sam Habiel 2018-2020
  ; Licensed under Apache 2.0
@@ -98,7 +98,8 @@ LOGRSRC ; @TEST LOGRSRC^%ZOSV Resource Logger
  ;
  ; -- Capacity Management --
 SYSINFO ; @TEST $$SYSINFO^KMPDUTL1 System Information
- D CHKTF^%ut($$SYSINFO^KMPDUTL1()["GT.M")
+ I $$GTM   D CHKTF^%ut($$SYSINFO^KMPDUTL1()["GT.M")
+ I $$CACHE D CHKTF^%ut($$SYSINFO^KMPDUTL1()["Cache")
  QUIT
  ;
 CPUINFO ; @TEST D CPU^KMPDUTL5 CPU Information
@@ -190,6 +191,7 @@ SAGG ; @TEST SAGG Data Collection
  ; -- VistA System Monitor Unit Tests --
  ;
 VSTM ; @TEST VSM Storage Monitor
+ S KMPVTEST="TESTING"
  K ^KMPTMP("KMPV","VSTM")
  D RUN^KMPVVSTM
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")>0)
@@ -198,6 +200,7 @@ VSTM ; @TEST VSM Storage Monitor
  QUIT
  ;
 VSTM2 ; @TEST VSM Storage Monitor w/o DUZ("AG")
+ S KMPVTEST="TESTING"
  K DUZ("AG")
  N % S %=$$RETURN^%ZOSV("rm -f "_$$DEFDIR^%ZISH_"KMPV/VSTM-"_hl7date_".dat")
  K ^KMPTMP("KMPV","VSTM")
@@ -279,8 +282,8 @@ VMCM ; @TEST VSM Message Count Monitor
  . J ^KMPVVMCM
  . S %J=$ZCHILD
  . D CHKTF^%ut($D(^$J(%J)))
- . H 1
- . N % S %=$ZU(4,$J)
+ . H 3
+ . N % S %=$ZU(4,%J)
  . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
  D SEND^KMPVVMCM
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VMCM-"_hl7date_".dat")>1)
@@ -303,8 +306,8 @@ VTCM ; @TEST VSM Timed Collection Monitor
  . J ^KMPVVTCM
  . S %J=$ZCHILD
  . D CHKTF^%ut($D(^$J(%J)))
- . H 1
- . N % S %=$ZU(4,$J)
+ . H 13  ; Block Collision collection takes forever
+ . N % S %=$ZU(4,%J)
  . F  Q:'$D(^$J(%J))  H .001 ; Wait around till death
  D SEND^KMPVVTCM
  D CHKTF^%ut(+$$RETURN^%ZOSV("wc -l "_$$DEFDIR^%ZISH_"KMPV/VTCM-"_hl7date_".dat")>1)

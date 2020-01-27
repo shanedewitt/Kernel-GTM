@@ -1,12 +1,12 @@
-KMPSGE ;OAK/KAK/JML - Master Routine;2020-01-10  11:42 AM ;Jan 13, 2020@13:45
- ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 67
+KMPSGE ;OAK/KAK/JML - Master Routine;2020-01-10  11:42 AM ;Jan 24, 2020@17:15
+ ;;2.0;SAGG PROJECT;**1,10001**;Jul 02, 2007;Build 5
  ; Original Code by Department of Veterans Affairs in Public Domain
  ; *10001* (c) Sam Habiel 2018,2020
  ; Changes licensed under Apache 2.0.
  ;
 EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  ;
- I ^%ZOSF("OS")'["GT.M" Q:'$D(ZTQUEUED)  ; *10001* q only on Cache
+ ; *10001* Remove ZTQUEUED requirement
  ;
  N CNT,COMPDT,HANG,KMPSVOLS,KMPSZE,LOC,MAXJOB,MGR,NOWDT,OS
  N PROD,PTCHINFO,QUIT,SESSNUM,SITENUM,TEMP,TEXT,UCI,UCIVOL
@@ -15,7 +15,7 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  ; maximum number of consecutively running jobs
  S MAXJOB=6
  ; hang time for LOOP and WAIT code
- S HANG=300
+ S HANG=1 ; *10001* changed from 300 to 1 sec. I think 300 is from 1998's computers.
  ;
  S SESSNUM=+$H,U="^",SITENUM=$P($$SITE^VASITE(),U,3)
  ;
@@ -47,7 +47,6 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  ; GT.M all OSes
  I OS="GTM" D START^%ZOSVKSE(TEMP)  ; *10001* Do not Job on GTM since only a single "volume"
  ;
- ; NOTE:  ^XINDEX incorrectly sees SYS("UCI" as an array.  It is a global in the %SYS namespace
  ; KMPS*2.0*1 - Now analyzing all volumes, not just those in the SAGG PROJECT file
  I $E(OS)="C" D  ; Cache
  .S CNT=0
@@ -62,7 +61,7 @@ EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
  S QUIT=0
  D LOOP(HANG,SESSNUM,OS)
  I 'QUIT D
- .I '$$VA^KMPVLOG D LOG(SESSNUM,SITENUM) QUIT  ; *10001* Dump Output to $HFS/KMPS/
+ .I '$$VA^KMPVLOG D LOG(SESSNUM,SITENUM,OS) QUIT  ; *10001* Dump Output to $HFS/KMPS/
  .E  S RESULT=$$PACK(SESSNUM,SITENUM)         ; *10001* Previous VA behavior unchanged
  .S XMZSENT=+RESULT,COMPDT=$P(RESULT,U,2)
  .S X=$$OUT^KMPSLK(NOWDT,OS,SESSNUM,SITENUM,XMZSENT,.TEXT)
@@ -118,7 +117,7 @@ LOOP(HANG,SESSNUM,OS) ;
  ;
  Q
  ;
-LOG(SESSNUM,SITENUM) ; [Private] Log output into $HFS/KMPS/...
+LOG(SESSNUM,SITENUM,OS) ; [Private] Log output into $HFS/KMPS/...
  ; SESSNUM..  +$Horolog number of session
  ; SITENUM..  site number
  ;
@@ -141,14 +140,25 @@ LOG(SESSNUM,SITENUM) ; [Private] Log output into $HFS/KMPS/...
  ; 1. Export the global sizes
  K ^TMP($J,"KMPVLOG")
  N L S L=1
- S ^TMP($J,"KMPVLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS" S L=L+1
+ I OS="GTM" S ^TMP($J,"KMPVLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS"
+ ; Blocks ^ Pointer Blocks ^ Total Bytes ^ Pointer Bytes ^ Big Blocks
+ ; ^ Big Bytes ^ Big Strings ^ Data size ^ Top Pointer Block
+ ; ^ Top Pointer Eff ^ Bottom Pointer Block ^ Bottom Pointer Eff
+ ; ^ Pointer Block - Pointer Eff ; Pointer Block - Pointer Eff ; etc
+ ; ^ Data Block ^ Data Eff ^ Big Strings Block ^ Big Strings Eff
+ E  I $E(OS)="C" D
+ . S ^TMP($J,"KMPVLOG",L)="BLOCKS^POINTER BLOCKS^TOTAL BYTES^POINTER BYTES^BIG BLOCKS^BIG BYTES^BIG STRINGS^DATA SIZE"
+ . S ^(L)=^(L)_"^TOP POINTER BLOCK^TOP POINTER EFF%^BOTTOM POINTER BLOCK^BOTTOM POINTER EFF%^POINTER DATA^DATA BLOCK^DATA EFF%^BIG STRINGS BLOCK^BIG STRINGS EFF%" ; **naked**
+ S L=L+1
  N H S H=+$H
  N D S D=$O(^XTMP("KMPS",SITENUM,H,""))
  N GLO S GLO=""
  N GLD S GLD="" ; global directory file; useless here.
  F  S GLO=$O(^XTMP("KMPS",SITENUM,H,D,GLO)) Q:GLO=""  D
  . F  S GLD=$O(^XTMP("KMPS",SITENUM,H,D,GLO,GLD)) Q:GLD=""  D
- .. N MYGLO S MYGLO=$P(GLO,U,2) ; rm the ^ from the global name
+ .. N MYGLO ; rm the ^ from the global nam
+ .. I $E(GLO)=U S MYGLO=$P(GLO,U,2)
+ .. E  S MYGLO=GLO
  .. S ^TMP($J,"KMPVLOG",L)=MYGLO_U_^XTMP("KMPS",SITENUM,H,D,GLO,GLD)
  .. S L=L+1
  D EN^KMPVLOG($NA(^TMP($J,"KMPVLOG")),"KMPS","globals","W",1)
