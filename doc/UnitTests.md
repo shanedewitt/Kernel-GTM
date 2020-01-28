@@ -2,13 +2,15 @@
 ## Summary
 Unit Tests for GT.M and YottaDB are called using ^ZOSVGUT1. There are six
 routines that contain unit tests: ZOSVGUT1-3 and ZOSVGUT5-7. ZOSVGUT4 is for the
-Capacity Management Packages and has not been released in a package yet.
+Capacity Management Packages.
 
 Unit Tests use M-Unit 1.6, which is available at https://github.com/ChristopherEdwards/M-Unit/releases.
 
 For Cache, this project contains the "unredaction" of XUSHSH for Cache, NDF
 file management support for PSN\*4.0\*10001, support for $$ENV^%ZOSV, and a fix
-for $$AVJ^%ZOSV. The unit tests to test these changes are in ZOSVONUT.
+for $$AVJ^%ZOSV. The unit tests to test these changes are in ZOSVONUT. ZOSVGUT4
+does capacity management checks for Cache. The Units tests for that will only
+run on \*nix systems; not Windows.
 
 They test every single change that was made in this project. Here's a summary
 of all the tests.
@@ -18,6 +20,7 @@ of all the tests.
  | ZOSVGUT1           | GT.M & YottaDB       | 10001, 10002, 10004, 10005, 10006 |
  | ZOSVONUT           | Intersystems Cache   | 10002 & 10005  |
  | ZOSVGUT7           | Both                 | 10007          |
+ | ZOSVGUT4           | Both                 | 10003          |
 
 Testing Numbers by Operating System:
 
@@ -26,6 +29,7 @@ Testing Numbers by Operating System:
  | ZOSVGUT1/Centos 7  | 210 |
  | ZOSVGUT1/Ubuntu 18 | 214 |
  | ZOSVONUT/Linux     | 28  |
+ | ZOSVGUT4/All       | 27  |
  | ZOSVGUT7/All       | 13  |
 
 ## Test Setup Notes
@@ -33,6 +37,8 @@ The tests need `stat` command, and need access to a writable `PRIMARY HFS
 DIRECTORY`. The HFS files used in GT.M/YottaDB tests are those in /usr/include;
 in my experience these always exist except in the latest version of macOS,
 where they need to be installed manually.
+
+ZOSVGUT4 uses rm, wc shell commands.
 
 ## Test Failure Notes
 For GT.M/YottaDB, there are certain tests that may fail. You need to be aware of which ones:
@@ -55,7 +61,6 @@ The tests have been done on multiple versions of GT.M and YottaDB on Linux x64,
 Darwin x64, Cygwin x32, and Arm7v.
 
 ## Test Screenscrapes
-
 The number of tests you end up with depends on the data and the operating
 system you are running on. Some tests (such as those using openssl) don't work
 well in Darwin or Cygwin, so they are skipped. Some tests run only on Linux.
@@ -218,6 +223,50 @@ Ran 1 Routine, 6 Entry Tags
 Checked 13 tests, with 0 failures and encountered 0 errors.
 ```
 
+Tests ran by `ZOSVGUT4`:
+```
+$ mumps -r ZOSVGUT4
+
+  (JAN 29, 2020@01:00)
+  (JAN 29, 2020@01:00)
+  (JAN 29, 2020@01:15)
+  (JAN 29, 2020@01:30)
+  (JAN 29, 2020@02:00)
+
+ ---------------------------------- ZOSVGUT4 ----------------------------------
+RUMSET - ZTMGRSET RUM Rename GTM/Cache Routines.--------------  [OK]   55.673ms
+LOGRSRC - LOGRSRC^%ZOSV Resource Logger.----------------------  [OK]    0.512ms
+SYSINFO - $$SYSINFO^KMPDUTL1 System Information.--------------  [OK]    2.250ms
+CPUINFO - D CPU^KMPDUTL5 CPU Information.---------------------  [OK]   33.301ms
+ROUFIND - ROUFIND^KMPDU2 Routine Find..-----------------------  [OK]  124.843ms
+COVER - Cover Sheet Statistics Calculations
+Gathering HL7 data...
+Compiling synchronous HL7 data...
+Filing synchronous HL7 stats into file 8973.1 (CM HL7 DATA)...
+Compiling asynchronous HL7 data...
+Finished!
+Compiling Timing data...
+20 records filed!
+Compressing data into daily format...
+
+Updating records to reflect transmission...
+
+Finished!.----------------------------------------------------  [OK] 11019.418ms
+SAGG - SAGG Data Collection......-----------------------------  [OK] 2391.857ms
+VSTM - VSM Storage Monitor..----------------------------------  [OK]   46.900ms
+VSTM2 - VSM Storage Monitor w/o DUZ("AG")..-------------------  [OK]   62.466ms
+VBEM - VSM Business Event Monitor (replaces old CM task)..----  [OK]   61.392ms
+VHLM - VSM Section HL7 mointor.-------------------------------  [OK]  171.749ms
+VMCM - VSM Message Count Monitor..----------------------------  [OK] 1263.719ms
+VTCM - VSM Timed Collection Monitor..-------------------------  [OK] 1763.975ms
+TASK - Task Creator.------------------------------------------  [OK]    1.248ms
+PATCHS - Test SAGG Patch Listing that they are correct.-------  [OK]    7.354ms
+PATCHD - Test CM Patch Listing that they are correct.---------  [OK]   26.436ms
+
+Ran 1 Routine, 16 Entry Tags
+Checked 27 tests, with 0 failures and encountered 0 errors.
+```
+
 ### Cache Tests
 I couldn't test $$BL and $$BE on Cache as Cache runs on UTF-16 (ehh.. almost)
 and I couldn't think of an easy way to make a UTF-8 string to test in a KIDS
@@ -244,4 +293,38 @@ AVJ - $$AVJ^%ZOSV ; 10005.------------------------------------  [OK]    0.036ms
 
 Ran 1 Routine, 11 Entry Tags
 Checked 28 tests, with 0 failures and encountered 0 errors. 
+```
+
+Capacity Management Unit Tests:
+
+```
+$ csession CACHE -U CACHEVISTA ZOSVGUT4
+ ---------------------------------- ZOSVGUT4 ----------------------------------
+RUMSET - ZTMGRSET RUM Rename GTM/Cache Routines.--------------  [OK]    5.484ms
+LOGRSRC - LOGRSRC^%ZOSV Resource Logger.----------------------  [OK]    0.739ms
+SYSINFO - $$SYSINFO^KMPDUTL1 System Information.--------------  [OK]    0.032ms
+CPUINFO - D CPU^KMPDUTL5 CPU Information.---------------------  [OK]   40.002ms
+ROUFIND - ROUFIND^KMPDU2 Routine Find..-----------------------  [OK]   76.900ms
+COVER - Cover Sheet Statistics Calculations
+Gathering HL7 data... no data to report
+Compiling Timing data...
+2 records filed!
+Compressing data into daily format...
+
+Updating records to reflect transmission...
+
+Finished!.----------------------------------------------------  [OK] 2121.990ms
+SAGG - SAGG Data Collection......-----------------------------  [OK] 5504.220ms
+VSTM - VSM Storage Monitor..----------------------------------  [OK] 2066.996ms
+VSTM2 - VSM Storage Monitor w/o DUZ("AG")..-------------------  [OK] 2084.383ms
+VBEM - VSM Business Event Monitor (replaces old CM task)..----  [OK] 2009.955ms
+VHLM - VSM Section HL7 mointor.-------------------------------  [OK] 2015.922ms
+VMCM - VSM Message Count Monitor..----------------------------  [OK] 3011.219ms
+VTCM - VSM Timed Collection Monitor..-------------------------  [OK] 13014.095ms
+TASK - Task Creator.------------------------------------------  [OK]    4.616ms
+PATCHS - Test SAGG Patch Listing that they are correct.-------  [OK]    0.324ms
+PATCHD - Test CM Patch Listing that they are correct.---------  [OK]    1.106ms
+
+Ran 1 Routine, 16 Entry Tags
+Checked 27 tests, with 0 failures and encountered 0 errors.
 ```
