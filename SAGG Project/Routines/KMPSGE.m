@@ -4,7 +4,7 @@ KMPSGE ;OAK/KAK/JML - Master Routine;2020-01-10  11:42 AM ;Jan 24, 2020@17:15
  ; *10001* (c) Sam Habiel 2018,2020
  ; Changes licensed under Apache 2.0.
  ;
-EN ;-- this routine can only be run as a TaskMan background job (fg ok for GT.M)
+EN ;
  ;
  ; *10001* Remove ZTQUEUED requirement
  ;
@@ -141,13 +141,13 @@ LOG(SESSNUM,SITENUM,OS) ; [Private] Log output into $HFS/KMPS/...
  K ^TMP($J,"KMPVLOG")
  N L S L=1
  I OS="GTM" S ^TMP($J,"KMPVLOG",L)="GLOBAL^BLOCKS^BLOCK SIZE^BYTES^ADJACENCY^REGION^ACCESS METHOD^JOURNALING STATE^JOURNAL FILE^J SETS^J KILLS"
- ; Blocks ^ Pointer Blocks ^ Total Bytes ^ Pointer Bytes ^ Big Blocks
+ ; Global ^ Blocks ^ Pointer Blocks ^ Total Bytes ^ Pointer Bytes ^ Big Blocks
  ; ^ Big Bytes ^ Big Strings ^ Data size ^ Top Pointer Block
  ; ^ Top Pointer Eff ^ Bottom Pointer Block ^ Bottom Pointer Eff
  ; ^ Pointer Block - Pointer Eff ; Pointer Block - Pointer Eff ; etc
  ; ^ Data Block ^ Data Eff ^ Big Strings Block ^ Big Strings Eff
  E  I $E(OS)="C" D
- . S ^TMP($J,"KMPVLOG",L)="BLOCKS^POINTER BLOCKS^TOTAL BYTES^POINTER BYTES^BIG BLOCKS^BIG BYTES^BIG STRINGS^DATA SIZE"
+ . S ^TMP($J,"KMPVLOG",L)="GLOBAL^BLOCKS^POINTER BLOCKS^TOTAL BYTES^POINTER BYTES^BIG BLOCKS^BIG BYTES^BIG STRINGS^DATA SIZE"
  . S ^(L)=^(L)_"^TOP POINTER BLOCK^TOP POINTER EFF%^BOTTOM POINTER BLOCK^BOTTOM POINTER EFF%^POINTER DATA^DATA BLOCK^DATA EFF%^BIG STRINGS BLOCK^BIG STRINGS EFF%" ; **naked**
  S L=L+1
  N H S H=+$H
