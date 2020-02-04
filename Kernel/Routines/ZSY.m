@@ -557,7 +557,7 @@ JOBVIEWZ ;
  ;
 JOBVIEWZ2(X) ; [Private] View Job Information
  I X'?1.N W !,"Not a valid job number." Q
- I '$zgetjpi(X,"isprocalive") W !,"This process does not exist" Q
+ I '$zgetjpi(X,"isprocalive") N P W !,"This process ("_X_") does not exist" R *P:3 Q
  ;
  N EXAMREAD
  N DONEONE S DONEONE=0
