@@ -28,8 +28,9 @@ Products & Installation
  | [XU\*8.0\*10005](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10005/XU_8-0_10005.KID) | 4 | [10005](doc/rel/XU-8.0-10005.rel.md) | UTF-8 support/Bug fixes |
  | [XU\*8.0\*10006](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/XU_8-0_10006.KID) | 5 | [10006](doc/rel/XU-8.0-10006.rel.md) | Bug fixes + ^%ZOSF("RESJOB") |
  | [XU-Multibuild (10001-10006)](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/XU-8-10001-10002-10004-10005-10006.KID) | n/a | n/a | n/a |
- | [virgin\_install.zip (10001-10006)](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10006/virgin_install.zip) | n/a | n/a | n/a |
- | [XU\*8.0\*10007](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10007-alpha/XU_8-0_10007.KID) | 6 | [10007](doc/rel/XU-8.0-10007.rel.md) | Kernel Lock Manager Port |
+ | [XU\*8.0\*10003](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10003/XU-8-10003-CM-BUNDLE.KID) | 6 | [10003](doc/rel/XU-8.0-10003.rel.md) | RUM/CM/SAGG/VSM Port |
+ | [virgin\_install.zip (10001-10006)](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10003/virgin_install.zip) | n/a | n/a | n/a |
+ | [XU\*8.0\*10007](https://github.com/shabiel/Kernel-GTM/releases/download/XU-8.0-10007-alpha/XU_8-0_10007.KID) | 7 | [10007](doc/rel/XU-8.0-10007.rel.md) | Kernel Lock Manager Port |
 
 You can install these either using a KIDS build by unzipping the routines in
 the virgin\_install.zip. You should always use the KIDS build unless you have
@@ -47,11 +48,6 @@ re-install.
  | [XT\*7.3\*10001](https://github.com/OSEHRA-Sandbox/XINDEX/releases/download/XT-7.3-10001/XT-7p3-10001T4.KID) | 1 | [10001](https://github.com/OSEHRA-Sandbox/XINDEX/blob/master/README.rst) | XINDEX Upgrade |
  | [XT\*7.3\*10002](https://github.com/shabiel/Kernel-GTM/releases/download/XT-7.3-10002/XT-7p3-10002T1.KID) | 1 | [10002](doc/rel/XU-8.0-10005.rel.md) | XTHC https support |
 
-### Other packages
-VistALink code is ready to be packaged. RPC Broker has UTF-8 support changes
-that need to be packaged. Capacity Management packages support for running
-outside of the VA is currently in process.
-
 Unit Testing
 ------------
 See [doc/UnitTests.md](doc/UnitTests.md)
@@ -63,5 +59,7 @@ I plan to port the following packages in these order:
  * RPMS %ZISH (done)
  * Job Examination capability for ZSY (done)
  * XOBW web service implementation for GT.M (done)
- * Resource Usage Monitor (RUM) (completed but not packaged)
- * Statistical Analysis of Global Growth (SAGG) (in progress)
+ * Resource Usage Monitor (RUM) (done)
+ * Statistical Analysis of Global Growth (SAGG) (done)
+ * VistALink packaging
+ * RPC Broker UTF-8 support changes
