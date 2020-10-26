@@ -557,7 +557,7 @@ JOBVIEWZ ;
  ;
 JOBVIEWZ2(X) ; [Private] View Job Information
  I X'?1.N W !,"Not a valid job number." Q
- I '$zgetjpi(X,"isprocalive") N P W !,"This process ("_X_") does not exist" R *P:3 Q
+ I '$zgetjpi(X,"isprocalive") N P W !,"This process ("_X_") does not exist" R *P:$G(DTIME,3) Q
  ;
  N EXAMREAD
  N DONEONE S DONEONE=0
@@ -565,7 +565,7 @@ JOBVIEWZ2(X) ; [Private] View Job Information
  . N % S %=$$EXAMINEJOBBYPID(X)
  . I %'=0 W !,"The job didn't respond to examination for 305 ms. You may try again." S DONEONE=1 QUIT
  . D PRINTEXAMDATA(X,$G(EXAMREAD))
- . W "Enter to Refersh, V for variables, I for ISVs, K to kill",!
+ . W "Enter to Refresh, V for variables, I for ISVs, K to kill",!
  . W "L to load variables into your ST and quit, ^ to go back: ",!
  . W "D to debug (broken), Z to zshow all data for debugging."
  . R EXAMREAD:$G(DTIME,300)
