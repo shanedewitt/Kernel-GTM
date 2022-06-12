@@ -1,5 +1,5 @@
-XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;12/08/15  12:44
- ;;8.0;KERNEL;**142,151,425,638,659**;Jul 10, 1995;Build 22
+XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;08/05/2020
+ ;;8.0;KERNEL;**142,151,425,638,659,717**;Jul 10, 1995;Build 10
  ;Per VA Directive 6402, this routine should not be modified.
  ;
  Q
@@ -16,7 +16,7 @@ TEST ;Test entry
 HOST(IP) ;Get a host name from an IP address
  ;ZEXCEPT: AddrToHostName,INetInfo,TextAddrToBinary ;Kernel exemption for Cache Objects
  N X,Y
- I $$VERSION^%ZOSV(1)["Cache" D  Q Y
+ I ($$VERSION^%ZOSV(1)["Cache")!($$VERSION^%ZOSV(1)["IRIS") D  Q Y
  . S X=$SYSTEM.INetInfo.TextAddrToBinary(IP)
  . S Y=$SYSTEM.INetInfo.AddrToHostName(X)
  ;Enter code for non-Cache systems here:
@@ -27,7 +27,7 @@ ADDRESS(N,T) ;Get a IP address from a name
  N X,XLF,Y,I S XLF="",Y=0
  I $$VERSION^XLFIPV S T=$G(T,"AAAA")
  E  S T=$G(T,"A") ; change default to "A" if VistA has IPv6 disabled
- I ($$VERSION^%ZOSV(1)["Cache")&((T="A")!(T="AAAA")) D  Q Y
+ I ($$VERSION^%ZOSV(1)["Cache")!($$VERSION^%ZOSV(1)["IRIS")&((T="A")!(T="AAAA")) D  Q Y
  . I T="AAAA" D
  . . S X=$SYSTEM.INetInfo.HostNameToAddr(N,2,0) ;Get IPv6 address
  . . S Y=$$FORCEIP6^XLFIPV(X) ;Format IPv6 address
