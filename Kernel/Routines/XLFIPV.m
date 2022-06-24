@@ -114,7 +114,7 @@ VERSION() ; EXTRINSIC. ICR #5844 (supported)
  N %
  S %=0
  I ($$VERSION^%ZOSV(1)["Cache")!($$VERSION^%ZOSV(1)["IRIS") I +$$VERSION^%ZOSV()>2009 S %=$SYSTEM.Process.IPv6Format()
- I $P($SY,",")=47 D  ; GT.M
+ I ^%ZOSF("OS")["GT.M" D  ; GT.M
  . I $TR($$VERSION^%ZOSV(),"-")<6.0003 QUIT  ; GT.M supports IPV6 starting in 6.0-003
  . I $ZTRNLNM("gtm_ipv4_only") QUIT
  . S %=1

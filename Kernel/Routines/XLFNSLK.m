@@ -1,7 +1,7 @@
 XLFNSLK ;ISF/RWF,ISD/HGW - Calling a DNS server for name lookup ;08/05/2020
  ;;8.0;KERNEL;**142,151,425,638,659,717,10001,10006,10008**;Jul 10, 1995;Build 10
  ;Per VA Directive 6402, this routine should not be modified.
- ; *19999 changes to support GT.M
+ ; *10001,10006,10008 changes to support GT.M
  ;
  Q
 TEST ;Test entry
@@ -21,7 +21,7 @@ HOST(IP) ;Get a host name from an IP address
  . S X=$SYSTEM.INetInfo.TextAddrToBinary(IP)
  . S Y=$SYSTEM.INetInfo.AddrToHostName(X)
  ;Enter code for non-Cache systems here:
- I +$SY=47 N RESULT D  Q RESULT
+ I ^%ZOSF("OS")["GT.M" N RESULT D  Q RESULT
  . S RESULT=$$RETURN^%ZOSV("dig -x "_IP_" +noall +answer +short") ; reverse DNS. MUST HAVE A REVERSE DNS RECORD
  . S $E(RESULT,$L(RESULT))="" ; Strip Last Character
  Q ""
@@ -37,7 +37,7 @@ ADDRESS(N,T) ;Get a IP address from a name
  . . S Y=$$FORCEIP6^XLFIPV(X) ;Format IPv6 address
  . I ($P(Y,":")="0000")!(T="A") S Y=$SYSTEM.INetInfo.HostNameToAddr(N,1,0) ;Get IPv4 address
  ;Non-cache systems and lookups other than "A" or "AAAA"
- I +$SY=47 D  Q Y
+ I ^%ZOSF("OS")["GT.M" D  Q Y
  . I (T="AAAA") S Y=$$FORCEIP6^XLFIPV($$RETURN^%ZOSV("dig "_T_" "_N_" +noall +answer +short")) QUIT  ; return the last ip address in the list
  . I (T="A") S Y=$$FORCEIP4^XLFIPV($$RETURN^%ZOSV("dig "_T_" "_N_" +noall +answer +short")) QUIT  ; return the last ip address in the list
  D NS(.XLF,N,T)
