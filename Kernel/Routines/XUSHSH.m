@@ -76,7 +76,7 @@ SHAHASH(N,X,FLAG) ;One-Way Hash Utility, IA #6189
 B64ENCD(X) ;Base 64 Encode, IA #6189
  I $G(^%ZOSF("OS"))["OpenM" Q $System.Encryption.Base64Encode(X)
  N %COMMAND,Y
- S %COMMAND="base64"
+ S %COMMAND="base64 -w 0" ;; do not wrap results to 76 characters
  O "COMM":(SHELL="/bin/sh":COMM=%COMMAND)::"pipe"
  U "COMM" W X S $X=0 W /EOF ; $X of 0 prevents the code from writing LF to the stream
  F  R Y:0 Q:$L(Y)  Q:$ZEOF
@@ -86,7 +86,7 @@ B64ENCD(X) ;Base 64 Encode, IA #6189
 B64DECD(X) ;Base 64 Decode, IA #6189
  I $G(^%ZOSF("OS"))["OpenM" Q $System.Encryption.Base64Decode(X)
  N %COMMAND,Y
- S %COMMAND="base64 -d"
+ S %COMMAND="base64 -w 0 -d" ;; do not wrap results to 76 characters
  I $G(^%ZOSF("OS"))["GT.M",$$VERSION^%ZOSV(1)["Darwin" S %COMMAND="base64 -D"
  O "COMM":(SHELL="/bin/sh":COMM=%COMMAND)::"pipe"
  U "COMM" W X S $X=0 W /EOF ; $X of 0 prevents the code from writing LF to the stream
